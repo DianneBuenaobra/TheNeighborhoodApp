@@ -10,18 +10,15 @@ using System.Windows.Forms;
 
 namespace TheNeighborhoodApp
 {
-    public partial class FrmAdminMenu : Form
+    public partial class FrmAdminResidentsList : Form
     {
-        public FrmAdminMenu()
+        public FrmAdminResidentsList()
         {
             InitializeComponent();
         }
 
-        private void btnRList_Click(object sender, EventArgs e)
+        private void FrmAdminResidentsList_Load(object sender, EventArgs e)
         {
-            
-
-
 
         }
     }
