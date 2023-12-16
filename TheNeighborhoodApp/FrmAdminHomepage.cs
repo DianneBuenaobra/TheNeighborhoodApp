@@ -12,7 +12,6 @@ namespace TheNeighborhoodApp
 {
     public partial class FrmAdminHomepage : Form
     {
-        FrmAdminMenu menu = new FrmAdminMenu();
         FrmAdminResidentsList rlist = new FrmAdminResidentsList();
         public FrmAdminHomepage()
         {
@@ -20,38 +19,35 @@ namespace TheNeighborhoodApp
         }
 
         private void FrmAdminHomepage_Load(object sender, EventArgs e)
-        {
-
-
-
-
-
-
-
-          
+        { 
         }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuList.Visible = true;
+            btnMenu.Visible = false;
             btnBack.Visible = true;
-         
-            
-            menu.TopLevel = false;
-            menuList.Controls.Add(menu);
-            menu.Show();
-        }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            AdminNF.Visible = false;
         }
-        public void residentsListClick()
+        private void btnBack_Click_1(object sender, EventArgs e)
         {
-            menuList.Visible = false;menu.Close();
+            menuList.Visible = false;
+            btnMenu.Visible = true; 
+        }
+        /*public void showResidentList()
+        {
+            FrmAdminResidentsList rlist = new FrmAdminResidentsList();
+            rlist.BringToFront();
+            rlist.TopLevel = false;
+            AdminNF.Controls.Add(rlist);
+            rlist.Show();
+        }*/
+
+        private void btnRList_Click(object sender, EventArgs e)
+        {
+            menuList.Visible = false;
+            btnMenu.Visible = true;
             rlist.TopLevel = false;
             AdminNF.Controls.Add(rlist);rlist.Show();
-            
         }
     }
 }
