@@ -42,6 +42,9 @@
             this.lineHome = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.PictureBox();
             this.panelHomepage = new System.Windows.Forms.Panel();
+            this.concernBtn = new System.Windows.Forms.Button();
+            this.announcementBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
@@ -54,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
+            this.panelHomepage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -198,11 +202,44 @@
             // 
             // panelHomepage
             // 
+            this.panelHomepage.BackColor = System.Drawing.Color.White;
+            this.panelHomepage.Controls.Add(this.panel2);
+            this.panelHomepage.Controls.Add(this.concernBtn);
+            this.panelHomepage.Controls.Add(this.announcementBtn);
             this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 67);
+            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
             this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 658);
+            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
             this.panelHomepage.TabIndex = 1;
+            // 
+            // concernBtn
+            // 
+            this.concernBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.concernBtn.ForeColor = System.Drawing.Color.White;
+            this.concernBtn.Location = new System.Drawing.Point(261, 10);
+            this.concernBtn.Name = "concernBtn";
+            this.concernBtn.Size = new System.Drawing.Size(223, 36);
+            this.concernBtn.TabIndex = 3;
+            this.concernBtn.Text = "Concern";
+            this.concernBtn.UseVisualStyleBackColor = false;
+            // 
+            // announcementBtn
+            // 
+            this.announcementBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.announcementBtn.ForeColor = System.Drawing.Color.White;
+            this.announcementBtn.Location = new System.Drawing.Point(21, 10);
+            this.announcementBtn.Name = "announcementBtn";
+            this.announcementBtn.Size = new System.Drawing.Size(215, 36);
+            this.announcementBtn.TabIndex = 2;
+            this.announcementBtn.Text = "Announcement";
+            this.announcementBtn.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(499, 600);
+            this.panel2.TabIndex = 4;
             // 
             // FrmHomepage
             // 
@@ -227,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
+            this.panelHomepage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -246,5 +284,8 @@
         private System.Windows.Forms.PictureBox slctNotif;
         private System.Windows.Forms.PictureBox btnNotif;
         private System.Windows.Forms.Panel panelHomepage;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button concernBtn;
+        private System.Windows.Forms.Button announcementBtn;
     }
 }
