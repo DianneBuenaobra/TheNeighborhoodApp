@@ -61,10 +61,7 @@ namespace TheNeighborhoodApp
             get; set;
         }
 
-        public string username
-        {
-            get; set;
-        }
+        public string username{get; set;}
         public string concernstatus { get; set; }
         public void getConcernInfo()
         {
@@ -83,15 +80,8 @@ namespace TheNeighborhoodApp
 
                 concernpanels();
             }
-            
-            MessageBox.Show(concernid.ToString());
-            
-            dr.Close();
-            
+            dr.Close(); 
         }
-       
-    
-      
 
         public void concernpanels()
         {

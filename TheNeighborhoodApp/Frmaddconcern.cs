@@ -25,7 +25,6 @@ namespace TheNeighborhoodApp
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
-            MessageBox.Show("Connected");
             _userinfo = userInfo;
         }
 

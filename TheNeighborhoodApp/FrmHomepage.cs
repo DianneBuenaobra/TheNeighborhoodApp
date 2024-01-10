@@ -25,8 +25,6 @@ namespace TheNeighborhoodApp
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
-            MessageBox.Show("Connected");
-
         }
 
         private void btnMessage_Click(object sender, EventArgs e)
