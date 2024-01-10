@@ -69,6 +69,12 @@
     <Compile Include="displayfrm.Designer.cs">
       <DependentUpon>displayfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmaddconcern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmaddconcern.Designer.cs">
+      <DependentUpon>Frmaddconcern.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,8 +131,12 @@
     <Compile Include="UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="displayfrm.resx">
       <DependentUpon>displayfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmaddconcern.resx">
+      <DependentUpon>Frmaddconcern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminCalendar.resx">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
@@ -181,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
