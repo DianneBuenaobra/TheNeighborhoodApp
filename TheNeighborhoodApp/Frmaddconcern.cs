@@ -19,7 +19,7 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         private UserInfo _userinfo;
-        int submitid = 0;
+        int submitid;
         public FrmAddConcern(UserInfo userInfo)
         {
             InitializeComponent();
@@ -44,12 +44,12 @@ namespace TheNeighborhoodApp
 
         public void submitConcern()
         {
-            submitid = submitid + submitid++;
+         
             DateTime Today = DateTime.Now;
            
             String insertInfo = "INSERT INTO Concern VALUES (@concernid, @concern, @concerninfo, @photo, @date, @name, @username, @concernstatus)";
             SqlCommand cmd = new SqlCommand(insertInfo, cnn);
-            cmd.Parameters.AddWithValue("@concernid", submitid);
+            cmd.Parameters.AddWithValue("@concernid", ++submitid);
             cmd.Parameters.AddWithValue("@concern", concerntxtbx.Text);
             cmd.Parameters.AddWithValue("@concerninfo",concerninfotxtbx.Text);
             cmd.Parameters.AddWithValue("@photo", getPhoto());
