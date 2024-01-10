@@ -39,7 +39,7 @@
             this.btnAnnouncements = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnRList = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNewsfeed = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AdminNF = new System.Windows.Forms.Panel();
@@ -104,9 +104,9 @@
             this.btnBack.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(154, 10);
+            this.btnBack.Location = new System.Drawing.Point(151, 10);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(28, 22);
+            this.btnBack.Size = new System.Drawing.Size(31, 25);
             this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBack.TabIndex = 16;
             this.btnBack.TabStop = false;
@@ -116,11 +116,12 @@
             // menuList
             // 
             this.menuList.BackColor = System.Drawing.Color.SteelBlue;
+            this.menuList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.menuList.Controls.Add(this.button5);
             this.menuList.Controls.Add(this.btnAnnouncements);
             this.menuList.Controls.Add(this.btnCalendar);
             this.menuList.Controls.Add(this.btnRList);
-            this.menuList.Controls.Add(this.button1);
+            this.menuList.Controls.Add(this.btnNewsfeed);
             this.menuList.Controls.Add(this.panel2);
             this.menuList.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.menuList.Location = new System.Drawing.Point(0, 0);
@@ -162,7 +163,7 @@
             this.btnAnnouncements.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAnnouncements.Image = ((System.Drawing.Image)(resources.GetObject("btnAnnouncements.Image")));
             this.btnAnnouncements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnnouncements.Location = new System.Drawing.Point(0, 533);
+            this.btnAnnouncements.Location = new System.Drawing.Point(0, 401);
             this.btnAnnouncements.Name = "btnAnnouncements";
             this.btnAnnouncements.Size = new System.Drawing.Size(184, 52);
             this.btnAnnouncements.TabIndex = 9;
@@ -183,7 +184,7 @@
             this.btnCalendar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
             this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(0, 484);
+            this.btnCalendar.Location = new System.Drawing.Point(0, 352);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(184, 52);
             this.btnCalendar.TabIndex = 8;
@@ -191,6 +192,7 @@
             this.btnCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCalendar.UseVisualStyleBackColor = false;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
             // btnRList
             // 
@@ -204,7 +206,7 @@
             this.btnRList.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRList.Image = ((System.Drawing.Image)(resources.GetObject("btnRList.Image")));
             this.btnRList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRList.Location = new System.Drawing.Point(0, 434);
+            this.btnRList.Location = new System.Drawing.Point(0, 302);
             this.btnRList.Name = "btnRList";
             this.btnRList.Size = new System.Drawing.Size(184, 52);
             this.btnRList.TabIndex = 7;
@@ -214,23 +216,23 @@
             this.btnRList.UseVisualStyleBackColor = false;
             this.btnRList.Click += new System.EventHandler(this.btnRList_Click);
             // 
-            // button1
+            // btnNewsfeed
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(0, 385);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 52);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "         Newsfeed";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnNewsfeed.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNewsfeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNewsfeed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewsfeed.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
+            this.btnNewsfeed.FlatAppearance.BorderSize = 0;
+            this.btnNewsfeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewsfeed.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewsfeed.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNewsfeed.Location = new System.Drawing.Point(0, 253);
+            this.btnNewsfeed.Name = "btnNewsfeed";
+            this.btnNewsfeed.Size = new System.Drawing.Size(184, 52);
+            this.btnNewsfeed.TabIndex = 6;
+            this.btnNewsfeed.Text = "         Newsfeed";
+            this.btnNewsfeed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNewsfeed.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -239,13 +241,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(184, 220);
+            this.panel2.Size = new System.Drawing.Size(182, 220);
             this.panel2.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(169, 161);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,7 +297,7 @@
         private System.Windows.Forms.Button btnAnnouncements;
         private System.Windows.Forms.Button btnCalendar;
         private System.Windows.Forms.Button btnRList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNewsfeed;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;

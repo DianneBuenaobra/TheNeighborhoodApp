@@ -14,7 +14,7 @@ namespace TheNeighborhoodApp
         SqlDataReader dr;
         public string MyConnection()
         {
-            string con = @"Data Source=LAPTOP-SDGJ5NAJ;Initial Catalog=TheNeighborhoodApp;Integrated Security=True";
+            string con = @"Data Source=LAPTOP-SDGJ5NAJ;Initial Catalog=neighborhoodDB1;Integrated Security=True";
             return con;
         }
 

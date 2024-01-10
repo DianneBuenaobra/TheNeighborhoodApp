@@ -13,6 +13,7 @@ namespace TheNeighborhoodApp
     public partial class FrmAdminHomepage : Form
     {
         FrmAdminResidentsList rlist = new FrmAdminResidentsList();
+        FrmAdminCalendar calendar = new FrmAdminCalendar();
         public FrmAdminHomepage()
         {
             InitializeComponent();
@@ -48,6 +49,15 @@ namespace TheNeighborhoodApp
             btnMenu.Visible = true;
             rlist.TopLevel = false;
             AdminNF.Controls.Add(rlist);rlist.Show();
+        }
+
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+            menuList.Visible = false;
+            btnMenu.Visible = true;
+            calendar.TopLevel = false;
+            AdminNF.Controls.Add(calendar); calendar.Show();
+            
         }
     }
 }
