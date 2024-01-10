@@ -113,7 +113,7 @@
             // contentpnl
             // 
             this.contentpnl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.contentpnl.Location = new System.Drawing.Point(0, 80);
+            this.contentpnl.Location = new System.Drawing.Point(0, 86);
             this.contentpnl.Name = "contentpnl";
             this.contentpnl.Size = new System.Drawing.Size(505, 639);
             this.contentpnl.TabIndex = 5;
@@ -130,7 +130,7 @@
             this.loginpnl.Controls.Add(this.pictureBox1);
             this.loginpnl.Location = new System.Drawing.Point(0, 80);
             this.loginpnl.Name = "loginpnl";
-            this.loginpnl.Size = new System.Drawing.Size(513, 639);
+            this.loginpnl.Size = new System.Drawing.Size(513, 645);
             this.loginpnl.TabIndex = 40;
             // 
             // label1
@@ -381,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 719);
+            this.ClientSize = new System.Drawing.Size(505, 725);
             this.Controls.Add(this.toppnl);
             this.Controls.Add(this.loginpnl);
             this.Controls.Add(this.contentpnl);

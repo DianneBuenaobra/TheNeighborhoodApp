@@ -16,8 +16,15 @@ namespace TheNeighborhoodApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmHomepage());
-            Application.Run(new FrmAdminHomepage());
+
+            UserInfo us = new UserInfo();   
+            displayfrm displayfrm = new displayfrm(us);
+            FrmAddConcern frmAddConcern = new FrmAddConcern(us);
+            FrmConcernResident frmConcernResident = new FrmConcernResident(us);
+            //Application.Run(FrmHomepage(us));
+            //Application.Run(frmAddConcern);
+            //Application.Run(frmConcernResident);
+            Application.Run(displayfrm);
         }
     }
 }

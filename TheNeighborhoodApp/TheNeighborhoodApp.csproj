@@ -61,12 +61,19 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concern.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="displayfrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="displayfrm.Designer.cs">
       <DependentUpon>displayfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmaddconcern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmaddconcern.Designer.cs">
+      <DependentUpon>Frmaddconcern.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAdminCalendar.cs">
       <SubType>Form</SubType>
@@ -85,6 +92,12 @@
     </Compile>
     <Compile Include="FrmAdminResidentsList.Designer.cs">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConcernResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConcernResident.Designer.cs">
+      <DependentUpon>FrmConcernResident.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
@@ -118,8 +131,12 @@
     <Compile Include="UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="displayfrm.resx">
       <DependentUpon>displayfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmaddconcern.resx">
+      <DependentUpon>Frmaddconcern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminCalendar.resx">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
@@ -129,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminResidentsList.resx">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConcernResident.resx">
+      <DependentUpon>FrmConcernResident.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
@@ -144,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="signinfrm.resx">
       <DependentUpon>signinfrm.cs</DependentUpon>
@@ -167,6 +188,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

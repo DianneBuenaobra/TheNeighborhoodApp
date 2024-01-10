@@ -14,10 +14,12 @@ namespace TheNeighborhoodApp
     public partial class displayfrm : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-09ORH5O\MSSQLSERVER01;Initial Catalog=neighborhoodDB;Integrated Security=True;Pooling=False");
-
-        public displayfrm()
+        private UserInfo _userInfo;
+        public displayfrm(UserInfo userinfo)
         {
+            _userInfo = userinfo;
             InitializeComponent();
+            
         }
 
         private void displayfrm_Load(object sender, EventArgs e)
@@ -67,77 +69,14 @@ namespace TheNeighborhoodApp
             usergroup.Visible = false;
             admingroup.Visible = true;
         }
-        /*
-        private void usertxt_Enter(object sender, EventArgs e)
-        {
-            if (usertxt.Text == " Username")
-            {
-                usertxt.Clear();
-            }
-        }
-
-        private void usertxt_Leave(object sender, EventArgs e)
-        {
-            if (usertxt.Text == "")
-            {
-                usertxt.Text = " Username";
-            }
-        }
-
-        private void userpasswordtxt_Enter(object sender, EventArgs e)
-        {
-            if (userpasswordtxt.Text == " Password")
-            {
-                userpasswordtxt.Clear();
-            }
-        }
-
-        private void userpasswordtxt_Leave(object sender, EventArgs e)
-        {
-            if (userpasswordtxt.Text == "")
-            {
-                userpasswordtxt.Text = " Password";
-            }
-        }
-
-        private void admintxt_Enter(object sender, EventArgs e)
-        {
-            if (admintxt.Text == " Admin")
-            {
-                admintxt.Clear();
-            }
-        }
-
-        private void admintxt_Leave(object sender, EventArgs e)
-        {
-            if (admintxt.Text == "")
-            {
-                admintxt.Text = " Admin";
-            }
-        }
-
-        private void adminpasswordtxt_Enter(object sender, EventArgs e)
-        {
-            if (adminpasswordtxt.Text == " Password")
-            {
-                adminpasswordtxt.Clear();
-            }
-        }
-
-        private void adminpasswordtxt_Leave(object sender, EventArgs e)
-        {
-            if (adminpasswordtxt.Text == "")
-            {
-                adminpasswordtxt.Text = " Password";
-            }
-        }
-        */
+        
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
             toppnl.Visible = true;
             signuptoppnl.Visible = true;
             contentpnl.Visible = true;
+
             contentpnl.BringToFront();
             signinfrm signin = new signinfrm();
             signin.TopLevel = false;
@@ -202,18 +141,24 @@ namespace TheNeighborhoodApp
             if (dtable.Rows.Count > 0 && verify() == "yes")
             {
                 MessageBox.Show("You're logged in and verified!");
-                //show form with all of the function
-
+                FrmHomepage frm = new FrmHomepage(_userInfo);
+                setInfoResident();
+                frm.ShowDialog();
             }
             else if (dtable.Rows.Count > 0 && verify() == "no")
             {
                 MessageBox.Show("You're logged in and not yet  verified!");
-                //show form with restriction of function
+                
+                FrmHomepage frm = new FrmHomepage(_userInfo);
+                setInfoResident();
+                frm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Invalid credentials");
             }
+
+            con.Close( );
         }
 
         private void admin()
@@ -228,11 +173,82 @@ namespace TheNeighborhoodApp
             if (dtable.Rows.Count > 0)
             {
                 MessageBox.Show("you're now logged in as an ADMIN");
+                getInfoAdmin();
+                
+                FrmAdminHomepage frm = new FrmAdminHomepage();
+                frm.ShowDialog();
+                
             }
             else
             {
                 MessageBox.Show("invalid credentials");
             }
+        }
+
+        public void setInfoResident()
+        {
+            
+            con.Open();
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, con); 
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                _userInfo.setFirstname(dr.GetValue(0).ToString());
+                _userInfo.setLastname(dr.GetValue(1).ToString());
+                _userInfo.setAge((int)dr.GetValue(2));
+                _userInfo.setStreet(dr.GetValue(3).ToString());
+                _userInfo.setHomenumber((int)dr.GetValue(4));
+                _userInfo.setGender(dr.GetValue(5).ToString());
+                _userInfo.setUsername(dr.GetValue(6).ToString());
+                _userInfo.setPassword(dr.GetValue(7).ToString());
+                _userInfo.setUserType(dr.GetValue(8).ToString());
+                _userInfo.setPhonenumber(dr.GetValue(9).ToString());
+                _userInfo.setVerified(dr.GetValue(10).ToString()); ;
+            }
+
+            con.Close();
+        }
+        /*
+        public void getInfoResident()
+        {
+            _userInfo.getFirstname();
+            _userInfo.getLastname();
+            _userInfo.getAge();
+            _userInfo.getStreet();
+            _userInfo.getHomenumber();
+            _userInfo.getGender();
+            _userInfo.getUsername();
+            _userInfo.getPassword();
+            _userInfo.getUserType();
+            _userInfo.getPhonenumber();
+            _userInfo.getVerified(); ;
+
+        }
+        */
+
+        public void getInfoAdmin()
+        {
+
+            con.Open();
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                _userInfo.setFirstname(dr.GetValue(0).ToString());
+                _userInfo.setLastname(dr.GetValue(1).ToString());
+                _userInfo.setAge((int)dr.GetValue(2));
+                _userInfo.setStreet(dr.GetValue(3).ToString());
+                _userInfo.setHomenumber((int)dr.GetValue(4));
+                _userInfo.setGender(dr.GetValue(5).ToString());
+                _userInfo.setUsername(dr.GetValue(6).ToString());
+                _userInfo.setPassword(dr.GetValue(7).ToString());
+                _userInfo.setUserType(dr.GetValue(8).ToString());
+                _userInfo.setPhonenumber(dr.GetValue(9).ToString());
+            
+            }
+            con.Close() ;
         }
         private void loginbtn_Click(object sender, EventArgs e)
         {

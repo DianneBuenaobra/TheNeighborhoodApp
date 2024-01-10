@@ -17,14 +17,14 @@ namespace TheNeighborhoodApp
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
-
-        public FrmHomepage()
+        private UserInfo _userInfo;
+        public FrmHomepage(UserInfo userInfo)
         {
+            this._userInfo = userInfo;
+
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
-            MessageBox.Show("Connected");
-
         }
 
         private void btnMessage_Click(object sender, EventArgs e)
@@ -46,6 +46,25 @@ namespace TheNeighborhoodApp
             lineMessage.Visible = false; slctMessage.Visible = false;
             lineHome.Visible = true; slctHome.Visible = true;
             lineNotif.Visible = false; slctNotif.Visible = false;
+        }
+
+        private void FrmHomepage_Load(object sender, EventArgs e)
+        {
+            
+            usernamelbl.Text = _userInfo.getFirstname() + " " + _userInfo.getLastname();
+
+        }
+
+        private void concernBtn_Click(object sender, EventArgs e)
+        {
+           
+            homepnl.Visible = true;
+            homepnl.BringToFront();
+            FrmConcernResident frm = new FrmConcernResident(_userInfo);
+            frm.TopLevel = false;
+            homepnl.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
         }
     }
 }
