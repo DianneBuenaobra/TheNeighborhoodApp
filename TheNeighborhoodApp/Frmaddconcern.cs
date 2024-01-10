@@ -15,6 +15,8 @@ namespace TheNeighborhoodApp
         public Frmaddconcern()
         {
             InitializeComponent();
+            cnn = new SqlConnection(dbcon.MyConnection());
+            cnn.Open();
         }
     }
 }
