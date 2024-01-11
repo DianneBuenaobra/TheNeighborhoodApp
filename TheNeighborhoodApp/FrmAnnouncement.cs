@@ -89,6 +89,7 @@ namespace TheNeighborhoodApp
             button.BackColor = Color.White;
             button.Font = new Font("Microsoft Sans Serif", 8f, FontStyle.Regular);
             button.Tag = announcementid;
+            button.Click += new EventHandler(this.button_click);
             /*
             if (File.Exists(movie.ImagePath))
                 picBox.Image = Image.FromFile(movie.ImagePath);
@@ -101,6 +102,12 @@ namespace TheNeighborhoodApp
             panel.Controls.Add(labeldescription);
             flowLayoutPanel1.Controls.Add(panel);
 
+        }
+
+        public void button_click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            MessageBox.Show("Clicked");
         }
 
         private void FrmAnnouncement_Load(object sender, EventArgs e)
