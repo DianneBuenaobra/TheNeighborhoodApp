@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace TheNeighborhoodApp
 {
@@ -114,5 +115,64 @@ namespace TheNeighborhoodApp
         {
             getAnnouncement();
         }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            filterValue = comboBox1.SelectedItem as string;
+            if (filterValue == "Today")
+            {
+                getToday();
+            }else if (filterValue == "Last 7 days")
+            {
+                getWeek();
+
+            }
+            else if (filterValue == "All")
+            {
+                getAnnouncement();
+            }
+        }
+        public string filterValue { get; set; }
+        public void getToday()
+        {
+            DateTime today = DateTime.Today;
+            string query = "Select AnnouncementId, Announcement, AnnouncementInfo, Image, Date FROM Announcement WHERE Date = '" + today+"'";
+
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                announcementid = (int)dr.GetValue(0);
+                announcement = (string)dr.GetValue(1);
+                announcementinfo = (string)dr.GetValue(2);
+                //image
+                date = (DateTime)dr.GetValue(4);
+
+                announcementPanel();
+            }
+            dr.Close();
+        }
+
+        public void getWeek()
+        {
+            string query = "SELECT AnnouncementId, Announcement, AnnouncementInfo, Image, Date FROM Announcement WHERE Date BETWEEN DATEADD(DAY, -7, GETDATE()) AND GETDATE()";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                announcementid = (int)dr.GetValue(0);
+                announcement = (string)dr.GetValue(1);
+                announcementinfo = (string)dr.GetValue(2);
+                //image
+                date = (DateTime)dr.GetValue(4);
+
+                announcementPanel();
+            }
+            dr.Close();
+        }
+
+
+      
     }
 }

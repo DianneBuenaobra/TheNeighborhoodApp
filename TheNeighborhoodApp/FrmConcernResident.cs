@@ -151,8 +151,10 @@ namespace TheNeighborhoodApp
 
             picBox.Tag = movie.Id;
             */
+            
             panel.Controls.Add(button);
             panel.Controls.Add(picBox);
+            panel.Controls.Add(labelstatus);
             panel.Controls.Add(labeldate);
             panel.Controls.Add(labelTitle);
             panel.Controls.Add(labeldescription);
@@ -178,5 +180,45 @@ namespace TheNeighborhoodApp
         {
             getConcernInfo();
         }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            if ((string)comboBox1.SelectedItem == "All")
+            {
+                getConcernInfo();
+            }
+            else
+            {
+                getfilterConcern();
+            }
+            
+            
+        }
+       public string filterValue { get; set; }
+        public void getfilterConcern()
+        {
+            filterValue = comboBox1.SelectedItem.ToString();
+            string query = "Select ConcernId, Concern, ConcernInfo, photo, date, ConcernStatus FROM Concern WHERE ConcernStatus = '" + filterValue + "'";
+
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                concernid = (int)dr.GetValue(0);
+                concernname = (string)dr.GetValue(1);
+                concerndescription = (string)dr.GetValue(2);
+                //image
+                date = (DateTime)dr.GetValue(4);
+                concernstatus = dr.GetValue(5).ToString();
+
+                concernpanels();
+            }
+            dr.Close();
+
+
+        }
+
+        
     }
 }

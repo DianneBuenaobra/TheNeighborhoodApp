@@ -24,8 +24,8 @@ namespace TheNeighborhoodApp
             //Application.Run(FrmHomepage(us));
             //Application.Run(frmAddConcern);
             //Application.Run(frmConcernResident);
-            //Application.Run(displayfrm);
-            Application.Run(new FrmAdminHomepage());
+            Application.Run(displayfrm);
+            //Application.Run(new FrmAdminHomepage());
         }
     }
 }

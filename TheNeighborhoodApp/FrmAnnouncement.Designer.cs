@@ -46,11 +46,13 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Today",
-            "Last 7 days"});
+            "Last 7 days",
+            "All"});
             this.comboBox1.Location = new System.Drawing.Point(350, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // FrmAnnouncement
             // 
