@@ -146,7 +146,7 @@
             this.picboxConcern.Image = global::TheNeighborhoodApp.Properties.Resources.background;
             this.picboxConcern.Location = new System.Drawing.Point(75, 370);
             this.picboxConcern.Name = "picboxConcern";
-            this.picboxConcern.Size = new System.Drawing.Size(192, 85);
+            this.picboxConcern.Size = new System.Drawing.Size(189, 85);
             this.picboxConcern.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxConcern.TabIndex = 2;
             this.picboxConcern.TabStop = false;

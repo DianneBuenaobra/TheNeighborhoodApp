@@ -226,6 +226,8 @@
             this.btnNewsfeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewsfeed.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewsfeed.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNewsfeed.Image = ((System.Drawing.Image)(resources.GetObject("btnNewsfeed.Image")));
+            this.btnNewsfeed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNewsfeed.Location = new System.Drawing.Point(0, 253);
             this.btnNewsfeed.Name = "btnNewsfeed";
             this.btnNewsfeed.Size = new System.Drawing.Size(184, 52);
@@ -233,6 +235,7 @@
             this.btnNewsfeed.Text = "         Newsfeed";
             this.btnNewsfeed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNewsfeed.UseVisualStyleBackColor = false;
+            this.btnNewsfeed.Click += new System.EventHandler(this.btnNewsfeed_Click);
             // 
             // panel2
             // 

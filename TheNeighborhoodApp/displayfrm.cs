@@ -13,10 +13,15 @@ namespace TheNeighborhoodApp
 {
     public partial class displayfrm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-09ORH5O\MSSQLSERVER01;Initial Catalog=neighborhoodDB;Integrated Security=True;Pooling=False");
+
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmm = new SqlCommand();
+        DBConnection dbcon = new DBConnection(); 
         private UserInfo _userInfo;
         public displayfrm(UserInfo userinfo)
         {
+            con = new SqlConnection(dbcon.MyConnection());
+            con.Open();
             _userInfo = userinfo;
             InitializeComponent();
             
@@ -27,15 +32,17 @@ namespace TheNeighborhoodApp
             signuptoppnl.Visible = false;
             loginpnl.Visible = true;
             contentpnl.Visible = false;
-/*
-            contentpnl.BringToFront();
-            loginfrm login = new loginfrm();
+            Userbtn.BackColor = Color.White;
+            adminadminbtn.BackColor = Color.SteelBlue;
+            /*
+                        contentpnl.BringToFront();
+                        loginfrm login = new loginfrm();
 
-            login.TopLevel = false;
-            contentpnl.Controls.Add(login);
-            login.BringToFront();
-            login.Show();
-*/
+                        login.TopLevel = false;
+                        contentpnl.Controls.Add(login);
+                        login.BringToFront();
+                        login.Show();
+            */
         }
 
         private void useradminbtn_Click(object sender, EventArgs e)
@@ -147,7 +154,7 @@ namespace TheNeighborhoodApp
             }
             else if (dtable.Rows.Count > 0 && verify() == "no")
             {
-                MessageBox.Show("You're logged in and not yet  verified!");
+                MessageBox.Show("You're logged in and not yet verified!");
                 
                 FrmHomepage frm = new FrmHomepage(_userInfo);
                 setInfoResident();
