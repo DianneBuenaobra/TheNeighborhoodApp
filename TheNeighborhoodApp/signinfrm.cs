@@ -14,12 +14,15 @@ namespace TheNeighborhoodApp
     public partial class signinfrm : Form
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-09ORH5O\MSSQLSERVER01;Initial Catalog=neighborhoodDB;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmm = new SqlCommand();
+        DBConnection dbcon = new DBConnection();
 
-            //  SqlConnection con = new SqlConnection();
+        //  SqlConnection con = new SqlConnection();
         public signinfrm()
         {
             InitializeComponent();
+            con = new SqlConnection(dbcon.MyConnection()); 
         }
 
         private void signinfrm_Load(object sender, EventArgs e)

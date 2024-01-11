@@ -14,6 +14,7 @@ namespace TheNeighborhoodApp
     {
         FrmAdminResidentsList rlist = new FrmAdminResidentsList();
         FrmAdminCalendar calendar = new FrmAdminCalendar();
+      
         public FrmAdminHomepage()
         {
             InitializeComponent();
@@ -27,12 +28,13 @@ namespace TheNeighborhoodApp
             menuList.Visible = true;
             btnMenu.Visible = false;
             btnBack.Visible = true;
+            rlist.eventclickSearch();
 
         }
         private void btnBack_Click_1(object sender, EventArgs e)
         {
             menuList.Visible = false;
-            btnMenu.Visible = true; 
+            btnMenu.Visible = true; rlist.eventclickSearch();
         }
         /*public void showResidentList()
         {
@@ -48,7 +50,8 @@ namespace TheNeighborhoodApp
             menuList.Visible = false;
             btnMenu.Visible = true;
             rlist.TopLevel = false;
-            AdminNF.Controls.Add(rlist);rlist.Show();
+            AdminNF.Controls.Clear();
+            AdminNF.Controls.Add(rlist);rlist.Show(); rlist.eventclickSearch();
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
@@ -56,8 +59,16 @@ namespace TheNeighborhoodApp
             menuList.Visible = false;
             btnMenu.Visible = true;
             calendar.TopLevel = false;
-            AdminNF.Controls.Add(calendar); calendar.Show();
-            
+            AdminNF.Controls.Clear();
+            AdminNF.Controls.Add(calendar); calendar.Show(); rlist.eventclickSearch();
+
+
+        }
+
+        private void btnNewsfeed_Click(object sender, EventArgs e)
+        {
+            menuList.Visible = false;
+            btnMenu.Visible = true; rlist.eventclickSearch();
         }
     }
 }
