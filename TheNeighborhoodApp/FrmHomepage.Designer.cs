@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHomepage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.usernamelbl = new System.Windows.Forms.Label();
-            this.panelHomepage = new System.Windows.Forms.Panel();
-            this.homepnl = new System.Windows.Forms.Panel();
-            this.concernBtn = new System.Windows.Forms.Button();
-            this.announcementBtn = new System.Windows.Forms.Button();
             this.slctMessage = new System.Windows.Forms.PictureBox();
             this.slctNotif = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -46,8 +42,12 @@
             this.lineMessage = new System.Windows.Forms.PictureBox();
             this.lineHome = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.PictureBox();
+            this.panelHomepage = new System.Windows.Forms.Panel();
+            this.homepnl = new System.Windows.Forms.Panel();
+            this.concernMessage = new System.Windows.Forms.Label();
+            this.concernBtn = new System.Windows.Forms.Button();
+            this.announcementBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panelHomepage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
@@ -59,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
+            this.panelHomepage.SuspendLayout();
+            this.homepnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,48 +94,6 @@
             this.usernamelbl.Size = new System.Drawing.Size(35, 13);
             this.usernamelbl.TabIndex = 14;
             this.usernamelbl.Text = "label1";
-            // 
-            // panelHomepage
-            // 
-            this.panelHomepage.BackColor = System.Drawing.Color.White;
-            this.panelHomepage.Controls.Add(this.homepnl);
-            this.panelHomepage.Controls.Add(this.concernBtn);
-            this.panelHomepage.Controls.Add(this.announcementBtn);
-            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
-            this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
-            this.panelHomepage.TabIndex = 1;
-            // 
-            // homepnl
-            // 
-            this.homepnl.Location = new System.Drawing.Point(3, 52);
-            this.homepnl.Name = "homepnl";
-            this.homepnl.Size = new System.Drawing.Size(499, 600);
-            this.homepnl.TabIndex = 4;
-            // 
-            // concernBtn
-            // 
-            this.concernBtn.BackColor = System.Drawing.Color.SteelBlue;
-            this.concernBtn.ForeColor = System.Drawing.Color.White;
-            this.concernBtn.Location = new System.Drawing.Point(261, 10);
-            this.concernBtn.Name = "concernBtn";
-            this.concernBtn.Size = new System.Drawing.Size(223, 36);
-            this.concernBtn.TabIndex = 3;
-            this.concernBtn.Text = "Concern";
-            this.concernBtn.UseVisualStyleBackColor = false;
-            this.concernBtn.Click += new System.EventHandler(this.concernBtn_Click);
-            // 
-            // announcementBtn
-            // 
-            this.announcementBtn.BackColor = System.Drawing.Color.SteelBlue;
-            this.announcementBtn.ForeColor = System.Drawing.Color.White;
-            this.announcementBtn.Location = new System.Drawing.Point(21, 10);
-            this.announcementBtn.Name = "announcementBtn";
-            this.announcementBtn.Size = new System.Drawing.Size(215, 36);
-            this.announcementBtn.TabIndex = 2;
-            this.announcementBtn.Text = "Announcement";
-            this.announcementBtn.UseVisualStyleBackColor = false;
             // 
             // slctMessage
             // 
@@ -255,6 +215,62 @@
             this.btnProfile.TabIndex = 1;
             this.btnProfile.TabStop = false;
             // 
+            // panelHomepage
+            // 
+            this.panelHomepage.BackColor = System.Drawing.Color.White;
+            this.panelHomepage.Controls.Add(this.homepnl);
+            this.panelHomepage.Controls.Add(this.concernBtn);
+            this.panelHomepage.Controls.Add(this.announcementBtn);
+            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
+            this.panelHomepage.Name = "panelHomepage";
+            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
+            this.panelHomepage.TabIndex = 1;
+            // 
+            // homepnl
+            // 
+            this.homepnl.Controls.Add(this.concernMessage);
+            this.homepnl.Location = new System.Drawing.Point(3, 52);
+            this.homepnl.Name = "homepnl";
+            this.homepnl.Size = new System.Drawing.Size(499, 600);
+            this.homepnl.TabIndex = 4;
+            // 
+            // concernMessage
+            // 
+            this.concernMessage.AutoSize = true;
+            this.concernMessage.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.concernMessage.Location = new System.Drawing.Point(60, 232);
+            this.concernMessage.MaximumSize = new System.Drawing.Size(400, 300);
+            this.concernMessage.Name = "concernMessage";
+            this.concernMessage.Size = new System.Drawing.Size(378, 28);
+            this.concernMessage.TabIndex = 0;
+            this.concernMessage.Text = "This feature is only for verified resident. Please wait for the admin to confirm " +
+    "your account. Thank you!";
+            // 
+            // concernBtn
+            // 
+            this.concernBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.concernBtn.ForeColor = System.Drawing.Color.White;
+            this.concernBtn.Location = new System.Drawing.Point(261, 10);
+            this.concernBtn.Name = "concernBtn";
+            this.concernBtn.Size = new System.Drawing.Size(223, 36);
+            this.concernBtn.TabIndex = 3;
+            this.concernBtn.Text = "Concern";
+            this.concernBtn.UseVisualStyleBackColor = false;
+            this.concernBtn.Click += new System.EventHandler(this.concernBtn_Click);
+            // 
+            // announcementBtn
+            // 
+            this.announcementBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.announcementBtn.ForeColor = System.Drawing.Color.White;
+            this.announcementBtn.Location = new System.Drawing.Point(21, 10);
+            this.announcementBtn.Name = "announcementBtn";
+            this.announcementBtn.Size = new System.Drawing.Size(215, 36);
+            this.announcementBtn.TabIndex = 2;
+            this.announcementBtn.Text = "Announcement";
+            this.announcementBtn.UseVisualStyleBackColor = false;
+            this.announcementBtn.Click += new System.EventHandler(this.announcementBtn_Click);
+            // 
             // FrmHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,7 +285,6 @@
             this.Load += new System.EventHandler(this.FrmHomepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelHomepage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
@@ -281,6 +296,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
+            this.panelHomepage.ResumeLayout(false);
+            this.homepnl.ResumeLayout(false);
+            this.homepnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -304,5 +322,6 @@
         private System.Windows.Forms.Button concernBtn;
         private System.Windows.Forms.Button announcementBtn;
         private System.Windows.Forms.Label usernamelbl;
+        private System.Windows.Forms.Label concernMessage;
     }
 }
