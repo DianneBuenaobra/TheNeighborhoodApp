@@ -125,8 +125,8 @@
             this.loginpnl.Controls.Add(this.loginbtn);
             this.loginpnl.Controls.Add(this.signupbtn);
             this.loginpnl.Controls.Add(this.pictureBox2);
-            this.loginpnl.Controls.Add(this.admingroup);
             this.loginpnl.Controls.Add(this.usergroup);
+            this.loginpnl.Controls.Add(this.admingroup);
             this.loginpnl.Controls.Add(this.pictureBox1);
             this.loginpnl.Location = new System.Drawing.Point(0, 80);
             this.loginpnl.Name = "loginpnl";
@@ -196,7 +196,7 @@
             this.admingroup.Controls.Add(this.label3);
             this.admingroup.Controls.Add(this.adminadminbtn);
             this.admingroup.Controls.Add(this.useradminbtn);
-            this.admingroup.Location = new System.Drawing.Point(100, 209);
+            this.admingroup.Location = new System.Drawing.Point(108, 209);
             this.admingroup.Name = "admingroup";
             this.admingroup.Size = new System.Drawing.Size(286, 212);
             this.admingroup.TabIndex = 37;
@@ -206,7 +206,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(148, 166);
+            this.checkBox2.Location = new System.Drawing.Point(156, 166);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(101, 17);
             this.checkBox2.TabIndex = 44;
@@ -218,7 +218,7 @@
             // 
             this.admintxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admintxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.admintxt.Location = new System.Drawing.Point(102, 87);
+            this.admintxt.Location = new System.Drawing.Point(110, 138);
             this.admintxt.Name = "admintxt";
             this.admintxt.Size = new System.Drawing.Size(147, 22);
             this.admintxt.TabIndex = 7;
@@ -228,7 +228,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(15, 142);
+            this.label4.Location = new System.Drawing.Point(23, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 18);
             this.label4.TabIndex = 6;
@@ -238,7 +238,7 @@
             // 
             this.adminpasswordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminpasswordtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.adminpasswordtxt.Location = new System.Drawing.Point(102, 138);
+            this.adminpasswordtxt.Location = new System.Drawing.Point(110, 84);
             this.adminpasswordtxt.Name = "adminpasswordtxt";
             this.adminpasswordtxt.PasswordChar = '*';
             this.adminpasswordtxt.Size = new System.Drawing.Size(147, 22);
@@ -249,7 +249,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(44, 88);
+            this.label3.Location = new System.Drawing.Point(35, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
             this.label3.TabIndex = 4;
@@ -287,7 +287,7 @@
             this.usergroup.Controls.Add(this.userpasswordtxt);
             this.usergroup.Controls.Add(this.Userbtn);
             this.usergroup.Controls.Add(this.label6);
-            this.usergroup.Location = new System.Drawing.Point(100, 209);
+            this.usergroup.Location = new System.Drawing.Point(107, 209);
             this.usergroup.Name = "usergroup";
             this.usergroup.Size = new System.Drawing.Size(286, 212);
             this.usergroup.TabIndex = 33;

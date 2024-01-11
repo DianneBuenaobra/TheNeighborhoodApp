@@ -93,6 +93,12 @@
     <Compile Include="FrmAdminResidentsList.Designer.cs">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnnouncement.Designer.cs">
+      <DependentUpon>FrmAnnouncement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConcernResident.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <EmbeddedResource Include="FrmAdminResidentsList.resx">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAnnouncement.resx">
+      <DependentUpon>FrmAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConcernResident.resx">
       <DependentUpon>FrmConcernResident.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timetable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

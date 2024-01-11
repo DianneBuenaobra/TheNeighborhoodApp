@@ -19,7 +19,7 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         private UserInfo _userinfo;
-        int submitid;
+        
         public FrmAddConcern(UserInfo userInfo)
         {
             InitializeComponent();
@@ -30,26 +30,47 @@ namespace TheNeighborhoodApp
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
-      
-            if (concerntxtbx.Text == "" || concerninfotxtbx.Text == "")
+            try
             {
-                MessageBox.Show("Please enter your concern before submitting.");
+                if (concerntxtbx.Text == "" || concerninfotxtbx.Text == "")
+                {
+                    MessageBox.Show("Please enter your concern before submitting.");
+                }
+                else
+                {
+                    submitConcern();
+                }
             }
-            else
+            catch
             {
-                submitConcern();
+                MessageBox.Show("Please summaries your concern shorter.");
             }
            
+           
+        }
+        public int id()
+        {
+            int idd = 0;
+            string query = "SELECT MAX(ConcernId) FROM Concern;";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                idd = (int)dr.GetValue(0);
+
+            }
+            dr.Close();
+            return idd;
         }
 
         public void submitConcern()
         {
-         
+            int cid = id();
             DateTime Today = DateTime.Now;
            
             String insertInfo = "INSERT INTO Concern VALUES (@concernid, @concern, @concerninfo, @photo, @date, @name, @username, @concernstatus)";
             SqlCommand cmd = new SqlCommand(insertInfo, cnn);
-            cmd.Parameters.AddWithValue("@concernid", ++submitid);
+            cmd.Parameters.AddWithValue("@concernid", ++cid);
             cmd.Parameters.AddWithValue("@concern", concerntxtbx.Text);
             cmd.Parameters.AddWithValue("@concerninfo",concerninfotxtbx.Text);
             cmd.Parameters.AddWithValue("@photo", getPhoto());

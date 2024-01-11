@@ -50,17 +50,57 @@ namespace TheNeighborhoodApp
 
         private void FrmHomepage_Load(object sender, EventArgs e)
         {
-            
             usernamelbl.Text = _userInfo.getFirstname() + " " + _userInfo.getLastname();
-
+            concernMessage.Visible = false;
+            displayannouncement();
         }
 
         private void concernBtn_Click(object sender, EventArgs e)
         {
-           
+            if(_userInfo.getVerified() =="yes") 
+            {
+                homepnl.Visible = true;
+                homepnl.BringToFront();
+                FrmConcernResident frm = new FrmConcernResident(_userInfo);
+                frm.TopLevel = false;
+                homepnl.Controls.Add(frm);
+                frm.BringToFront();
+                frm.Show();
+            }
+            else
+            {
+                homepnl.Controls.Clear();
+                concernMessage.Visible = true;
+
+                Label labelmessage;
+                labelmessage = new Label();
+                labelmessage.Name = String.Format("LblConcernTitle{0}", 0);
+                labelmessage.Text = "This feature is only for verified resident. Please wait for the admin to confirm your account. Thank you!";
+                labelmessage.Location = new Point(60, 232);
+                labelmessage.ForeColor = Color.Black;
+                labelmessage.Font = new Font("Mongolian Baiti", 9.75f, FontStyle.Regular);
+                labelmessage.AutoSize = true;
+                labelmessage.Tag = 0;
+                labelmessage.MaximumSize = new Size(400, 300);
+
+                homepnl.Controls.Add(labelmessage);
+               
+            }
+            
+        }
+
+        private void announcementBtn_Click(object sender, EventArgs e)
+        {
+            displayannouncement();
+        }
+
+        public void displayannouncement()
+        {
+            FrmAnnouncement frm = new FrmAnnouncement(_userInfo);
+
             homepnl.Visible = true;
             homepnl.BringToFront();
-            FrmConcernResident frm = new FrmConcernResident(_userInfo);
+
             frm.TopLevel = false;
             homepnl.Controls.Add(frm);
             frm.BringToFront();

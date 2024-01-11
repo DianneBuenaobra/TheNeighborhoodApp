@@ -27,7 +27,8 @@ namespace TheNeighborhoodApp
             signuptoppnl.Visible = false;
             loginpnl.Visible = true;
             contentpnl.Visible = false;
-/*
+            Userbtn.BackColor = Color.SteelBlue;
+/*user
             contentpnl.BringToFront();
             loginfrm login = new loginfrm();
 
@@ -209,23 +210,7 @@ namespace TheNeighborhoodApp
 
             con.Close();
         }
-        /*
-        public void getInfoResident()
-        {
-            _userInfo.getFirstname();
-            _userInfo.getLastname();
-            _userInfo.getAge();
-            _userInfo.getStreet();
-            _userInfo.getHomenumber();
-            _userInfo.getGender();
-            _userInfo.getUsername();
-            _userInfo.getPassword();
-            _userInfo.getUserType();
-            _userInfo.getPhonenumber();
-            _userInfo.getVerified(); ;
-
-        }
-        */
+    
 
         public void getInfoAdmin()
         {
