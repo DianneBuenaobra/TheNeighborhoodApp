@@ -11,55 +11,35 @@ using System.Windows.Forms;
 
 namespace TheNeighborhoodApp
 {
-    public partial class displayfrm : Form
+    public partial class frmlogin : Form
     {
-
         SqlConnection con = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
-        DBConnection dbcon = new DBConnection(); 
+        DBConnection dbcon = new DBConnection();
         private UserInfo _userInfo;
-        public displayfrm(UserInfo userinfo)
+        public frmlogin(UserInfo userinfo)
         {
             con = new SqlConnection(dbcon.MyConnection());
             con.Open();
             _userInfo = userinfo;
             InitializeComponent();
-            
+
         }
 
-        private void displayfrm_Load(object sender, EventArgs e)
+        private void frmlogin_Load(object sender, EventArgs e)
         {
             signuptoppnl.Visible = false;
             loginpnl.Visible = true;
             contentpnl.Visible = false;
-            Userbtn.BackColor = Color.SteelBlue;
-/*user
-            contentpnl.BringToFront();
-            loginfrm login = new loginfrm();
+            g.BackColor = Color.SteelBlue;
+        }
 
-                        login.TopLevel = false;
-                        contentpnl.Controls.Add(login);
-                        login.BringToFront();
-                        login.Show();
-            */
-        }
-        private void Userbtn_Click(object sender, EventArgs e)
+        private void backpb_Click(object sender, EventArgs e)
         {
-            
-            Userbtn.BackColor = Color.SteelBlue;
-            adminbtn.BackColor = Color.White;
-            usergroup.Visible = true;
-            admingroup.Visible = false;
-            
+            contentpnl.Visible = false;
+            loginpnl.Visible = true;
+            signuptoppnl.Visible = false;
         }
-        private void adminbtn_Click(object sender, EventArgs e)
-        {
-            Userbtn.BackColor = Color.White;
-            adminbtn.BackColor = Color.SteelBlue;
-            admingroup.Visible = true;
-            usergroup.Visible = false;
-           }
-        
 
         private void signupbtn_Click(object sender, EventArgs e)
         {
@@ -74,34 +54,10 @@ namespace TheNeighborhoodApp
             signin.BringToFront();
             signin.Show();
         }
-
-        private void backpb_Click(object sender, EventArgs e)
-        {
-
-            contentpnl.Visible = false;
-            loginpnl.Visible = true;
-            signuptoppnl.Visible = false;
-        }
-
-        private void admingroup_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            adminpasswordtxt.PasswordChar = checkBox2.Checked ? '\0' : '*';
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            userpasswordtxt.PasswordChar = checkBox1.Checked ? '\0' : '*';
-        }
-
         private string verify()
         {
             string verifyy = "";
-           
+
             string query = "SELECT Verified FROM userInfo where username = @username";
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -111,16 +67,16 @@ namespace TheNeighborhoodApp
             {
                 verifyy = da.GetValue(0).ToString();
 
-             
+
             }
             da.Close();
-             
+
             return verifyy;
-           
+
         }
         private void resident()
         {
-            
+
             string usertype = "resident";
             string query = "SELECT * FROM dbo.UserInfo WHERE Username = '" + usertxt.Text + "' AND password = '" + userpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
 
@@ -129,7 +85,7 @@ namespace TheNeighborhoodApp
             DataTable dtable = new DataTable();
             ad.Fill(dtable);
 
-           // MessageBox.Show(verify());
+            // MessageBox.Show(verify());
             if (dtable.Rows.Count > 0 && verify() == "yes")
             {
                 MessageBox.Show("You're logged in and verified!");
@@ -140,7 +96,7 @@ namespace TheNeighborhoodApp
             else if (dtable.Rows.Count > 0 && verify() == "no")
             {
                 MessageBox.Show("You're logged in and not yet verified!");
-                
+
                 FrmHomepage frm = new FrmHomepage(_userInfo);
                 setInfoResident();
                 frm.ShowDialog();
@@ -150,13 +106,13 @@ namespace TheNeighborhoodApp
             {
                 MessageBox.Show("Invalid credentials");
             }
-
-            con.Close( );
+         
+            con.Close();
         }
 
         private void admin()
         {
-            
+
             string usertype = "admin";
             string query = "SELECT * FROM dbo.userInfo WHERE Username = '" + admintxt.Text + "' AND password = '" + adminpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
 
@@ -168,11 +124,11 @@ namespace TheNeighborhoodApp
             {
                 MessageBox.Show("you're now logged in as an ADMIN");
                 setInfoAdmin();
-                
+
                 FrmAdminHomepage frm = new FrmAdminHomepage();
                 frm.ShowDialog();
                 this.Close();
-                
+
             }
             else
             {
@@ -182,10 +138,10 @@ namespace TheNeighborhoodApp
 
         public void setInfoResident()
         {
-            
-           
+
+
             string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, con); 
+            SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -201,16 +157,16 @@ namespace TheNeighborhoodApp
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
                 _userInfo.setVerified(dr.GetValue(10).ToString()); ;
             }
-        
+
             dr.Close();
-          
+
         }
-    
+
 
         public void setInfoAdmin()
         {
 
-          
+
             string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -226,21 +182,78 @@ namespace TheNeighborhoodApp
                 _userInfo.setPassword(dr.GetValue(7).ToString());
                 _userInfo.setUserType(dr.GetValue(8).ToString());
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
-            
+
             }
-            dr.Close ();
-           
+            dr.Close();
+
         }
         private void loginbtn_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Userbtn.BackColor = Color.White;
+            adminbtn.BackColor = Color.SteelBlue;
+            admingroup.Visible = true;
+            usergroup.Visible = false;
+
+        }
+
+        private void g_Click(object sender, EventArgs e)
+        {
+            Userbtn.BackColor = Color.SteelBlue;
+            adminbtn.BackColor = Color.White;
+            usergroup.Visible = true;
+            admingroup.Visible = false;
+        }
+
+        private void adminbtn_Click(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.SteelBlue;
+            Userbtn.BackColor = Color.White;
+            adminbtn.BackColor = Color.SteelBlue;
+            admingroup.Visible = true;
+            usergroup.Visible = false;
+        }
+
+        private void Userbtn_Click(object sender, EventArgs e)
+        {
+          
+            g.BackColor = Color.SteelBlue;
+            Userbtn.BackColor = Color.SteelBlue;
+            adminbtn.BackColor = Color.White;
+            usergroup.Visible = true;
+            admingroup.Visible = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginbtn_Click_1(object sender, EventArgs e)
+        {
             if (usergroup.Visible == true)
             {
-                resident(); 
+                resident();
             }
             else
             {
                 admin();
             }
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            adminpasswordtxt.PasswordChar = checkBox2.Checked ? '\0' : '*';
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            adminpasswordtxt.PasswordChar = checkBox2.Checked ? '\0' : '*';
         }
     }
 }
