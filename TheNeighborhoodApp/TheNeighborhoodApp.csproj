@@ -87,6 +87,12 @@
     <Compile Include="FrmAdminCalendar.Designer.cs">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminMessage.Designer.cs">
+      <DependentUpon>FrmAdminMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminEditRListVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="FrmAdminHomepage.Designer.cs">
       <DependentUpon>FrmAdminHomepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminNotif.Designer.cs">
+      <DependentUpon>FrmAdminNotif.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAdminResidentsList.cs">
       <SubType>Form</SubType>
@@ -162,11 +174,17 @@
     <EmbeddedResource Include="FrmAdminCalendar.resx">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminMessage.resx">
+      <DependentUpon>FrmAdminMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminEditRListVerification.resx">
       <DependentUpon>FrmAdminEditRListVerification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminHomepage.resx">
       <DependentUpon>FrmAdminHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminNotif.resx">
+      <DependentUpon>FrmAdminNotif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminResidentsList.resx">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>

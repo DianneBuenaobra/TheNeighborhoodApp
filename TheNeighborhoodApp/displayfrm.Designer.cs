@@ -41,8 +41,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.adminpasswordtxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.adminadminbtn = new System.Windows.Forms.Button();
-            this.useradminbtn = new System.Windows.Forms.Button();
+            //this.adminadminbtn = new System.Windows.Forms.Button();
+            //this.useradminbtn = new System.Windows.Forms.Button();
             this.usergroup = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.usertxt = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@
             this.userpasswordtxt = new System.Windows.Forms.TextBox();
             this.Userbtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            //this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loginbtn = new System.Windows.Forms.Button();
@@ -203,7 +203,7 @@
             // 
             // adminadminbtn
             // 
-            this.adminadminbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            /*this.adminadminbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminadminbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminadminbtn.Location = new System.Drawing.Point(142, 21);
             this.adminadminbtn.Name = "adminadminbtn";
@@ -223,7 +223,7 @@
             this.useradminbtn.TabIndex = 0;
             this.useradminbtn.Text = "User";
             this.useradminbtn.UseVisualStyleBackColor = true;
-            this.useradminbtn.Click += new System.EventHandler(this.useradminbtn_Click);
+            this.useradminbtn.Click += new System.EventHandler(this.useradminbtn_Click);*/
             // 
             // usergroup
             // 

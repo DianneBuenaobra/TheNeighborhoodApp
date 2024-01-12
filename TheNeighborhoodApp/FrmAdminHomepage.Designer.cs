@@ -30,32 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminHomepage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.slctMessage = new System.Windows.Forms.PictureBox();
-            this.slctNotif = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.menuList = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.AdminNF = new System.Windows.Forms.Panel();
+            this.notifMessage = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.btnAnnouncements = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnRList = new System.Windows.Forms.Button();
             this.btnNewsfeed = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.AdminNF = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.slctMessage = new System.Windows.Forms.PictureBox();
+            this.slctNotif = new System.Windows.Forms.PictureBox();
+            this.notif = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.menuList.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            this.menuList.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.notif);
+            this.panel1.Controls.Add(this.notifMessage);
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Controls.Add(this.slctMessage);
             this.panel1.Controls.Add(this.slctNotif);
@@ -64,54 +68,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(505, 43);
             this.panel1.TabIndex = 1;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(6, 6);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(28, 29);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // slctMessage
-            // 
-            this.slctMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slctMessage.Image = ((System.Drawing.Image)(resources.GetObject("slctMessage.Image")));
-            this.slctMessage.Location = new System.Drawing.Point(425, 5);
-            this.slctMessage.Name = "slctMessage";
-            this.slctMessage.Size = new System.Drawing.Size(30, 30);
-            this.slctMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.slctMessage.TabIndex = 15;
-            this.slctMessage.TabStop = false;
-            // 
-            // slctNotif
-            // 
-            this.slctNotif.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slctNotif.Image = ((System.Drawing.Image)(resources.GetObject("slctNotif.Image")));
-            this.slctNotif.Location = new System.Drawing.Point(463, 5);
-            this.slctNotif.Name = "slctNotif";
-            this.slctNotif.Size = new System.Drawing.Size(30, 30);
-            this.slctNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.slctNotif.TabIndex = 14;
-            this.slctNotif.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(151, 10);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(31, 25);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBack.TabIndex = 16;
-            this.btnBack.TabStop = false;
-            this.btnBack.Visible = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // menuList
             // 
@@ -129,6 +85,33 @@
             this.menuList.Size = new System.Drawing.Size(184, 725);
             this.menuList.TabIndex = 3;
             this.menuList.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnBack);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(182, 220);
+            this.panel2.TabIndex = 5;
+            // 
+            // AdminNF
+            // 
+            this.AdminNF.Location = new System.Drawing.Point(0, 41);
+            this.AdminNF.Name = "AdminNF";
+            this.AdminNF.Size = new System.Drawing.Size(505, 684);
+            this.AdminNF.TabIndex = 4;
+            // 
+            // notifMessage
+            // 
+            this.notifMessage.AutoSize = true;
+            this.notifMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.notifMessage.Location = new System.Drawing.Point(444, 5);
+            this.notifMessage.Name = "notifMessage";
+            this.notifMessage.Size = new System.Drawing.Size(13, 13);
+            this.notifMessage.TabIndex = 16;
+            this.notifMessage.Text = "1";
             // 
             // button5
             // 
@@ -237,15 +220,19 @@
             this.btnNewsfeed.UseVisualStyleBackColor = false;
             this.btnNewsfeed.Click += new System.EventHandler(this.btnNewsfeed_Click);
             // 
-            // panel2
+            // btnBack
             // 
-            this.panel2.Controls.Add(this.btnBack);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(182, 220);
-            this.panel2.TabIndex = 5;
+            this.btnBack.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(151, 10);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(31, 25);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack.TabIndex = 16;
+            this.btnBack.TabStop = false;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // pictureBox1
             // 
@@ -257,12 +244,49 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // AdminNF
+            // btnMenu
             // 
-            this.AdminNF.Location = new System.Drawing.Point(0, 41);
-            this.AdminNF.Name = "AdminNF";
-            this.AdminNF.Size = new System.Drawing.Size(505, 684);
-            this.AdminNF.TabIndex = 4;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(6, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(28, 29);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // slctMessage
+            // 
+            this.slctMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slctMessage.Image = ((System.Drawing.Image)(resources.GetObject("slctMessage.Image")));
+            this.slctMessage.Location = new System.Drawing.Point(425, 5);
+            this.slctMessage.Name = "slctMessage";
+            this.slctMessage.Size = new System.Drawing.Size(30, 30);
+            this.slctMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctMessage.TabIndex = 15;
+            this.slctMessage.TabStop = false;
+            // 
+            // slctNotif
+            // 
+            this.slctNotif.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slctNotif.Image = ((System.Drawing.Image)(resources.GetObject("slctNotif.Image")));
+            this.slctNotif.Location = new System.Drawing.Point(463, 5);
+            this.slctNotif.Name = "slctNotif";
+            this.slctNotif.Size = new System.Drawing.Size(30, 30);
+            this.slctNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctNotif.TabIndex = 14;
+            this.slctNotif.TabStop = false;
+            // 
+            // notif
+            // 
+            this.notif.AutoSize = true;
+            this.notif.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.notif.Location = new System.Drawing.Point(480, 5);
+            this.notif.Name = "notif";
+            this.notif.Size = new System.Drawing.Size(13, 13);
+            this.notif.TabIndex = 17;
+            this.notif.Text = "1";
             // 
             // FrmAdminHomepage
             // 
@@ -278,13 +302,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmAdminHomepage_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.menuList.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            this.menuList.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +330,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label notifMessage;
+        private System.Windows.Forms.Label notif;
     }
 }
