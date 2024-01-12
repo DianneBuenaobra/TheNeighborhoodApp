@@ -35,15 +35,6 @@
             this.backpb = new System.Windows.Forms.PictureBox();
             this.contentpnl = new System.Windows.Forms.Panel();
             this.loginpnl = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.usergroup = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.usertxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.adminbtn = new System.Windows.Forms.Button();
-            this.userpasswordtxt = new System.Windows.Forms.TextBox();
-            this.Userbtn = new System.Windows.Forms.Button();
             this.admingroup = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.admintxt = new System.Windows.Forms.TextBox();
@@ -52,7 +43,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.adminadminbtn = new System.Windows.Forms.Button();
             this.useradminbtn = new System.Windows.Forms.Button();
+            this.usergroup = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.usertxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.adminbtn = new System.Windows.Forms.Button();
+            this.userpasswordtxt = new System.Windows.Forms.TextBox();
+            this.Userbtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loginbtn = new System.Windows.Forms.Button();
             this.signupbtn = new System.Windows.Forms.Button();
@@ -61,9 +61,9 @@
             this.signuptoppnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backpb)).BeginInit();
             this.loginpnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.usergroup.SuspendLayout();
             this.admingroup.SuspendLayout();
+            this.usergroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,9 +121,6 @@
             // 
             // loginpnl
             // 
-            this.loginpnl.Controls.Add(this.admingroup);
-            this.loginpnl.Controls.Add(this.usergroup);
-            this.loginpnl.Controls.Add(this.pictureBox2);
             this.loginpnl.Controls.Add(this.label1);
             this.loginpnl.Controls.Add(this.label2);
             this.loginpnl.Controls.Add(this.loginbtn);
@@ -136,107 +133,6 @@
             this.loginpnl.Name = "loginpnl";
             this.loginpnl.Size = new System.Drawing.Size(513, 645);
             this.loginpnl.TabIndex = 40;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(187, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(124, 126);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.SteelBlue;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 25);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "LOG IN";
-            // 
-            // usergroup
-            // 
-            this.usergroup.BackColor = System.Drawing.Color.White;
-            this.usergroup.Controls.Add(this.checkBox1);
-            this.usergroup.Controls.Add(this.usertxt);
-            this.usergroup.Controls.Add(this.label5);
-            this.usergroup.Controls.Add(this.adminbtn);
-            this.usergroup.Controls.Add(this.userpasswordtxt);
-            this.usergroup.Controls.Add(this.Userbtn);
-            this.usergroup.Controls.Add(this.label6);
-            this.usergroup.Location = new System.Drawing.Point(100, 184);
-            this.usergroup.Name = "usergroup";
-            this.usergroup.Size = new System.Drawing.Size(286, 212);
-            this.usergroup.TabIndex = 33;
-            this.usergroup.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(148, 166);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 17);
-            this.checkBox1.TabIndex = 43;
-            this.checkBox1.Text = "Show password";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // usertxt
-            // 
-            this.usertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usertxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.usertxt.Location = new System.Drawing.Point(105, 88);
-            this.usertxt.Name = "usertxt";
-            this.usertxt.Size = new System.Drawing.Size(147, 22);
-            this.usertxt.TabIndex = 42;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(26, 142);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Password:";
-            // 
-            // adminbtn
-            // 
-            this.adminbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminbtn.Location = new System.Drawing.Point(142, 21);
-            this.adminbtn.Name = "adminbtn";
-            this.adminbtn.Size = new System.Drawing.Size(87, 28);
-            this.adminbtn.TabIndex = 1;
-            this.adminbtn.Text = "Admin";
-            this.adminbtn.UseVisualStyleBackColor = true;
-            this.adminbtn.Click += new System.EventHandler(this.adminbtn_Click);
-            // 
-            // userpasswordtxt
-            // 
-            this.userpasswordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userpasswordtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.userpasswordtxt.Location = new System.Drawing.Point(105, 138);
-            this.userpasswordtxt.Name = "userpasswordtxt";
-            this.userpasswordtxt.PasswordChar = '*';
-            this.userpasswordtxt.Size = new System.Drawing.Size(147, 22);
-            this.userpasswordtxt.TabIndex = 40;
-            // 
-            // Userbtn
-            // 
-            this.Userbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Userbtn.Location = new System.Drawing.Point(49, 21);
-            this.Userbtn.Name = "Userbtn";
-            this.Userbtn.Size = new System.Drawing.Size(87, 28);
-            this.Userbtn.TabIndex = 0;
-            this.Userbtn.Text = "User";
-            this.Userbtn.UseVisualStyleBackColor = true;
-            this.Userbtn.Click += new System.EventHandler(this.Userbtn_Click);
             // 
             // admingroup
             // 
@@ -258,7 +154,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(148, 166);
+            this.checkBox2.Location = new System.Drawing.Point(163, 166);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(101, 17);
             this.checkBox2.TabIndex = 44;
@@ -270,7 +166,7 @@
             // 
             this.admintxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admintxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.admintxt.Location = new System.Drawing.Point(110, 138);
+            this.admintxt.Location = new System.Drawing.Point(110, 84);
             this.admintxt.Name = "admintxt";
             this.admintxt.Size = new System.Drawing.Size(147, 22);
             this.admintxt.TabIndex = 7;
@@ -280,7 +176,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(15, 142);
+            this.label4.Location = new System.Drawing.Point(23, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 6;
@@ -290,7 +186,7 @@
             // 
             this.adminpasswordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminpasswordtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.adminpasswordtxt.Location = new System.Drawing.Point(110, 84);
+            this.adminpasswordtxt.Location = new System.Drawing.Point(110, 138);
             this.adminpasswordtxt.Name = "adminpasswordtxt";
             this.adminpasswordtxt.PasswordChar = '*';
             this.adminpasswordtxt.Size = new System.Drawing.Size(147, 22);
@@ -301,7 +197,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(35, 85);
+            this.label3.Location = new System.Drawing.Point(21, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 4;
@@ -350,7 +246,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(156, 166);
+            this.checkBox1.Location = new System.Drawing.Point(163, 166);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(101, 17);
             this.checkBox1.TabIndex = 43;
@@ -422,6 +318,28 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "Username:";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(187, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.SteelBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(204, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "LOG IN";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -485,11 +403,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.backpb)).EndInit();
             this.loginpnl.ResumeLayout(false);
             this.loginpnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.usergroup.ResumeLayout(false);
-            this.usergroup.PerformLayout();
             this.admingroup.ResumeLayout(false);
             this.admingroup.PerformLayout();
+            this.usergroup.ResumeLayout(false);
+            this.usergroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

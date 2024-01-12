@@ -69,6 +69,12 @@
     <Compile Include="displayfrm.Designer.cs">
       <DependentUpon>displayfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayHome.Designer.cs">
+      <DependentUpon>DisplayHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frmaddconcern.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="displayfrm.resx">
       <DependentUpon>displayfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayHome.resx">
+      <DependentUpon>DisplayHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frmaddconcern.resx">
       <DependentUpon>Frmaddconcern.cs</DependentUpon>
