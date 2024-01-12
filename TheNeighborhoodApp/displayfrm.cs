@@ -102,7 +102,7 @@ namespace TheNeighborhoodApp
         {
             string verifyy = "";
            
-            string query = "SELECT Verified FROM dbo.userInfo where username = @username";
+            string query = "SELECT Verified FROM userInfo where username = @username";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", usertxt.Text);
@@ -113,7 +113,8 @@ namespace TheNeighborhoodApp
 
              
             }
-             con.Close();
+            da.Close();
+             
             return verifyy;
            
         }
@@ -182,8 +183,8 @@ namespace TheNeighborhoodApp
         public void setInfoResident()
         {
             
-            con.Open();
-            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM dbo.UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
+           
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con); 
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -200,16 +201,17 @@ namespace TheNeighborhoodApp
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
                 _userInfo.setVerified(dr.GetValue(10).ToString()); ;
             }
-
-            con.Close();
+        
+            dr.Close();
+          
         }
     
 
         public void setInfoAdmin()
         {
 
-            
-            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM dbo.UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
+          
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -226,7 +228,8 @@ namespace TheNeighborhoodApp
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
             
             }
-            con.Close() ;
+            dr.Close ();
+           
         }
         private void loginbtn_Click(object sender, EventArgs e)
         {

@@ -77,7 +77,7 @@ namespace TheNeighborhoodApp
             cmd.Parameters.AddWithValue("@date", Today);
             cmd.Parameters.AddWithValue("@name", lblName.Text);
             cmd.Parameters.AddWithValue("@username", _userinfo.getUsername().ToString());
-            cmd.Parameters.AddWithValue("@concernstatus", "submitted");
+            cmd.Parameters.AddWithValue("@concernstatus", "Submitted");
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Succesfully submitted! Please wait for our response. Thank you!");

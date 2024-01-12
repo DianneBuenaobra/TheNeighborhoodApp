@@ -35,21 +35,23 @@
             this.backpb = new System.Windows.Forms.PictureBox();
             this.contentpnl = new System.Windows.Forms.Panel();
             this.loginpnl = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.adminbtn = new System.Windows.Forms.Button();
-            this.Userbtn = new System.Windows.Forms.Button();
             this.admingroup = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.usergroup = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.usertxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.userpasswordtxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.admintxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.adminpasswordtxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.adminadminbtn = new System.Windows.Forms.Button();
+            this.useradminbtn = new System.Windows.Forms.Button();
+            this.usergroup = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.usertxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.adminbtn = new System.Windows.Forms.Button();
+            this.userpasswordtxt = new System.Windows.Forms.TextBox();
+            this.Userbtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loginbtn = new System.Windows.Forms.Button();
@@ -60,7 +62,6 @@
             this.signuptoppnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.backpb)).BeginInit();
             this.loginpnl.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.admingroup.SuspendLayout();
             this.usergroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -121,7 +122,6 @@
             // 
             // loginpnl
             // 
-            this.loginpnl.Controls.Add(this.panel1);
             this.loginpnl.Controls.Add(this.label1);
             this.loginpnl.Controls.Add(this.label2);
             this.loginpnl.Controls.Add(this.loginbtn);
@@ -132,39 +132,6 @@
             this.loginpnl.Name = "loginpnl";
             this.loginpnl.Size = new System.Drawing.Size(513, 645);
             this.loginpnl.TabIndex = 40;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.adminbtn);
-            this.panel1.Controls.Add(this.Userbtn);
-            this.panel1.Controls.Add(this.admingroup);
-            this.panel1.Location = new System.Drawing.Point(100, 198);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 205);
-            this.panel1.TabIndex = 44;
-            // 
-            // adminbtn
-            // 
-            this.adminbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminbtn.Location = new System.Drawing.Point(144, 21);
-            this.adminbtn.Name = "adminbtn";
-            this.adminbtn.Size = new System.Drawing.Size(87, 28);
-            this.adminbtn.TabIndex = 1;
-            this.adminbtn.Text = "Admin";
-            this.adminbtn.UseVisualStyleBackColor = true;
-            this.adminbtn.Click += new System.EventHandler(this.adminbtn_Click);
-            // 
-            // Userbtn
-            // 
-            this.Userbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Userbtn.Location = new System.Drawing.Point(51, 21);
-            this.Userbtn.Name = "Userbtn";
-            this.Userbtn.Size = new System.Drawing.Size(87, 28);
-            this.Userbtn.TabIndex = 0;
-            this.Userbtn.Text = "User";
-            this.Userbtn.UseVisualStyleBackColor = true;
-            this.Userbtn.Click += new System.EventHandler(this.Userbtn_Click);
             // 
             // admingroup
             // 
@@ -185,13 +152,78 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(151, 113);
+            this.checkBox2.Location = new System.Drawing.Point(163, 166);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(101, 17);
             this.checkBox2.TabIndex = 44;
             this.checkBox2.Text = "Show password";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // admintxt
+            // 
+            this.admintxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admintxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.admintxt.Location = new System.Drawing.Point(110, 84);
+            this.admintxt.Name = "admintxt";
+            this.admintxt.Size = new System.Drawing.Size(147, 22);
+            this.admintxt.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(23, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Password:";
+            // 
+            // adminpasswordtxt
+            // 
+            this.adminpasswordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminpasswordtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.adminpasswordtxt.Location = new System.Drawing.Point(110, 138);
+            this.adminpasswordtxt.Name = "adminpasswordtxt";
+            this.adminpasswordtxt.PasswordChar = '*';
+            this.adminpasswordtxt.Size = new System.Drawing.Size(147, 22);
+            this.adminpasswordtxt.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(21, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Admin:";
+            // 
+            // adminadminbtn
+            // 
+            this.adminadminbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adminadminbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminadminbtn.Location = new System.Drawing.Point(142, 21);
+            this.adminadminbtn.Name = "adminadminbtn";
+            this.adminadminbtn.Size = new System.Drawing.Size(87, 28);
+            this.adminadminbtn.TabIndex = 1;
+            this.adminadminbtn.Text = "Admin";
+            this.adminadminbtn.UseVisualStyleBackColor = true;
+            this.adminadminbtn.Click += new System.EventHandler(this.adminadminbtn_Click);
+            // 
+            // useradminbtn
+            // 
+            this.useradminbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.useradminbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.useradminbtn.Location = new System.Drawing.Point(49, 21);
+            this.useradminbtn.Name = "useradminbtn";
+            this.useradminbtn.Size = new System.Drawing.Size(87, 28);
+            this.useradminbtn.TabIndex = 0;
+            this.useradminbtn.Text = "User";
+            this.useradminbtn.UseVisualStyleBackColor = true;
+            this.useradminbtn.Click += new System.EventHandler(this.useradminbtn_Click);
             // 
             // usergroup
             // 
@@ -210,7 +242,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(153, 116);
+            this.checkBox1.Location = new System.Drawing.Point(163, 166);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(101, 17);
             this.checkBox1.TabIndex = 43;
@@ -260,46 +292,16 @@
             this.label6.TabIndex = 39;
             this.label6.Text = "Username:";
             // 
-            // admintxt
+            // pictureBox2
             // 
-            this.admintxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.admintxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.admintxt.Location = new System.Drawing.Point(108, 31);
-            this.admintxt.Name = "admintxt";
-            this.admintxt.Size = new System.Drawing.Size(147, 22);
-            this.admintxt.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(23, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Password:";
-            // 
-            // adminpasswordtxt
-            // 
-            this.adminpasswordtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminpasswordtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.adminpasswordtxt.Location = new System.Drawing.Point(108, 83);
-            this.adminpasswordtxt.Name = "adminpasswordtxt";
-            this.adminpasswordtxt.PasswordChar = '*';
-            this.adminpasswordtxt.Size = new System.Drawing.Size(147, 22);
-            this.adminpasswordtxt.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(40, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Admin:";
+            this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(187, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -386,7 +388,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.backpb)).EndInit();
             this.loginpnl.ResumeLayout(false);
             this.loginpnl.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.admingroup.ResumeLayout(false);
             this.admingroup.PerformLayout();
             this.usergroup.ResumeLayout(false);
