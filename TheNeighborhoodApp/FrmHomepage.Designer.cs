@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHomepage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.usernamelbl = new System.Windows.Forms.Label();
+            this.panelHomepage = new System.Windows.Forms.Panel();
             this.slctMessage = new System.Windows.Forms.PictureBox();
             this.slctNotif = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -42,7 +43,7 @@
             this.lineMessage = new System.Windows.Forms.PictureBox();
             this.lineHome = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.PictureBox();
-            this.panelHomepage = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
@@ -88,6 +89,15 @@
             this.usernamelbl.Size = new System.Drawing.Size(35, 13);
             this.usernamelbl.TabIndex = 14;
             this.usernamelbl.Text = "label1";
+            // 
+            // panelHomepage
+            // 
+            this.panelHomepage.BackColor = System.Drawing.Color.White;
+            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
+            this.panelHomepage.Name = "panelHomepage";
+            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
+            this.panelHomepage.TabIndex = 1;
             // 
             // slctMessage
             // 
@@ -208,15 +218,14 @@
             this.btnProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnProfile.TabIndex = 1;
             this.btnProfile.TabStop = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
-            // panelHomepage
+            // panel2
             // 
-            this.panelHomepage.BackColor = System.Drawing.Color.White;
-            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
-            this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
-            this.panelHomepage.TabIndex = 1;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(505, 722);
+            this.panel2.TabIndex = 15;
             // 
             // FrmHomepage
             // 
@@ -224,6 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(505, 725);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelHomepage);
             this.MaximizeBox = false;
@@ -263,5 +273,6 @@
         private System.Windows.Forms.PictureBox btnNotif;
         private System.Windows.Forms.Panel panelHomepage;
         private System.Windows.Forms.Label usernamelbl;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -125,7 +125,7 @@ namespace TheNeighborhoodApp
                 MessageBox.Show("you're now logged in as an ADMIN");
                 setInfoAdmin();
 
-                FrmAdminHomepage frm = new FrmAdminHomepage();
+                FrmAdminHomepage frm = new FrmAdminHomepage(_userInfo);
                 frm.ShowDialog();
                 this.Close();
 
@@ -170,6 +170,7 @@ namespace TheNeighborhoodApp
             string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
+            
             while (dr.Read())
             {
                 _userInfo.setFirstname(dr.GetValue(0).ToString());
