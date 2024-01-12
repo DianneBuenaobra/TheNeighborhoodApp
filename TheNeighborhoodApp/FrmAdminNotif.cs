@@ -97,7 +97,7 @@ namespace TheNeighborhoodApp
             button.ForeColor = Color.White;
             button.Font = new Font("Microsoft Sans Serif", 9.5f, FontStyle.Regular);
             button.Tag = concernid;
-            button.Click += new EventHandler(this.button_click);
+            //button.Click += new EventHandler(this.button_click);
             /*
             if (File.Exists(movie.ImagePath))
                 picBox.Image = Image.FromFile(movie.ImagePath);

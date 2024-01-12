@@ -31,6 +31,7 @@ namespace TheNeighborhoodApp
         private void FrmAdminHomepage_Load(object sender, EventArgs e)
         {
             displayHome();
+           
         }
         public void displayHome()
         {
@@ -45,6 +46,8 @@ namespace TheNeighborhoodApp
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuList.Visible = true;
+            panel2.BringToFront();
+            menuList.BringToFront();
             btnMenu.Visible = false;
             btnBack.Visible = true;
             rlist.eventclickSearch();
@@ -84,10 +87,12 @@ namespace TheNeighborhoodApp
 
         }
 
-        private void btnNewsfeed_Click(object sender, EventArgs e)
+        private void btnConcerns_Click(object sender, EventArgs e)
         {
             menuList.Visible = false;
             btnMenu.Visible = true; rlist.eventclickSearch();
+            AdminNF.Controls.Clear();
+            displayHome();
         }
     }
 }

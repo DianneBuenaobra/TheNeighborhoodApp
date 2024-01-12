@@ -106,6 +106,7 @@ namespace TheNeighborhoodApp
         public void eventclickSearch()
         {
             IconSearch.Visible = true;tbSearch.Text = "";btnX.Visible = false; label1.Visible = true;
+            btnEdit.Visible = false;
 
         }
 
