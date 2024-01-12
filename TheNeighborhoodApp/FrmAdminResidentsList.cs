@@ -96,6 +96,7 @@ namespace TheNeighborhoodApp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             eventclickSearch();
+            btnEdit.Visible = true;
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -111,6 +112,11 @@ namespace TheNeighborhoodApp
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             eventclickSearch();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

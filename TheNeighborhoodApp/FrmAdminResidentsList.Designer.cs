@@ -34,6 +34,7 @@
             this.IconSearch = new System.Windows.Forms.PictureBox();
             this.btnX = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnX)).BeginInit();
@@ -80,10 +81,11 @@
             // btnX
             // 
             this.btnX.BackColor = System.Drawing.SystemColors.Window;
+            this.btnX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnX.Image = ((System.Drawing.Image)(resources.GetObject("btnX.Image")));
-            this.btnX.Location = new System.Drawing.Point(225, 45);
+            this.btnX.Location = new System.Drawing.Point(226, 46);
             this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(20, 16);
+            this.btnX.Size = new System.Drawing.Size(18, 14);
             this.btnX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnX.TabIndex = 4;
             this.btnX.TabStop = false;
@@ -104,12 +106,24 @@
             this.label1.Text = "Search";
             this.label1.Click += new System.EventHandler(this.tbSearch_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(416, 605);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // FrmAdminResidentsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 681);
             this.ControlBox = false;
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnX);
             this.Controls.Add(this.IconSearch);
@@ -134,5 +148,6 @@
         private System.Windows.Forms.PictureBox IconSearch;
         private System.Windows.Forms.PictureBox btnX;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

@@ -81,6 +81,12 @@
     <Compile Include="FrmAdminCalendar.Designer.cs">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminEditRListVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminEditRListVerification.Designer.cs">
+      <DependentUpon>FrmAdminEditRListVerification.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdminHomepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminCalendar.resx">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminEditRListVerification.resx">
+      <DependentUpon>FrmAdminEditRListVerification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminHomepage.resx">
       <DependentUpon>FrmAdminHomepage.cs</DependentUpon>

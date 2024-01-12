@@ -17,6 +17,10 @@ namespace TheNeighborhoodApp
             string con = @"Data Source=LAPTOP-SDGJ5NAJ;Initial Catalog=database2;Integrated Security=True;Pooling=False";
             return con;
         }
+        /*public string getEventInfo(string eventName, string fromdate, string todate,string desscription)
+        {
+            string getquery = "SELECT * FROM Events WHERE "
+        }*/
 
     }
 }

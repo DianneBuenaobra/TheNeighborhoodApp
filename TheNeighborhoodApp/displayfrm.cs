@@ -43,38 +43,22 @@ namespace TheNeighborhoodApp
                         login.Show();
             */
         }
-
-        private void useradminbtn_Click(object sender, EventArgs e)
+        private void Userbtn_Click(object sender, EventArgs e)
         {
+            
             Userbtn.BackColor = Color.SteelBlue;
             adminbtn.BackColor = Color.White;
             usergroup.Visible = true;
             admingroup.Visible = false;
+            
         }
-
-        private void adminadminbtn_Click(object sender, EventArgs e)
+        private void adminbtn_Click(object sender, EventArgs e)
         {
             Userbtn.BackColor = Color.White;
             adminbtn.BackColor = Color.SteelBlue;
             admingroup.Visible = true;
             usergroup.Visible = false;
-        }
-
-        private void Userbtn_Click(object sender, EventArgs e)
-        {
-            Userbtn.BackColor = Color.SteelBlue;
-            adminbtn.BackColor = Color.White;
-            usergroup.Visible = true;
-            admingroup.Visible = false;
-        }
-
-        private void adminbtn_Click(object sender, EventArgs e)
-        {
-            Userbtn.BackColor = Color.White;
-            adminadminbtn.BackColor = Color.SteelBlue;
-            usergroup.Visible = false;
-            admingroup.Visible = true;
-        }
+           }
         
 
         private void signupbtn_Click(object sender, EventArgs e)
@@ -117,8 +101,8 @@ namespace TheNeighborhoodApp
         private string verify()
         {
             string verifyy = "";
-            con.Open();
-            string query = "SELECT Verified FROM userInfo where username = @username";
+           
+            string query = "SELECT Verified FROM dbo.userInfo where username = @username";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", usertxt.Text);
@@ -135,8 +119,9 @@ namespace TheNeighborhoodApp
         }
         private void resident()
         {
-            string usertype = "Resident";
-            string query = "SELECT * FROM userInfo WHERE Username = '" + usertxt.Text + "' AND password = '" + userpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
+            
+            string usertype = "resident";
+            string query = "SELECT * FROM dbo.UserInfo WHERE Username = '" + usertxt.Text + "' AND password = '" + userpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
 
@@ -158,6 +143,7 @@ namespace TheNeighborhoodApp
                 FrmHomepage frm = new FrmHomepage(_userInfo);
                 setInfoResident();
                 frm.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -169,8 +155,9 @@ namespace TheNeighborhoodApp
 
         private void admin()
         {
-            string usertype = "Admin";
-            string query = "SELECT * FROM userInfo WHERE Username = '" + admintxt.Text + "' AND password = '" + adminpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
+            
+            string usertype = "admin";
+            string query = "SELECT * FROM dbo.userInfo WHERE Username = '" + admintxt.Text + "' AND password = '" + adminpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
 
             SqlDataAdapter ad = new SqlDataAdapter(query, con);
             DataTable dtable = new DataTable();
@@ -179,10 +166,11 @@ namespace TheNeighborhoodApp
             if (dtable.Rows.Count > 0)
             {
                 MessageBox.Show("you're now logged in as an ADMIN");
-                getInfoAdmin();
+                setInfoAdmin();
                 
                 FrmAdminHomepage frm = new FrmAdminHomepage();
                 frm.ShowDialog();
+                this.Close();
                 
             }
             else
@@ -195,7 +183,7 @@ namespace TheNeighborhoodApp
         {
             
             con.Open();
-            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM dbo.UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con); 
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -217,11 +205,11 @@ namespace TheNeighborhoodApp
         }
     
 
-        public void getInfoAdmin()
+        public void setInfoAdmin()
         {
 
-            con.Open();
-            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
+            
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM dbo.UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
