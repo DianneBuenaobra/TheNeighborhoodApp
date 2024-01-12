@@ -18,9 +18,11 @@ namespace TheNeighborhoodApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             UserInfo us = new UserInfo();   
-            displayfrm displayfrm = new displayfrm(us);
+            //displayfrm displayfrm = new displayfrm(us);
             FrmAddConcern frmAddConcern = new FrmAddConcern(us);
             FrmConcernResident frmConcernResident = new FrmConcernResident(us);
+            FrmAnnouncement frmAnnouncement = new FrmAnnouncement(us);
+            frmlogin frmlogin = new frmlogin(us);
             //Application.Run(FrmHomepage(us));
             //Application.Run(frmAddConcern);
             //Application.Run(frmConcernResident);

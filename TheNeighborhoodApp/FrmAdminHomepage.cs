@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,32 @@ namespace TheNeighborhoodApp
     {
         FrmAdminResidentsList rlist = new FrmAdminResidentsList();
         FrmAdminCalendar calendar = new FrmAdminCalendar();
-      
-        public FrmAdminHomepage()
+        SqlConnection cnn = new SqlConnection();
+        SqlCommand cmm = new SqlCommand();
+        DBConnection dbcon = new DBConnection();
+        private UserInfo _userInfo;
+        public FrmAdminHomepage(UserInfo userInfo)
         {
+            this._userInfo = userInfo;
+
             InitializeComponent();
+            cnn = new SqlConnection(dbcon.MyConnection());
+            cnn.Open();
         }
 
         private void FrmAdminHomepage_Load(object sender, EventArgs e)
-        { 
+        {
+            displayHome();
+        }
+        public void displayHome()
+        {
+            AdminNF.Visible = true;
+            AdminNF.BringToFront();
+            adminAnnouncement frm = new adminAnnouncement(_userInfo);
+            frm.TopLevel = false;
+            AdminNF.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {

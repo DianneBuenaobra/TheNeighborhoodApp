@@ -61,14 +61,20 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concern.cs" />
-    <Compile Include="DBConnection.cs" />
-    <Compile Include="displayfrm.cs">
+    <Compile Include="AdminAddAnnouncement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="displayfrm.Designer.cs">
-      <DependentUpon>displayfrm.cs</DependentUpon>
+    <Compile Include="AdminAddAnnouncement.Designer.cs">
+      <DependentUpon>AdminAddAnnouncement.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminAnnouncement.Designer.cs">
+      <DependentUpon>adminAnnouncement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Concern.cs" />
+    <Compile Include="DBConnection.cs" />
     <Compile Include="DisplayHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,18 @@
     <Compile Include="FrmHomepage.Designer.cs">
       <DependentUpon>FrmHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmResidentManageAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmResidentManageAccount.Designer.cs">
+      <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signinfrm.cs">
@@ -162,8 +180,11 @@
       <DependentUpon>UserControlDays.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
-    <EmbeddedResource Include="displayfrm.resx">
-      <DependentUpon>displayfrm.cs</DependentUpon>
+    <EmbeddedResource Include="AdminAddAnnouncement.resx">
+      <DependentUpon>AdminAddAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminAnnouncement.resx">
+      <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayHome.resx">
       <DependentUpon>DisplayHome.cs</DependentUpon>
@@ -200,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHomepage.resx">
       <DependentUpon>FrmHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmResidentManageAccount.resx">
+      <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -245,6 +272,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo-camera-interface-symbol-for-button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

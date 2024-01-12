@@ -73,12 +73,12 @@
             // 
             this.menuList.BackColor = System.Drawing.Color.SteelBlue;
             this.menuList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.menuList.Controls.Add(this.panel2);
             this.menuList.Controls.Add(this.button5);
             this.menuList.Controls.Add(this.btnAnnouncements);
             this.menuList.Controls.Add(this.btnCalendar);
             this.menuList.Controls.Add(this.btnRList);
             this.menuList.Controls.Add(this.btnNewsfeed);
-            this.menuList.Controls.Add(this.panel2);
             this.menuList.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.menuList.Location = new System.Drawing.Point(0, 0);
             this.menuList.Name = "menuList";

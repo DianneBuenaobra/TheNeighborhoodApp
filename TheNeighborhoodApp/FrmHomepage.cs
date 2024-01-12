@@ -67,8 +67,9 @@ namespace TheNeighborhoodApp
             frm.Show();
         }
 
-      
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
