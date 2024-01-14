@@ -33,6 +33,11 @@ namespace TheNeighborhoodApp
 
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             
@@ -174,5 +179,6 @@ namespace TheNeighborhoodApp
 
 
         }
+     
     }
 }

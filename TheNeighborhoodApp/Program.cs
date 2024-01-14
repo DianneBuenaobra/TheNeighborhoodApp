@@ -23,11 +23,15 @@ namespace TheNeighborhoodApp
             FrmConcernResident frmConcernResident = new FrmConcernResident(us);
             FrmAnnouncement frmAnnouncement = new FrmAnnouncement(us);
             frmlogin frmlogin = new frmlogin(us);
-            //Application.Run(FrmHomepage(us));
+            FrmResidentManageAccount frm = new FrmResidentManageAccount(us);
+            FrmHomepage frmhome = new FrmHomepage(us);
+            FrmAdminCalendar frmadminCalendar = new FrmAdminCalendar();
+            Application.Run(frmhome);
             //Application.Run(frmAddConcern);
             //Application.Run(frmConcernResident);
             //Application.Run(new frmlogin(us));
-            Application.Run(new FrmAdminHomepage(us));
+            //Application.Run(new FrmAdminHomepage(us));
+            //Application.Run(frmadminCalendar);
         }
     }
 }

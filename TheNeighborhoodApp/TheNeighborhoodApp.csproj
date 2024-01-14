@@ -279,5 +279,11 @@
   <ItemGroup>
     <None Include="Resources\photo-camera-interface-symbol-for-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

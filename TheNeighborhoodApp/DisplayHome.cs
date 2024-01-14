@@ -13,6 +13,7 @@ namespace TheNeighborhoodApp
 {
     public partial class DisplayHome : Form
     {
+      
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
@@ -23,6 +24,7 @@ namespace TheNeighborhoodApp
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
+            
         }
 
        
@@ -41,7 +43,9 @@ namespace TheNeighborhoodApp
         }
         private void announcementBtn_Click(object sender, EventArgs e)
         {
+            FrmHomepage frm = new FrmHomepage(_userInfo);
             displayannouncement();
+            frm.Pnllogout.Visible = false;
         }
 
        
@@ -82,6 +86,13 @@ namespace TheNeighborhoodApp
         {
             concernMessage.Visible = false;
             displayannouncement();
+        }
+
+        private void homepnl_Paint(object sender, PaintEventArgs e)
+        {
+            FrmHomepage frm = new FrmHomepage(_userInfo);
+            frm.Pnllogout.Visible = false;
+            //Pnllogout.Visible = false;
         }
     }
 }

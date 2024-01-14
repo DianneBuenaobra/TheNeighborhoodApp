@@ -52,6 +52,8 @@ namespace TheNeighborhoodApp
 
         private void FrmHomepage_Load(object sender, EventArgs e)
         {
+            Pnllogout.Visible = false;
+            PnlmanageAcc.Visible = false;
             usernamelbl.Text = _userInfo.getFirstname() + " " + _userInfo.getLastname();
             displayHome();
         }
@@ -67,9 +69,117 @@ namespace TheNeighborhoodApp
             frm.Show();
         }
 
+        public int clickcount { get; set; }
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            clickcount = clickcount + 1;
+            
+            if (clickcount / 2 == 0)
+            {
+                Pnllogout.BringToFront();
+                Pnllogout.Visible = true;
+            }
+            else {
+                Pnllogout.Visible = false;
+               
+                clickcount = 0;
+            }
+        }
 
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnManageAcc_Click(object sender, EventArgs e)
+        {
+            Pnllogout.Visible = false;
+            PnlmanageAcc.Visible = true;
+            displayManageAcc();
+        }
+
+        public void displayManageAcc()
+        {
+            panelHomepage.Visible = true;
+            panelHomepage.BringToFront();
+            FrmResidentManageAccount frm = new FrmResidentManageAccount(_userInfo);
+            frm.TopLevel = false;
+            panelHomepage.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            displayHome();
+            PnlmanageAcc.Visible = false;
+        }
+
+      
+
+        private void Pnllogout_MouseEnter(object sender, EventArgs e)
+        {
+            //Pnllogout.Visible = true;
+        }
+
+        private void Pnllogout_MouseLeave(object sender, EventArgs e)
+        {
+            //Pnllogout.Visible= false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+          //  Pnllogout.Visible = false;
+        }
+
+        private void panelHomepage_MouseClick(object sender, MouseEventArgs e)
+        {
+           // Pnllogout.Visible = false;
+        }
+
+        private void panelHomepage_Paint(object sender, PaintEventArgs e)
+        {
+           // Pnllogout.Visible = false;
+        }
+
+        private void slctNotif_Click(object sender, EventArgs e)
+        {
+           // Pnllogout.Visible = false;
+        }
+
+        private void slctMessage_Click(object sender, EventArgs e)
+        {
+           // Pnllogout.Visible = false;
+        }
+
+        private void lineNotif_Click(object sender, EventArgs e)
+        {
+         //   Pnllogout.Visible = false;
+        }
+
+        private void lineMessage_Click(object sender, EventArgs e)
+        {
+            //Pnllogout.Visible = false;
+        }
+
+        private void slctHome_Click(object sender, EventArgs e)
+        {
+            //Pnllogout.Visible = false;
+        }
+
+        private void usernamelbl_Click(object sender, EventArgs e)
+        {
+           // Pnllogout.Visible = false;
+        }
+
+        private void lineHome_Click(object sender, EventArgs e)
+        {
+            //Pnllogout.Visible = false;
         }
     }
 }

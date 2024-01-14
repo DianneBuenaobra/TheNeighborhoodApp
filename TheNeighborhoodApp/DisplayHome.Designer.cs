@@ -42,6 +42,7 @@
             this.homepnl.Name = "homepnl";
             this.homepnl.Size = new System.Drawing.Size(499, 600);
             this.homepnl.TabIndex = 7;
+            this.homepnl.Paint += new System.Windows.Forms.PaintEventHandler(this.homepnl_Paint);
             // 
             // concernMessage
             // 

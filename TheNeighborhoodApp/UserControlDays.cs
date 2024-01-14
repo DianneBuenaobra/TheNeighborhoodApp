@@ -17,15 +17,23 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         SqlDataReader dr;
         DBConnection db = new DBConnection();
+       
         public UserControlDays()
         {
             InitializeComponent();
             cnn = new SqlConnection(db.MyConnection());
+
+            
+
+          
         }
+
         public void Dates(int num)
         {
             txtDate.Text = num + "";
         }
+
+       
         public void displayEvent(int year,int month, int day)
         {
             /*cnn.Open();
