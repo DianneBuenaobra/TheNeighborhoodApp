@@ -52,15 +52,21 @@
             this.btnprev = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAttach = new System.Windows.Forms.Button();
+            this.picEvent = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEvent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnAttach);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtPicker1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnAdd);
@@ -69,6 +75,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTitle);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.picEvent);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(479, 248);
@@ -77,11 +84,12 @@
             // dtPicker1
             // 
             this.dtPicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtPicker1.Location = new System.Drawing.Point(23, 207);
             this.dtPicker1.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.dtPicker1.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtPicker1.Name = "dtPicker1";
-            this.dtPicker1.Size = new System.Drawing.Size(230, 21);
+            this.dtPicker1.Size = new System.Drawing.Size(100, 21);
             this.dtPicker1.TabIndex = 12;
             // 
             // label2
@@ -97,9 +105,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(383, 178);
+            this.btnAdd.Location = new System.Drawing.Point(383, 207);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 50);
+            this.btnAdd.Size = new System.Drawing.Size(64, 21);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -107,9 +115,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(313, 178);
+            this.btnEdit.Location = new System.Drawing.Point(313, 207);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(64, 50);
+            this.btnEdit.Size = new System.Drawing.Size(64, 21);
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -314,6 +322,37 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(138, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Attach Photo:";
+            // 
+            // btnAttach
+            // 
+            this.btnAttach.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttach.Location = new System.Drawing.Point(142, 207);
+            this.btnAttach.Name = "btnAttach";
+            this.btnAttach.Size = new System.Drawing.Size(142, 21);
+            this.btnAttach.TabIndex = 14;
+            this.btnAttach.Text = "Add Attachment";
+            this.btnAttach.UseVisualStyleBackColor = true;
+            this.btnAttach.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // picEvent
+            // 
+            this.picEvent.Location = new System.Drawing.Point(-2, 57);
+            this.picEvent.Name = "picEvent";
+            this.picEvent.Size = new System.Drawing.Size(161, 127);
+            this.picEvent.TabIndex = 15;
+            this.picEvent.TabStop = false;
+            this.picEvent.Visible = false;
+            // 
             // FrmAdminCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +373,7 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEvent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,5 +403,8 @@
         private System.Windows.Forms.DateTimePicker dtPicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAttach;
+        private System.Windows.Forms.PictureBox picEvent;
     }
 }

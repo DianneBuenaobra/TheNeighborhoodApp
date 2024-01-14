@@ -18,6 +18,7 @@ namespace TheNeighborhoodApp
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+                
         private UserInfo _userinfo;
         
         public FrmAddConcern(UserInfo userInfo)
@@ -56,6 +57,7 @@ namespace TheNeighborhoodApp
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+
                 idd = (int)dr.GetValue(0);
 
             }

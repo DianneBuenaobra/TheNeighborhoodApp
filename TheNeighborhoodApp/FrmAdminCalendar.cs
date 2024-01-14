@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,19 +17,19 @@ namespace TheNeighborhoodApp
     {
         SqlConnection con = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
-        DBConnection dbcon = new DBConnection();
+        DBConnection dbcon = new DBConnection(); SqlDataReader dr;
 
         int _month, _year, monthnow, totalDays;
         string _eventName, _fromDate, _toDate, _description;
         public static string selectedDate;
-        UserControlDays ucdays = new UserControlDays();
+        int eventID;
 
 
 
         public FrmAdminCalendar()
         {
             InitializeComponent();
-            con = new SqlConnection(dbcon.MyConnection());con.Open();
+            con = new SqlConnection(dbcon.MyConnection());
            
 
         }
@@ -40,8 +41,19 @@ namespace TheNeighborhoodApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-           // ucdays.displayEvent(_month,_year, totalDays);
+            //UserControlDays ucdays = new UserControlDays(); 
+            //ucdays.displayEvent(selectedDate);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openfiledialog = new OpenFileDialog();
+            if (openfiledialog.ShowDialog() == DialogResult.OK)
+            {
+                btnAttach.Text = openfiledialog.FileName;
+                picEvent.Image = new Bitmap(openfiledialog.FileName);
+            }
         }
 
         private void FrmAdminCalendar_Load(object sender, EventArgs e)
@@ -50,22 +62,60 @@ namespace TheNeighborhoodApp
             _month = now.Month; _year = now.Year;
             DisplayDay();
         }
+        public void getEventDate()
+        {
+            con.Open();
+            cmm = new SqlCommand("Select Date from Events",con);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+                selectedDate = (string)dr.GetValue(4);
+            }
+            con.Close();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            
+            eventID = getEventID();
+            con.Open();
+            //selectedDate = dtPicker1.Text
             // _eventName = txtTitle.Text; _fromDate = dtPicker1.Text; _toDate = dtPicker2.Text; _description = txtDescription.Text;
-            string query = "INSERT INTO Events VALUES (@EventName,@Date,@description)";
+            string query = "INSERT INTO Events VALUES (@EventID,@EventName,@EventInfo,@Image,@Date)";
             cmm = new SqlCommand(query, con);
+            cmm.Parameters.AddWithValue("@EventID",eventID++);
             cmm.Parameters.AddWithValue("@EventName", txtTitle.Text);
-            cmm.Parameters.AddWithValue("@Date", dtPicker1.Value.ToString("yyyy-MM-dd")); 
-            
-            cmm.Parameters.AddWithValue("@description", txtDescription.Text);
+            cmm.Parameters.AddWithValue("@EventInfo", txtDescription.Text);
+            cmm.Parameters.AddWithValue("@Image", getPhoto()); 
+            cmm.Parameters.AddWithValue("@Date", dtPicker1.Value.ToString("yyyy-MM-dd"));            
             cmm.ExecuteNonQuery();
-
-            MessageBox.Show(selectedDate);
-       
+            MessageBox.Show(selectedDate);       
             con.Close();
+
+            txtDescription.Text = ""; txtTitle.Text = "";
+        }
+        public int getEventID()
+        {
+            int id = 0;
+            con.Open();
+            cmm = new SqlCommand("SELECT MAX(EventID) FROM Events", con);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+         
+                    id = (int)dr.GetValue(0);
+                
+                
+            }
+            con.Close();
+            return id;
+           
+        }
+        public byte[] getPhoto()
+        {
+            MemoryStream stream = new MemoryStream();
+            picEvent.Image.Save(stream, picEvent.Image.RawFormat);
+
+            return stream.GetBuffer();
         }
 
         private void btnnext_Click(object sender, EventArgs e)
@@ -90,8 +140,18 @@ namespace TheNeighborhoodApp
             for (int i = 1; i <= totalDays; i++)
             {
                 UserControlDays days = new UserControlDays();
-                days.Dates(i);
-                DateContainer.Controls.Add(days);
+
+                if (selectedDate == _year + "-" + _month + "-" + i)
+                {
+                    days.Dates(i); days.displayEvent(selectedDate);
+                    DateContainer.Controls.Add(days);
+                }
+                else
+                {
+                    days.Dates(i);
+                    DateContainer.Controls.Add(days);
+
+                }
             }
             switch (_month)
             {
@@ -127,8 +187,18 @@ namespace TheNeighborhoodApp
             for (int i = 1; i <= totalDays; i++)
             {
                 UserControlDays days = new UserControlDays();
-                days.Dates(i);
-                DateContainer.Controls.Add(days);
+
+                if (selectedDate == _year + "-" + _month + "-" + i)
+                {
+                    days.Dates(i); days.displayEvent(selectedDate);
+                    DateContainer.Controls.Add(days);
+                }
+                else
+                {
+                    days.Dates(i);
+                    DateContainer.Controls.Add(days);
+
+                }
             }
             switch (_month)
             {
@@ -161,9 +231,20 @@ namespace TheNeighborhoodApp
             for (int i = 1; i <= totalDays; i++)
             {
                 UserControlDays days = new UserControlDays();
-                days.Dates(i);
+               
+                if (selectedDate == _year + "-" + _month + "-" + i)
+                {
+                    days.Dates(i);days.displayEvent(selectedDate);
+                    DateContainer.Controls.Add(days);
+                }
+                else
+                {
+                    days.Dates(i); 
+                    DateContainer.Controls.Add(days);
+
+                }
                 
-                DateContainer.Controls.Add(days);
+                
 
             }
             switch (_month)
