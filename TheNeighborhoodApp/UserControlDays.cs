@@ -26,25 +26,34 @@ namespace TheNeighborhoodApp
         {
             txtDate.Text = num + "";
         }
-        public void displayEvent(int year,int month, int day)
+        public string setEvent { get; set;}
+        public void displayEvent(string date)
         {
+            cnn.Open();
+            cmm = new SqlCommand("SELECT * FROM Events WHERE Date = " + date, cnn);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+                label1.Text = (string)dr.GetValue(1);
+
+            }
+            cnn.Close();
             /*cnn.Open();
             cmm = new SqlCommand("SELECT * FROM Events WHERE Date = @date" , cnn);
-            cmm.Parameters.AddWithValue("@date", FrmAdminCalendar.selectedDate);
-            int d = 1;
+            cmm.Parameters.AddWithValue("@date", year + "-" + month + "-" + day);
+            //int d = 1;
             dr = cmm.ExecuteReader();
             while(dr.Read())
             {
-                if (d <= day)
-                {
-                    label1.Text = dr["eventName"].ToString();
-                    d++;
-                }
+
+                setEvent = (string)dr.GetValue(1);
+                    //d++;
+                
             }
             
-            cnn.Close();*/
+            cnn.Close();
 
-
+            label1.Text = setEvent;*/
         }
 
         private void UserControlDays_Load(object sender, EventArgs e)

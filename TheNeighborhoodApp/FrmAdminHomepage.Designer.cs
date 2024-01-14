@@ -36,14 +36,15 @@
             this.slctMessage = new System.Windows.Forms.PictureBox();
             this.slctNotif = new System.Windows.Forms.PictureBox();
             this.menuList = new System.Windows.Forms.Panel();
+            this.btnRList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.btnAnnouncements = new System.Windows.Forms.Button();
             this.btnCalendar = new System.Windows.Forms.Button();
-            this.btnRList = new System.Windows.Forms.Button();
             this.btnConcerns = new System.Windows.Forms.Button();
+            this.slctedMessage = new System.Windows.Forms.PictureBox();
             this.AdminNF = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -53,13 +54,15 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctedMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.notif);
             this.panel1.Controls.Add(this.notifMessage);
+            this.panel1.Controls.Add(this.slctedMessage);
+            this.panel1.Controls.Add(this.notif);
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Controls.Add(this.slctMessage);
             this.panel1.Controls.Add(this.slctNotif);
@@ -111,6 +114,7 @@
             this.slctMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.slctMessage.TabIndex = 15;
             this.slctMessage.TabStop = false;
+            this.slctMessage.Click += new System.EventHandler(this.slctMessage_Click);
             // 
             // slctNotif
             // 
@@ -139,6 +143,28 @@
             this.menuList.Size = new System.Drawing.Size(184, 725);
             this.menuList.TabIndex = 3;
             this.menuList.Visible = false;
+            // 
+            // btnRList
+            // 
+            this.btnRList.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRList.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
+            this.btnRList.FlatAppearance.BorderSize = 0;
+            this.btnRList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRList.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRList.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRList.Image = ((System.Drawing.Image)(resources.GetObject("btnRList.Image")));
+            this.btnRList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRList.Location = new System.Drawing.Point(0, 399);
+            this.btnRList.Name = "btnRList";
+            this.btnRList.Size = new System.Drawing.Size(184, 52);
+            this.btnRList.TabIndex = 7;
+            this.btnRList.Text = " Residents List";
+            this.btnRList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRList.UseVisualStyleBackColor = false;
+            this.btnRList.Click += new System.EventHandler(this.btnRList_Click);
             // 
             // panel2
             // 
@@ -207,7 +233,7 @@
             this.btnAnnouncements.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAnnouncements.Image = ((System.Drawing.Image)(resources.GetObject("btnAnnouncements.Image")));
             this.btnAnnouncements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnnouncements.Location = new System.Drawing.Point(0, 302);
+            this.btnAnnouncements.Location = new System.Drawing.Point(-1, 254);
             this.btnAnnouncements.Name = "btnAnnouncements";
             this.btnAnnouncements.Size = new System.Drawing.Size(184, 52);
             this.btnAnnouncements.TabIndex = 9;
@@ -215,6 +241,7 @@
             this.btnAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnnouncements.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAnnouncements.UseVisualStyleBackColor = false;
+            this.btnAnnouncements.Click += new System.EventHandler(this.btnAnnouncements_Click);
             // 
             // btnCalendar
             // 
@@ -228,7 +255,7 @@
             this.btnCalendar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
             this.btnCalendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendar.Location = new System.Drawing.Point(0, 351);
+            this.btnCalendar.Location = new System.Drawing.Point(0, 350);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(184, 52);
             this.btnCalendar.TabIndex = 8;
@@ -237,28 +264,6 @@
             this.btnCalendar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCalendar.UseVisualStyleBackColor = false;
             this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
-            // 
-            // btnRList
-            // 
-            this.btnRList.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnRList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRList.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
-            this.btnRList.FlatAppearance.BorderSize = 0;
-            this.btnRList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRList.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRList.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRList.Image = ((System.Drawing.Image)(resources.GetObject("btnRList.Image")));
-            this.btnRList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRList.Location = new System.Drawing.Point(0, 400);
-            this.btnRList.Name = "btnRList";
-            this.btnRList.Size = new System.Drawing.Size(184, 52);
-            this.btnRList.TabIndex = 7;
-            this.btnRList.Text = " Residents List";
-            this.btnRList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRList.UseVisualStyleBackColor = false;
-            this.btnRList.Click += new System.EventHandler(this.btnRList_Click);
             // 
             // btnConcerns
             // 
@@ -272,7 +277,7 @@
             this.btnConcerns.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConcerns.Image = ((System.Drawing.Image)(resources.GetObject("btnConcerns.Image")));
             this.btnConcerns.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConcerns.Location = new System.Drawing.Point(0, 253);
+            this.btnConcerns.Location = new System.Drawing.Point(-1, 302);
             this.btnConcerns.Name = "btnConcerns";
             this.btnConcerns.Size = new System.Drawing.Size(184, 52);
             this.btnConcerns.TabIndex = 6;
@@ -280,6 +285,19 @@
             this.btnConcerns.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConcerns.UseVisualStyleBackColor = false;
             this.btnConcerns.Click += new System.EventHandler(this.btnConcerns_Click);
+            // 
+            // slctedMessage
+            // 
+            this.slctedMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slctedMessage.Image = ((System.Drawing.Image)(resources.GetObject("slctedMessage.Image")));
+            this.slctedMessage.Location = new System.Drawing.Point(425, 6);
+            this.slctedMessage.Name = "slctedMessage";
+            this.slctedMessage.Size = new System.Drawing.Size(30, 30);
+            this.slctedMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctedMessage.TabIndex = 18;
+            this.slctedMessage.TabStop = false;
+            this.slctedMessage.Visible = false;
+            this.slctedMessage.Click += new System.EventHandler(this.slctedMessage_Click);
             // 
             // AdminNF
             // 
@@ -310,6 +328,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctedMessage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,7 +341,6 @@
         private System.Windows.Forms.PictureBox slctNotif;
         public System.Windows.Forms.Panel menuList;
         private System.Windows.Forms.PictureBox btnBack;
-        private System.Windows.Forms.Panel AdminNF;
         private System.Windows.Forms.Button btnAnnouncements;
         private System.Windows.Forms.Button btnCalendar;
         private System.Windows.Forms.Button btnRList;
@@ -332,5 +350,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label notifMessage;
         private System.Windows.Forms.Label notif;
+        private System.Windows.Forms.PictureBox slctedMessage;
+        private System.Windows.Forms.Panel AdminNF;
     }
 }

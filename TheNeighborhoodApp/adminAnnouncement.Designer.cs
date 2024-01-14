@@ -34,10 +34,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,24 +92,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(438, 217);
             this.panel1.TabIndex = 0;
+            this.panel1.Visible = false;
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 194);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 65);
-            this.label1.MaximumSize = new System.Drawing.Size(200, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 120);
-            this.label1.TabIndex = 3;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(227, 12);
+            this.label3.MaximumSize = new System.Drawing.Size(140, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "label2jhdgjagdejavdejavehdfjeavfvaevfhe";
             // 
             // label2
             // 
@@ -121,15 +114,23 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "label2jhdgjagdejavdejavehdfjeavfvaevfhe";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(227, 12);
-            this.label3.MaximumSize = new System.Drawing.Size(140, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label2jhdgjagdejavdejavehdfjeavfvaevfhe";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(227, 65);
+            this.label1.MaximumSize = new System.Drawing.Size(200, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 120);
+            this.label1.TabIndex = 3;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(218, 194);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // adminAnnouncement
             // 
