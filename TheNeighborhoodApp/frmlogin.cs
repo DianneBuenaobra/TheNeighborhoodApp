@@ -63,13 +63,13 @@ namespace TheNeighborhoodApp
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", usertxt.Text);
             SqlDataReader da = cmd.ExecuteReader();
+            
             while (da.Read())
             {
                 verifyy = da.GetValue(0).ToString();
 
-
             }
-            da.Close();
+       da.Close();
 
             return verifyy;
 
@@ -92,6 +92,8 @@ namespace TheNeighborhoodApp
                 FrmHomepage frm = new FrmHomepage(_userInfo);
                 setInfoResident();
                 frm.ShowDialog();
+                usertxt.Clear();
+                userpasswordtxt.Clear();
             }
             else if (dtable.Rows.Count > 0 && verify() == "no")
             {
@@ -100,6 +102,8 @@ namespace TheNeighborhoodApp
                 FrmHomepage frm = new FrmHomepage(_userInfo);
                 setInfoResident();
                 frm.ShowDialog();
+                usertxt.Clear();
+                userpasswordtxt.Clear();
                 this.Close();
             }
             else
@@ -107,7 +111,7 @@ namespace TheNeighborhoodApp
                 MessageBox.Show("Invalid credentials");
             }
          
-            con.Close();
+           
         }
 
         private void admin()
@@ -127,6 +131,8 @@ namespace TheNeighborhoodApp
 
                 FrmAdminHomepage frm = new FrmAdminHomepage(_userInfo);
                 frm.ShowDialog();
+                adminpasswordtxt.Clear();
+                admintxt.Clear();
                 this.Close();
 
             }
@@ -157,8 +163,9 @@ namespace TheNeighborhoodApp
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
                 _userInfo.setVerified(dr.GetValue(10).ToString()); ;
             }
-
             dr.Close();
+
+            
 
         }
 
@@ -185,7 +192,9 @@ namespace TheNeighborhoodApp
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
 
             }
+
             dr.Close();
+           
 
         }
         private void loginbtn_Click(object sender, EventArgs e)
@@ -238,6 +247,7 @@ namespace TheNeighborhoodApp
         {
             if (usergroup.Visible == true)
             {
+                
                 resident();
             }
             else
@@ -249,12 +259,17 @@ namespace TheNeighborhoodApp
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            adminpasswordtxt.PasswordChar = checkBox2.Checked ? '\0' : '*';
+            userpasswordtxt.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             adminpasswordtxt.PasswordChar = checkBox2.Checked ? '\0' : '*';
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please reach out to our barangay officials.");
         }
     }
 }

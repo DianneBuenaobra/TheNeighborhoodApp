@@ -47,7 +47,7 @@ namespace TheNeighborhoodApp
                 //UserProfile = (string)dr.GetValue(5);
                 Messagepanels();
             }
-            dr.Close();
+           
             cnn.Close();
         }
         public void Messagepanels()

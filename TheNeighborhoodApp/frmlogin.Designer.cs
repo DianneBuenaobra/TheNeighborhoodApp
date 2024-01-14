@@ -93,7 +93,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.SteelBlue;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(195, 45);
+            this.label7.Location = new System.Drawing.Point(199, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 32);
             this.label7.TabIndex = 41;
@@ -103,9 +103,9 @@
             // 
             this.backpb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.backpb.Image = ((System.Drawing.Image)(resources.GetObject("backpb.Image")));
-            this.backpb.Location = new System.Drawing.Point(46, 25);
+            this.backpb.Location = new System.Drawing.Point(36, 21);
             this.backpb.Name = "backpb";
-            this.backpb.Size = new System.Drawing.Size(30, 28);
+            this.backpb.Size = new System.Drawing.Size(34, 31);
             this.backpb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.backpb.TabIndex = 10;
             this.backpb.TabStop = false;
@@ -131,7 +131,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.SteelBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 140);
+            this.label1.Location = new System.Drawing.Point(207, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.TabIndex = 31;
@@ -141,11 +141,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(197, 467);
+            this.label2.Location = new System.Drawing.Point(214, 464);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 35;
             this.label2.Text = "Forgot Password";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // loginbtn
             // 
@@ -153,9 +154,9 @@
             this.loginbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(148, 431);
+            this.loginbtn.Location = new System.Drawing.Point(157, 418);
             this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(180, 28);
+            this.loginbtn.Size = new System.Drawing.Size(198, 43);
             this.loginbtn.TabIndex = 34;
             this.loginbtn.Text = "Log in";
             this.loginbtn.UseVisualStyleBackColor = false;
@@ -166,9 +167,9 @@
             this.signupbtn.BackColor = System.Drawing.Color.White;
             this.signupbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signupbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupbtn.Location = new System.Drawing.Point(148, 536);
+            this.signupbtn.Location = new System.Drawing.Point(157, 523);
             this.signupbtn.Name = "signupbtn";
-            this.signupbtn.Size = new System.Drawing.Size(180, 28);
+            this.signupbtn.Size = new System.Drawing.Size(198, 37);
             this.signupbtn.TabIndex = 38;
             this.signupbtn.Text = "Sign up";
             this.signupbtn.UseVisualStyleBackColor = false;
@@ -178,7 +179,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(187, 7);
+            this.pictureBox2.Location = new System.Drawing.Point(190, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(124, 126);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -194,7 +195,7 @@
             this.usergroup.Controls.Add(this.usertxt);
             this.usergroup.Controls.Add(this.label4);
             this.usergroup.Controls.Add(this.label3);
-            this.usergroup.Location = new System.Drawing.Point(111, 181);
+            this.usergroup.Location = new System.Drawing.Point(119, 195);
             this.usergroup.Name = "usergroup";
             this.usergroup.Size = new System.Drawing.Size(271, 196);
             this.usergroup.TabIndex = 40;
@@ -278,7 +279,7 @@
             this.admingroup.Controls.Add(this.admintxt);
             this.admingroup.Controls.Add(this.label5);
             this.admingroup.Controls.Add(this.label6);
-            this.admingroup.Location = new System.Drawing.Point(111, 181);
+            this.admingroup.Location = new System.Drawing.Point(119, 195);
             this.admingroup.Name = "admingroup";
             this.admingroup.Size = new System.Drawing.Size(271, 196);
             this.admingroup.TabIndex = 41;
@@ -355,9 +356,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -80);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -77);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(505, 364);
+            this.pictureBox1.Size = new System.Drawing.Size(513, 389);
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -379,6 +380,7 @@
             this.Controls.Add(this.loginpnl);
             this.Controls.Add(this.contentpnl);
             this.Name = "frmlogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmlogin_Load);
             this.toppnl.ResumeLayout(false);
             this.signuptoppnl.ResumeLayout(false);
