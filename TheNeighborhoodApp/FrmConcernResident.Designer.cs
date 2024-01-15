@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.refreshBtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,29 +42,35 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(433, 540);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // refreshBtn
-            // 
-            this.refreshBtn.Location = new System.Drawing.Point(25, 19);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(75, 23);
-            this.refreshBtn.TabIndex = 3;
-            this.refreshBtn.Text = "refresh";
-            this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Submitted",
             "Processing",
             "Done",
             "All"});
-            this.comboBox1.Location = new System.Drawing.Point(106, 20);
+            this.comboBox1.Location = new System.Drawing.Point(68, 15);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.reload;
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Location = new System.Drawing.Point(26, 12);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(35, 29);
+            this.refreshBtn.TabIndex = 3;
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // button1
             // 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace TheNeighborhoodApp
         public string announcement { get; set; }
         public string announcementinfo { get; set; }
         public DateTime date { get; set; }
-        public string image { get; set; }
+        public Image image { get; set; }
 
         public void getAnnouncement()
         {
@@ -42,7 +43,10 @@ namespace TheNeighborhoodApp
                 announcementid = (int)dr.GetValue(0);
                 announcement = (string)dr.GetValue(1);
                 announcementinfo = (string)dr.GetValue(2);
-                //image
+                //byte[] img = (byte[])(dr[3]);
+                //MemoryStream ms = new MemoryStream(img);
+                //image = Image.FromStream(ms);
+
                 date = (DateTime)dr.GetValue(4);
                 announcementPanel();
             }
@@ -79,6 +83,7 @@ namespace TheNeighborhoodApp
             picBox.Location = new Point(0,0);
             picBox.SizeMode = PictureBoxSizeMode.Zoom;
             picBox.BackColor = Color.White;
+            //picBox.Image = image;
 
             Button button;
             button = new Button();

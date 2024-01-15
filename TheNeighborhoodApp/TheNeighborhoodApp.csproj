@@ -74,6 +74,12 @@
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </Compile>
     <Compile Include="Concern.cs" />
+    <Compile Include="ConcernContactAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConcernContactAdmin.Designer.cs">
+      <DependentUpon>ConcernContactAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="DisplayHome.cs">
       <SubType>Form</SubType>
@@ -192,6 +198,9 @@
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConcernContactAdmin.resx">
+      <DependentUpon>ConcernContactAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayHome.resx">
       <DependentUpon>DisplayHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +317,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle %283%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hvhv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

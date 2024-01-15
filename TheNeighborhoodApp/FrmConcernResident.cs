@@ -39,7 +39,7 @@ namespace TheNeighborhoodApp
         {
             flowLayoutPanel1.Controls.Clear();
             getConcernInfo();
-            
+            comboBox1.SelectedItem = "All";
         }
 
         public int concernid { get; set;}
@@ -49,9 +49,12 @@ namespace TheNeighborhoodApp
         public string name{get; set;}
         public string username{get; set;}
         public string concernstatus { get; set; }
+        public Image image { get; set; }
 
+        public int buttonclickedid { get; set;}
         public void getConcernInfo()
         {
+            
 
             string query = "SELECT ConcernId, Concern, ConcernInfo, photo, date, ConcernStatus FROM Concern WHERE Username = '" + _userInfo.getUsername().ToString() + "'";
             SqlCommand cmd = new SqlCommand(query, cnn);
@@ -62,6 +65,10 @@ namespace TheNeighborhoodApp
                 concernname = (string)dr.GetValue(1);
                 concerndescription = (string)dr.GetValue (2);
                 //image
+                byte[] img = (byte[])(dr[3]);
+                MemoryStream ms = new MemoryStream(img);
+                image = Image.FromStream(ms);
+
                 date = (DateTime)dr.GetValue(4);
                 concernstatus = dr.GetValue(5).ToString();
 
@@ -133,11 +140,12 @@ namespace TheNeighborhoodApp
             picBox.Size = new Size(145, 139);
             picBox.Location = new Point(255, -1);
             picBox.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox.BackColor = Color.White;
+            picBox.BackColor = Color.SteelBlue;
+            picBox.Image = image;
 
             Button button;
             button = new Button();
-            button.Name=String.Format("PbconcernButton{0}", concernid);
+            button.Name = concernid.ToString();
             button.Size = new Size(145, 26);
             button.Text = "Contact Admin";
             button.Location = new Point(255, 136);
@@ -165,7 +173,10 @@ namespace TheNeighborhoodApp
         public void button_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            MessageBox.Show("Clicked");
+            buttonclickedid = Convert.ToInt32(btn.Name);
+            MessageBox.Show(buttonclickedid.ToString());
+            ConcernContactAdmin c = new ConcernContactAdmin(this, _userInfo);
+            c.ShowDialog();
         }
 
 
@@ -178,6 +189,7 @@ namespace TheNeighborhoodApp
 
         private void FrmConcernResident_Load(object sender, EventArgs e)
         {
+          
             getConcernInfo();
         }
 
@@ -218,7 +230,12 @@ namespace TheNeighborhoodApp
 
 
         }
-
-        
+        /*
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            getConcernInfo();
+        }
+        */
     }
 }
