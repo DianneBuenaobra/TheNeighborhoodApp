@@ -82,7 +82,7 @@ namespace TheNeighborhoodApp
             Label labelTitle;
             labelTitle = new Label();
             labelTitle.Name = String.Format("LblConcernTitle{0}", announcementid);
-            labelTitle.Text = announcementname;
+            labelTitle.Text = "Title: " +announcementname;
             labelTitle.Location = new Point(207, 61);
             labelTitle.ForeColor = Color.White;
             labelTitle.Font = new Font("Microsoft Sans Serif", 8.5f, FontStyle.Bold);
@@ -97,19 +97,18 @@ namespace TheNeighborhoodApp
             labeldescription = new Label();
             labeldescription.Name = String.Format("LblConcernTitle{0}", announcementid);
             labeldescription.Text = announcementdescription;
-            labeldescription.Location = new Point(206, 84);
+            labeldescription.Location = new Point(213, 84);
             labeldescription.ForeColor = Color.Black;
             labeldescription.Font = new Font("Microsoft Sans Serif", 8.5f, FontStyle.Regular);
-            labeldescription.AutoSize = true;
             labeldescription.Tag = announcementid;
-            labeldescription.MaximumSize = new Size(225, 100);
-            labeldescription.MinimumSize = new Size(225, 100);
+            labeldescription.MaximumSize = new Size(220, 95);
+            labeldescription.MinimumSize = new Size(220, 95);
             labeldescription.BackColor = Color.White;
 
             Label labeldate;
             labeldate = new Label();
             labeldate.Name = String.Format("LblConcernYear{0}", announcementid);
-            labeldate.Text = date.ToString();
+            labeldate.Text = "Date: " +date.ToString();
             labeldate.Location = new Point(207, 29);
             labeldate.ForeColor = Color.WhiteSmoke;
             labeldate.Font = new Font("Microsoft Sans Serif", 8.5f, FontStyle.Regular);
@@ -118,23 +117,25 @@ namespace TheNeighborhoodApp
             Label labelstatus;
             labelstatus = new Label();
             labelstatus.Name = String.Format("LblConcernYear{0}", announcementid);
-            labelstatus.Text = status;
+            labelstatus.Text = "Status: " +status;
             labelstatus.Location = new Point(207, 9);
             labelstatus.ForeColor = Color.WhiteSmoke;
             labelstatus.Font = new Font("Microsoft Sans Serif", 8.5f, FontStyle.Regular);
             labelstatus.Tag = announcementid;
             labeldescription.MaximumSize = new Size(90, 20);
             labeldescription.MinimumSize = new Size(90, 20);
-            /*
-            Label labelstatus;
-            labelstatus = new Label();
-            labelstatus.Name = String.Format("LblConcernStatus{0}", concernid);
-            labelstatus.Text = concernstatus;
-            labelstatus.Location = new Point(187, 10);
-            labelstatus.ForeColor = Color.WhiteSmoke;
-            labelstatus.Font = new Font("Microsoft Sans Serif", 8.5f, FontStyle.Regular);
-            labelstatus.Tag = concernid;
-            */
+            
+
+            Label labelid;
+            labelid = new Label();
+            labelid.Name = String.Format("LblConcernStatus{0}", announcementid);
+            labelid.Text = "ID: " + announcementid.ToString();
+            labelid.Location = new Point(368, 9);
+            labelid.ForeColor = Color.WhiteSmoke;
+            labelid.Font = new Font("Microsoft Sans Serif", 8.5f, FontStyle.Regular);
+            labelid.Tag = announcementid;
+            labelid.MaximumSize = new Size(60, 20);
+
             PictureBox picBox;
             picBox = new PictureBox();
             picBox.Name = String.Format("PbconcernImage{0}", announcementid);
@@ -147,9 +148,9 @@ namespace TheNeighborhoodApp
             Button editbutton;
             editbutton = new Button();
             editbutton.Name = announcementid.ToString();
-            editbutton.Size = new Size(146, 25);
+            editbutton.Size = new Size(219, 25);
             editbutton.Text = "Edit";
-            editbutton.Location = new Point(146, 189);
+            editbutton.Location = new Point(218, 189);
             editbutton.ForeColor = Color.White;
             editbutton.Font = new Font("Microsoft Sans Serif", 9.5f, FontStyle.Regular);
             editbutton.Tag = announcementid;
@@ -158,32 +159,34 @@ namespace TheNeighborhoodApp
             Button deletebutton;
             deletebutton = new Button();
             deletebutton.Name = announcementid.ToString();
-            deletebutton.Size = new Size(146, 25);
+            deletebutton.Size = new Size(219, 25);
             deletebutton.Text = "delete";
             deletebutton.Location = new Point(1, 189);
             deletebutton.ForeColor = Color.White;
             deletebutton.Font = new Font("Microsoft Sans Serif", 9.5f, FontStyle.Regular);
             deletebutton.Tag = announcementid;
             deletebutton.Click += new EventHandler(this.button1_click);
-
+            /*
             Button viewmorebutton;
             viewmorebutton = new Button();
             viewmorebutton.Name = announcementid.ToString();
             viewmorebutton.Size = new Size(146, 25);
-            viewmorebutton.Text = "delete";
+            viewmorebutton.Text = "View More";
             viewmorebutton.Location = new Point(291, 189);
             viewmorebutton.ForeColor = Color.White;
             viewmorebutton.Font = new Font("Microsoft Sans Serif", 9.5f, FontStyle.Regular);
             viewmorebutton.Tag = announcementid;
-            viewmorebutton.Click += new EventHandler(this.button1_click);
+            viewmorebutton.Click += new EventHandler(this.button2_click);
+            */
             /*
             if (File.Exists(movie.ImagePath))
                 picBox.Image = Image.FromFile(movie.ImagePath);
 
             picBox.Tag = movie.Id;
             */
+            panel.Controls.Add(labelid);
             panel.Controls.Add(labelstatus);
-            panel.Controls.Add(viewmorebutton);
+           // panel.Controls.Add(viewmorebutton);
             panel.Controls.Add(editbutton);
             panel.Controls.Add(picBox);
             panel.Controls.Add(deletebutton);
@@ -199,33 +202,43 @@ namespace TheNeighborhoodApp
         public void button_click(object sender, EventArgs e)
         {
             //edit button
-            getAnnouncement();
-            Button btn = sender as Button;
+                Button btn = sender as Button;
             buttonclickedid = Convert.ToInt32(btn.Name);
-            if (getstatus() == "Pending")
-            {
+            getAnnouncement();
+        
+         
                 FrmEditAnnouncement f = new FrmEditAnnouncement(_userInfo, this);
                 f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("You can not edit this Announcement since it is already posted. You can delete it if you have any mistake.");
-            }
+           
            
         }
+        /*
         public void button2_click(object sender, EventArgs e)
         {
             //view more button
             Button btn = sender as Button;
             buttonclickedid = Convert.ToInt32(btn.Name);
-            MessageBox.Show("Clicked");
+           
         }
+        */
         public void button1_click(object sender, EventArgs e)
         {
             //delete button
             Button btn = sender as Button;
             buttonclickedid = Convert.ToInt32(btn.Name);
-            MessageBox.Show("Clicked");
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this announcement? it will permanently deleted.", "Title", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(result == DialogResult.Yes)
+            {
+                deleteAnnouncement();
+            }
+
+        }
+        public void deleteAnnouncement()
+        {
+            string query = "DELETE FROM Announcement WHERE AnnouncementId = '" + buttonclickedid + "'";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            cmd.ExecuteNonQuery();
         }
 
         public void getAnnouncement()

@@ -18,6 +18,7 @@ namespace TheNeighborhoodApp
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+       
         private UserInfo _userInfo;
         public FrmAnnouncement(UserInfo userinfo)
         {
@@ -25,6 +26,7 @@ namespace TheNeighborhoodApp
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
             _userInfo = userinfo;
+            
         }
         public int announcementid { get; set; }
         public string announcement { get; set; }
@@ -43,9 +45,12 @@ namespace TheNeighborhoodApp
                 announcementid = (int)dr.GetValue(0);
                 announcement = (string)dr.GetValue(1);
                 announcementinfo = (string)dr.GetValue(2);
-                //byte[] img = (byte[])(dr[3]);
-                //MemoryStream ms = new MemoryStream(img);
-                //image = Image.FromStream(ms);
+                if (dr[3] != DBNull.Value)
+                {
+                    byte[] img = (byte[])(dr[3]);
+                    MemoryStream ms = new MemoryStream(img);
+                    image = Image.FromStream(ms);
+                }
 
                 date = (DateTime)dr.GetValue(4);
                 announcementPanel();
@@ -82,12 +87,12 @@ namespace TheNeighborhoodApp
             picBox.Size = new Size(304, 140);
             picBox.Location = new Point(0,0);
             picBox.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox.BackColor = Color.White;
-            //picBox.Image = image;
+            picBox.BackColor = Color.SteelBlue;
+            picBox.Image = image;
 
             Button button;
             button = new Button();
-            button.Name = String.Format("PbconcernButton{0}", announcementid);
+            button.Name = announcementid.ToString();
             button.Size = new Size(452, 21);
             button.Text = "View More";
             button.Location = new Point(0, 142);
@@ -110,10 +115,14 @@ namespace TheNeighborhoodApp
 
         }
 
+        public int buttonclickedid { get; set; }
         public void button_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            MessageBox.Show("Clicked");
+            buttonclickedid = Convert.ToInt32(btn.Name);
+            ResidentViewMoreAnnouncement viewmore = new ResidentViewMoreAnnouncement(this);
+            viewmore.ShowDialog();
+            
         }
 
         private void FrmAnnouncement_Load(object sender, EventArgs e)
@@ -152,6 +161,12 @@ namespace TheNeighborhoodApp
                 announcement = (string)dr.GetValue(1);
                 announcementinfo = (string)dr.GetValue(2);
                 //image
+                 if (dr[3] != DBNull.Value)
+                {
+                    byte[] img = (byte[])(dr[3]);
+                    MemoryStream ms = new MemoryStream(img);
+                    image = Image.FromStream(ms);  
+                }
                 date = (DateTime)dr.GetValue(4);
 
                 announcementPanel();
@@ -170,6 +185,12 @@ namespace TheNeighborhoodApp
                 announcement = (string)dr.GetValue(1);
                 announcementinfo = (string)dr.GetValue(2);
                 //image
+                if (dr[3] != DBNull.Value)
+                {
+                    byte[] img = (byte[])(dr[3]);
+                    MemoryStream ms = new MemoryStream(img);
+                    image = Image.FromStream(ms);
+                }
                 date = (DateTime)dr.GetValue(4);
 
                 announcementPanel();

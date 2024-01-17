@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.refreshBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -60,16 +59,16 @@
             // 
             this.button2.Location = new System.Drawing.Point(1, 189);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 25);
+            this.button2.Size = new System.Drawing.Size(219, 25);
             this.button2.TabIndex = 1;
             this.button2.Text = "delete";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(146, 189);
+            this.button3.Location = new System.Drawing.Point(218, 189);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 25);
+            this.button3.Size = new System.Drawing.Size(219, 25);
             this.button3.TabIndex = 2;
             this.button3.Text = "edit";
             this.button3.UseVisualStyleBackColor = true;
@@ -86,7 +85,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -123,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(206, 84);
+            this.label1.Location = new System.Drawing.Point(213, 84);
             this.label1.MaximumSize = new System.Drawing.Size(225, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 100);
@@ -151,24 +149,15 @@
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(291, 189);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 25);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "view more";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(207, 9);
-            this.label4.MaximumSize = new System.Drawing.Size(90, 20);
+            this.label4.Location = new System.Drawing.Point(368, 9);
+            this.label4.MaximumSize = new System.Drawing.Size(60, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 20);
+            this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 8;
-            this.label4.Text = "label2jhdgjagdejavdejavehdfjeavfvaevfhe";
+            this.label4.Text = "agdejavdejavehdfjeavfvaevfhe";
             // 
             // adminAnnouncement
             // 
@@ -201,7 +190,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button refreshBtn;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
     }
 }
