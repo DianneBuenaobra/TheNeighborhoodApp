@@ -45,20 +45,22 @@ namespace TheNeighborhoodApp
             AddAnnouncemnet();
         }
 
+       
+
         public void AddAnnouncemnet()
         {
-            
-            String insertInfo = "INSERT INTO Announcement VALUES (@announcemenid, @announcement, @announcementinfo, @image, @date)";
+            int idd = id();
+            String insertInfo = "INSERT INTO Announcement VALUES (@announcemenid, @announcement, @announcementinfo, @image, @date, @status)";
             SqlCommand cmd = new SqlCommand(insertInfo, cnn);
-            cmd.Parameters.AddWithValue("@announcemenid", id());
+            cmd.Parameters.AddWithValue("@announcemenid", ++idd);
             cmd.Parameters.AddWithValue("@announcement", txtannouncement.Text);
             cmd.Parameters.AddWithValue("@announcementinfo", txtannouncementinfo.Text);
             cmd.Parameters.AddWithValue("@image", getPhoto());
             cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value);
-          
+            cmd.Parameters.AddWithValue("@status", "Pending");
 
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Succesfully submitted! Please wait for our response. Thank you!");
+            MessageBox.Show("Succesfully added");
 
         }
         public int id()
@@ -77,5 +79,10 @@ namespace TheNeighborhoodApp
             return idd;
         }
 
+        private void AdminAddAnnouncement_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.MinDate = DateTime.Now;
+            dateTimePicker1.Value = DateTime.Now;
+        }
     }
 }

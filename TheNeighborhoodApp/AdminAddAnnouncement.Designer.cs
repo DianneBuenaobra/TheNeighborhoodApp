@@ -156,6 +156,7 @@
             this.Controls.Add(this.picboxAnnouncement);
             this.Name = "AdminAddAnnouncement";
             this.Text = "AdminAddAnnouncement";
+            this.Load += new System.EventHandler(this.AdminAddAnnouncement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxAnnouncement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

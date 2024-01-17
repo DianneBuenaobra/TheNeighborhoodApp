@@ -147,6 +147,12 @@
     <Compile Include="FrmConcernResident.Designer.cs">
       <DependentUpon>FrmConcernResident.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditAnnouncement.Designer.cs">
+      <DependentUpon>FrmEditAnnouncement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConcernResident.resx">
       <DependentUpon>FrmConcernResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditAnnouncement.resx">
+      <DependentUpon>FrmEditAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
