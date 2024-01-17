@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAttach = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtPicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -38,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.picEvent = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblmonth = new System.Windows.Forms.Label();
@@ -52,13 +55,10 @@
             this.btnprev = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnAttach = new System.Windows.Forms.Button();
-            this.picEvent = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEvent)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEvent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +80,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(479, 248);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAttach
+            // 
+            this.btnAttach.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttach.Location = new System.Drawing.Point(142, 207);
+            this.btnAttach.Name = "btnAttach";
+            this.btnAttach.Size = new System.Drawing.Size(142, 21);
+            this.btnAttach.TabIndex = 14;
+            this.btnAttach.Text = "Add Attachment";
+            this.btnAttach.UseVisualStyleBackColor = true;
+            this.btnAttach.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(138, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Attach Photo:";
             // 
             // dtPicker1
             // 
@@ -121,6 +143,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
             // 
             // txtDescription
             // 
@@ -160,6 +183,15 @@
             this.label1.Size = new System.Drawing.Size(38, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Title";
+            // 
+            // picEvent
+            // 
+            this.picEvent.Location = new System.Drawing.Point(-2, 57);
+            this.picEvent.Name = "picEvent";
+            this.picEvent.Size = new System.Drawing.Size(161, 127);
+            this.picEvent.TabIndex = 15;
+            this.picEvent.TabStop = false;
+            this.picEvent.Visible = false;
             // 
             // panel2
             // 
@@ -322,37 +354,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(138, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Attach Photo:";
-            // 
-            // btnAttach
-            // 
-            this.btnAttach.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttach.Location = new System.Drawing.Point(142, 207);
-            this.btnAttach.Name = "btnAttach";
-            this.btnAttach.Size = new System.Drawing.Size(142, 21);
-            this.btnAttach.TabIndex = 14;
-            this.btnAttach.Text = "Add Attachment";
-            this.btnAttach.UseVisualStyleBackColor = true;
-            this.btnAttach.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // picEvent
-            // 
-            this.picEvent.Location = new System.Drawing.Point(-2, 57);
-            this.picEvent.Name = "picEvent";
-            this.picEvent.Size = new System.Drawing.Size(161, 127);
-            this.picEvent.TabIndex = 15;
-            this.picEvent.TabStop = false;
-            this.picEvent.Visible = false;
-            // 
             // FrmAdminCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,10 +371,10 @@
             this.Load += new System.EventHandler(this.FrmAdminCalendar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEvent)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEvent)).EndInit();
             this.ResumeLayout(false);
 
         }
