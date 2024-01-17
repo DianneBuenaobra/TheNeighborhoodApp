@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace TheNeighborhoodApp
 {
@@ -19,6 +22,7 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection(); SqlDataReader dr;
 
+        ArrayList events = new ArrayList();     
         int _month, _year, monthnow, totalDays;
         string _eventName, _fromDate, _toDate, _description;
         public static string selectedDate;
@@ -41,8 +45,7 @@ namespace TheNeighborhoodApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //UserControlDays ucdays = new UserControlDays(); 
-            //ucdays.displayEvent(selectedDate);
+            DisplayDay();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,7 +65,7 @@ namespace TheNeighborhoodApp
             _month = now.Month; _year = now.Year;
             DisplayDay();
         }
-        public void getEventDate()
+        /*public void getEventDate()
         {
             con.Open();
             cmm = new SqlCommand("Select Date from Events",con);
@@ -72,11 +75,11 @@ namespace TheNeighborhoodApp
                 selectedDate = (string)dr.GetValue(4);
             }
             con.Close();
-        }
+        }*/
         private void btnAdd_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            eventID = getEventID();
+           // eventID = getEventID();
             con.Open();
             //selectedDate = dtPicker1.Text
             // _eventName = txtTitle.Text; _fromDate = dtPicker1.Text; _toDate = dtPicker2.Text; _description = txtDescription.Text;
@@ -88,12 +91,13 @@ namespace TheNeighborhoodApp
             cmm.Parameters.AddWithValue("@Image", getPhoto()); 
             cmm.Parameters.AddWithValue("@Date", dtPicker1.Value.ToString("yyyy-MM-dd"));            
             cmm.ExecuteNonQuery();
-            MessageBox.Show(selectedDate);       
-            con.Close();
+                 
+            
 
             txtDescription.Text = ""; txtTitle.Text = "";
+            con.Close();
         }
-        public int getEventID()
+        /*public int getEventID()
         {
             int id = 0;
             con.Open();
@@ -109,6 +113,20 @@ namespace TheNeighborhoodApp
             con.Close();
             return id;
            
+        }*/
+        public void getDate()
+        {
+            events.Clear();
+            con.Open();
+            cmm = new SqlCommand("select convert(varchar(10),Date,101)from Events order by date", con);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+                events.Add(dr.GetValue(0).ToString());
+                
+            }
+            events.Sort();
+            con.Close();dr.Close();
         }
         public byte[] getPhoto()
         {
@@ -120,7 +138,10 @@ namespace TheNeighborhoodApp
 
         private void btnnext_Click(object sender, EventArgs e)
         {
-           DateContainer.Controls.Clear();
+            getDate();
+            int len = events.Count;
+            //selectedDate = _year + "-" + _month + "-" + day;
+            DateContainer.Controls.Clear();
             _month++;
             //timer1.Start();
             if (monthnow == _month) { btnprev.Enabled = false; }
@@ -137,21 +158,46 @@ namespace TheNeighborhoodApp
                 UserControlBlank blank = new UserControlBlank();
                 DateContainer.Controls.Add(blank);
             }
+            int index = 0;
             for (int i = 1; i <= totalDays; i++)
             {
                 UserControlDays days = new UserControlDays();
 
-                if (selectedDate == _year + "-" + _month + "-" + i)
+
+                
+                System.Windows.Forms.MessageBox.Show(index.ToString());
+                System.Windows.Forms.MessageBox.Show(events[index].ToString());
+                string countDate = (string.Format("{0:D2}", _month) + "/" + string.Format("{0:D2}", i) + "/" + _year);
+                if (events.Count > index)
                 {
-                    days.Dates(i); days.displayEvent(selectedDate);
-                    DateContainer.Controls.Add(days);
+                    if (events[index].Equals(countDate))
+                    {
+                        con.Open();
+                        cmm = new SqlCommand("Select EventName from Events where date = '" +
+                           events[index] + "'", con);
+                        dr = cmm.ExecuteReader();
+                        while (dr.Read())
+                        {
+
+                            days.Dates(i); days.eventLabel(dr.GetValue(0).ToString());
+                            DateContainer.Controls.Add(days);
+                        }
+                        index++;
+                        dr.Close();con.Close();
+                        
+                    }
+                    else
+                    {
+                        days.Dates(i);
+                        DateContainer.Controls.Add(days);
+                    }
                 }
                 else
                 {
                     days.Dates(i);
                     DateContainer.Controls.Add(days);
-
                 }
+
             }
             switch (_month)
             {
@@ -165,8 +211,11 @@ namespace TheNeighborhoodApp
         }
 
         private void btnprev_Click(object sender, EventArgs e)
-        { 
-            
+        {
+
+            getDate();
+            int len = events.Count;
+            //selectedDate = _year + "-" + _month + "-" + day;
             DateContainer.Controls.Clear();
             _month--;
             //timer1.Start();
@@ -184,21 +233,45 @@ namespace TheNeighborhoodApp
                 UserControlBlank blank = new UserControlBlank();
                 DateContainer.Controls.Add(blank);
             }
+            int index = 0;
             for (int i = 1; i <= totalDays; i++)
             {
                 UserControlDays days = new UserControlDays();
 
-                if (selectedDate == _year + "-" + _month + "-" + i)
+                
+                System.Windows.Forms.MessageBox.Show(index.ToString());
+                System.Windows.Forms.MessageBox.Show(events[index].ToString());
+                string countDate = (string.Format("{0:D2}", _month) + "/" + string.Format("{0:D2}", i) + "/" + _year);
+                if (events.Count > index)
                 {
-                    days.Dates(i); days.displayEvent(selectedDate);
-                    DateContainer.Controls.Add(days);
+                    if (events[index].Equals(countDate))
+                    {
+                        con.Open();
+                        cmm = new SqlCommand("Select EventName from Events where date = '" +
+                           events[index] + "'", con);
+                        dr = cmm.ExecuteReader();
+                        while (dr.Read())
+                        {
+
+                            days.Dates(i); days.eventLabel(dr.GetValue(0).ToString());
+                            DateContainer.Controls.Add(days);
+                        }
+                        System.Windows.Forms.MessageBox.Show("ookay");
+                        index = index + 1;
+                        con.Close();dr.Close();
+                    }
+                    else
+                    {
+                        days.Dates(i);
+                        DateContainer.Controls.Add(days);
+                    }
                 }
                 else
                 {
                     days.Dates(i);
                     DateContainer.Controls.Add(days);
-
                 }
+
             }
             switch (_month)
             {
@@ -210,8 +283,14 @@ namespace TheNeighborhoodApp
                 case 11: lblmonth.Text = "November " + _year; break;case 12: lblmonth.Text = "December " + _year; break;
             }
         }
+        public string eventName { get; set; } public string eventInfo { get; set; }
+        public Image image { get; set; } public DateTime date { get; set; }
+
         private void DisplayDay()
         {
+            
+            getDate();
+            int len = events.Count;
             //selectedDate = _year + "-" + _month + "-" + day;
             DateContainer.Controls.Clear();
             if (monthnow == _month) { btnprev.Enabled = false; }
@@ -220,6 +299,15 @@ namespace TheNeighborhoodApp
             DateTime startofMonth = new DateTime(_year, _month, 1);
             totalDays = DateTime.DaysInMonth(_year, _month);
             int startoftheWeek = Convert.ToInt32(startofMonth.DayOfWeek.ToString("d")) + 1;
+
+            /*con.Open();
+            cmm = new SqlCommand("Select EventName,Date from Events", con);
+            dr = cmm.ExecuteReader();
+            while(dr.Read())
+            {
+                events.Add(dr.GetValue(4), dr.GetValue(1));
+            }
+            con.Close();*/
             
             
             for (int i = 1; i < startoftheWeek; i++)
@@ -228,24 +316,62 @@ namespace TheNeighborhoodApp
                 UserControlBlank blank = new UserControlBlank();
                 DateContainer.Controls.Add(blank);
             }
+            int index = 0;
             for (int i = 1; i <= totalDays; i++)
             {
                 UserControlDays days = new UserControlDays();
+
+
+                /*con.Open();
+                cmm = new SqlCommand("Select EventName from Events where date = '"+ 
+                    _year + "-" + _month + "-" + i + "'", con);
+                dr = cmm.ExecuteReader();
                
-                if (selectedDate == _year + "-" + _month + "-" + i)
+                days.Dates(i);
+                days.eventLabel(dr.GetValue(1).ToString());
+                DateContainer.Controls.Add(days);
+                con.Close();*/
+
+                //System.Windows.Forms.MessageBox.Show(string.Format("{0:D2}", _month) + "/" + string.Format("{0:D2}",i) + "/" + _year);
+
+
+
+
+                //System.Windows.Forms.MessageBox.Show((string.Format("{0:D2}", _month) + "/" + string.Format("{0:D2}", i) + "/" + _year));
+                
+               // System.Windows.Forms.MessageBox.Show(index.ToString());
+                //System.Windows.Forms.MessageBox.Show(events[index].ToString());
+                string countDate = (string.Format("{0:D2}", _month) + "/" + string.Format("{0:D2}", i) + "/" + _year);
+                if(events.Count > index)
                 {
-                    days.Dates(i);days.displayEvent(selectedDate);
-                    DateContainer.Controls.Add(days);
+                    if (events[index].Equals(countDate))
+                    {
+                        con.Open();
+                        cmm = new SqlCommand("Select EventName from Events where date = '" +
+                           events[index] + "'", con);
+                        dr = cmm.ExecuteReader();
+                        while (dr.Read())
+                        {
+
+                            days.Dates(i); days.eventLabel(dr.GetValue(0).ToString());
+                            DateContainer.Controls.Add(days);
+                        }
+                        //System.Windows.Forms.MessageBox.Show("ookay");
+                        index = index + 1;
+
+                        con.Close();
+                    }
+                    else
+                    {
+                        days.Dates(i);
+                        DateContainer.Controls.Add(days);
+                    }
                 }
                 else
                 {
-                    days.Dates(i); 
+                    days.Dates(i);
                     DateContainer.Controls.Add(days);
-
                 }
-                
-                
-
             }
             switch (_month)
             {

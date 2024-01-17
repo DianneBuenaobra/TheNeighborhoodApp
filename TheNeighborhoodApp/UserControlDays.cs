@@ -17,54 +17,32 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         SqlDataReader dr;
         DBConnection db = new DBConnection();
-       
+
+        //private string lbl;
         public UserControlDays()
         {
             InitializeComponent();
             cnn = new SqlConnection(db.MyConnection());
 
+
+
             
-
-          
         }
-
+        //public string labels { set { lbl = value; } get => lbl; }
+        public void eventLabel(string name){
+            label1.Text = name + "";
+            System.Windows.Forms.MessageBox.Show(label1.Text);
+        }
         public void Dates(int num)
         {
             txtDate.Text = num + "";
         }
-        public string setEvent { get; set;}
-        public void displayEvent(string date)
-        {
-            cnn.Open();
-            cmm = new SqlCommand("SELECT * FROM Events WHERE Date = " + date, cnn);
-            dr = cmm.ExecuteReader();
-            while (dr.Read())
-            {
-                label1.Text = (string)dr.GetValue(1);
-
-            }
-            cnn.Close();
-            /*cnn.Open();
-            cmm = new SqlCommand("SELECT * FROM Events WHERE Date = @date" , cnn);
-            cmm.Parameters.AddWithValue("@date", year + "-" + month + "-" + day);
-            //int d = 1;
-            dr = cmm.ExecuteReader();
-            while(dr.Read())
-            {
-
-                setEvent = (string)dr.GetValue(1);
-                    //d++;
-                
-            }
-            
-            cnn.Close();
-
-            label1.Text = setEvent;*/
-        }
-
+        
         private void UserControlDays_Load(object sender, EventArgs e)
         {
             label1.Text = "";
         }
+
+       
     }
 }
