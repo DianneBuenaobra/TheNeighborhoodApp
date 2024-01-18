@@ -17,6 +17,8 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         SqlDataReader dr;
         DBConnection db = new DBConnection();
+        FrmAdminCalendar calendar = new FrmAdminCalendar();
+        string eventname;
 
         //private string lbl;
         public UserControlDays()
@@ -30,8 +32,8 @@ namespace TheNeighborhoodApp
         }
         //public string labels { set { lbl = value; } get => lbl; }
         public void eventLabel(string name){
-            label1.Text = name + "";
-            System.Windows.Forms.MessageBox.Show(label1.Text);
+            eventname = name;
+            label1.Text = eventname;
         }
         public void Dates(int num)
         {
@@ -40,7 +42,7 @@ namespace TheNeighborhoodApp
         
         private void UserControlDays_Load(object sender, EventArgs e)
         {
-            label1.Text = "";
+            
         }
 
        
