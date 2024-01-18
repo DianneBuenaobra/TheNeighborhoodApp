@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -146,7 +147,7 @@ namespace TheNeighborhoodApp
         {
 
 
-            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified FROM UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Verified, Photo FROM UserInfo WHERE Username = '" + usertxt.Text + "' AND Password = '" + userpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -162,6 +163,12 @@ namespace TheNeighborhoodApp
                 _userInfo.setUserType(dr.GetValue(8).ToString());
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
                 _userInfo.setVerified(dr.GetValue(10).ToString()); ;
+                if (dr[11] != DBNull.Value)
+                {
+                    byte[] img = (byte[])(dr[11]);
+                    MemoryStream ms = new MemoryStream(img);
+                    _userInfo.image = Image.FromStream(ms);
+                }
             }
             dr.Close();
 
@@ -174,7 +181,7 @@ namespace TheNeighborhoodApp
         {
 
 
-            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number] FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender, Username, Password, UserType, [Phone Number], Photo FROM UserInfo WHERE Username = '" + admintxt.Text + "' AND Password = '" + adminpasswordtxt.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dr = cmd.ExecuteReader();
             
@@ -190,6 +197,12 @@ namespace TheNeighborhoodApp
                 _userInfo.setPassword(dr.GetValue(7).ToString());
                 _userInfo.setUserType(dr.GetValue(8).ToString());
                 _userInfo.setPhonenumber(dr.GetValue(9).ToString());
+                if (dr[10] != DBNull.Value)
+                {
+                    byte[] img = (byte[])(dr[10]);
+                    MemoryStream ms = new MemoryStream(img);
+                    _userInfo.image = Image.FromStream(ms);
+                }
 
             }
 

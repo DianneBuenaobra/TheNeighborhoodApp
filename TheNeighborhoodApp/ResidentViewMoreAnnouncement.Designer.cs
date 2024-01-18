@@ -68,6 +68,7 @@
             this.txttitle.ForeColor = System.Drawing.Color.Black;
             this.txttitle.Location = new System.Drawing.Point(152, 63);
             this.txttitle.Name = "txttitle";
+            this.txttitle.ReadOnly = true;
             this.txttitle.Size = new System.Drawing.Size(290, 20);
             this.txttitle.TabIndex = 22;
             // 
@@ -86,6 +87,7 @@
             this.txtdescription.Location = new System.Drawing.Point(30, 139);
             this.txtdescription.Multiline = true;
             this.txtdescription.Name = "txtdescription";
+            this.txtdescription.ReadOnly = true;
             this.txtdescription.Size = new System.Drawing.Size(302, 254);
             this.txtdescription.TabIndex = 20;
             // 

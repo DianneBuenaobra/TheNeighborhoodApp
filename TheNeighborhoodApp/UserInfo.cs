@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,8 @@ namespace TheNeighborhoodApp
         public int getAge() { return Age; }
         public int getHomenumber() { return Homenumber;}
         public void setHomenumber(int value) { Homenumber = value; }
+
+        public Image image { get; set; }
       
        
      

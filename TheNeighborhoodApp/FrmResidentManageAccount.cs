@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,7 @@ namespace TheNeighborhoodApp
             gendertxt.Text = _UserInfo.getGender();
             usernameTxt.Text = _UserInfo.getUsername();
             passwordTxt.Text = _UserInfo.getPassword();
+            pictureBox1.Image = _UserInfo.image;
 
         }
 
@@ -46,11 +48,10 @@ namespace TheNeighborhoodApp
             BtnSubmit.Visible = false;
             BtnEdit.Visible = true;
             displayPersonalInfo();
-            panel1.Enabled = false;
+            
 
-            addressTxt.Enabled = false;
-            gendertxt.Enabled = false;
-            NameTxt.Enabled = false;
+            enableTxt(false, false, false);
+            button1.Enabled = false;
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
@@ -59,11 +60,20 @@ namespace TheNeighborhoodApp
             BtnSubmit.Visible = true;
             BtnEdit.Visible = false;
 
+            button1.Enabled = true;
+            enableTxt(true, true, true);
+        }
+
+        private void enableTxt(bool age, bool contact, bool password)
+        {
+            AgeTxt.Enabled = age;
+            numTxt.Enabled = contact;
+            passwordTxt.Enabled = password;
+
             usernameTxt.Enabled = false;
             addressTxt.Enabled = false;
             gendertxt.Enabled = false;
             NameTxt.Enabled = false;
-            panel1.Enabled = true;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -72,7 +82,8 @@ namespace TheNeighborhoodApp
             BtnSubmit.Visible = false;
             BtnEdit.Visible = true;
 
-            panel1.Enabled = false;
+            enableTxt(false, false, false);
+            button1.Enabled = false;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
@@ -122,7 +133,7 @@ namespace TheNeighborhoodApp
         public void updatePersonalInfo()
         {
             string n = "Resident1";
-            string query = "UPDATE UserInfo SET Age = @age, [Phone Number] = @number, Password = @password WHERE Username = '"+ n + "';";
+            string query = "UPDATE UserInfo SET Age = @age, [Phone Number] = @number, Password = @password, Photo = @image WHERE Username = '"+ n + "';";
 
             SqlCommand cmd = new SqlCommand(query, cnn);
           
@@ -133,6 +144,8 @@ namespace TheNeighborhoodApp
             cmd.Parameters.AddWithValue("@Password", passwordTxt.Text);
           
             cmd.Parameters.AddWithValue("@number", numTxt.Text);
+
+            cmd.Parameters.AddWithValue("@image", getPhoto());
           
             cmd.ExecuteNonQuery();
             MessageBox.Show("Succesfully updated");
@@ -141,6 +154,23 @@ namespace TheNeighborhoodApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfiledialog = new OpenFileDialog();
+            if (openfiledialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(openfiledialog.FileName);
+            }
+        }
+       
+        public byte[] getPhoto()
+        {
+            MemoryStream stream = new MemoryStream();
+            pictureBox1.Image.Save(stream, pictureBox1.Image.RawFormat);
+
+            return stream.GetBuffer();
         }
     }
 }

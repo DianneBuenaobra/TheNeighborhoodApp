@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.NameTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,20 +53,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(198, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Personal Data";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(38, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 18);
@@ -76,9 +66,9 @@
             // 
             // NameTxt
             // 
-            this.NameTxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.NameTxt.BackColor = System.Drawing.Color.White;
             this.NameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTxt.ForeColor = System.Drawing.Color.White;
+            this.NameTxt.ForeColor = System.Drawing.Color.Black;
             this.NameTxt.Location = new System.Drawing.Point(41, 171);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(260, 26);
@@ -88,6 +78,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(38, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 18);
@@ -96,9 +87,9 @@
             // 
             // AgeTxt
             // 
-            this.AgeTxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.AgeTxt.BackColor = System.Drawing.Color.White;
             this.AgeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeTxt.ForeColor = System.Drawing.Color.White;
+            this.AgeTxt.ForeColor = System.Drawing.Color.Black;
             this.AgeTxt.Location = new System.Drawing.Point(41, 225);
             this.AgeTxt.Name = "AgeTxt";
             this.AgeTxt.Size = new System.Drawing.Size(260, 26);
@@ -106,9 +97,9 @@
             // 
             // addressTxt
             // 
-            this.addressTxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.addressTxt.BackColor = System.Drawing.Color.White;
             this.addressTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxt.ForeColor = System.Drawing.Color.White;
+            this.addressTxt.ForeColor = System.Drawing.Color.Black;
             this.addressTxt.Location = new System.Drawing.Point(41, 280);
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.Size = new System.Drawing.Size(260, 26);
@@ -118,6 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(38, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 18);
@@ -126,9 +118,9 @@
             // 
             // numTxt
             // 
-            this.numTxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.numTxt.BackColor = System.Drawing.Color.White;
             this.numTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numTxt.ForeColor = System.Drawing.Color.White;
+            this.numTxt.ForeColor = System.Drawing.Color.Black;
             this.numTxt.Location = new System.Drawing.Point(41, 336);
             this.numTxt.Name = "numTxt";
             this.numTxt.Size = new System.Drawing.Size(260, 26);
@@ -138,6 +130,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(38, 315);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 18);
@@ -148,6 +141,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(39, 442);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 16);
@@ -156,9 +150,9 @@
             // 
             // usernameTxt
             // 
-            this.usernameTxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.usernameTxt.BackColor = System.Drawing.Color.White;
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.ForeColor = System.Drawing.Color.White;
+            this.usernameTxt.ForeColor = System.Drawing.Color.Black;
             this.usernameTxt.Location = new System.Drawing.Point(40, 487);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(260, 22);
@@ -168,6 +162,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(38, 466);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 15);
@@ -176,9 +171,9 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.passwordTxt.BackColor = System.Drawing.Color.White;
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.ForeColor = System.Drawing.Color.White;
+            this.passwordTxt.ForeColor = System.Drawing.Color.Black;
             this.passwordTxt.Location = new System.Drawing.Point(41, 536);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(260, 22);
@@ -188,6 +183,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(39, 515);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 15);
@@ -197,7 +193,7 @@
             // BtnEdit
             // 
             this.BtnEdit.BackColor = System.Drawing.Color.Azure;
-            this.BtnEdit.Location = new System.Drawing.Point(190, 612);
+            this.BtnEdit.Location = new System.Drawing.Point(190, 603);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(100, 23);
             this.BtnEdit.TabIndex = 19;
@@ -208,7 +204,7 @@
             // BtnSubmit
             // 
             this.BtnSubmit.BackColor = System.Drawing.Color.Azure;
-            this.BtnSubmit.Location = new System.Drawing.Point(313, 612);
+            this.BtnSubmit.Location = new System.Drawing.Point(313, 603);
             this.BtnSubmit.Name = "BtnSubmit";
             this.BtnSubmit.Size = new System.Drawing.Size(100, 23);
             this.BtnSubmit.TabIndex = 20;
@@ -219,7 +215,7 @@
             // BtnCancel
             // 
             this.BtnCancel.BackColor = System.Drawing.Color.Azure;
-            this.BtnCancel.Location = new System.Drawing.Point(78, 612);
+            this.BtnCancel.Location = new System.Drawing.Point(78, 603);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(100, 23);
             this.BtnCancel.TabIndex = 21;
@@ -229,9 +225,9 @@
             // 
             // gendertxt
             // 
-            this.gendertxt.BackColor = System.Drawing.Color.SteelBlue;
+            this.gendertxt.BackColor = System.Drawing.Color.White;
             this.gendertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gendertxt.ForeColor = System.Drawing.Color.White;
+            this.gendertxt.ForeColor = System.Drawing.Color.Black;
             this.gendertxt.Location = new System.Drawing.Point(42, 395);
             this.gendertxt.Name = "gendertxt";
             this.gendertxt.Size = new System.Drawing.Size(260, 26);
@@ -241,6 +237,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(39, 374);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 18);
@@ -266,7 +263,7 @@
             this.panel1.Controls.Add(this.numTxt);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(78, 32);
+            this.panel1.Location = new System.Drawing.Point(78, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 574);
             this.panel1.TabIndex = 25;
@@ -281,12 +278,15 @@
             this.button1.Size = new System.Drawing.Size(28, 26);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox1.Location = new System.Drawing.Point(112, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -294,13 +294,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(505, 652);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnSubmit);
             this.Controls.Add(this.BtnEdit);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmResidentManageAccount";
             this.Text = "FrmResidentManageAccount";
@@ -309,14 +308,12 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NameTxt;
