@@ -73,12 +73,6 @@
     <Compile Include="adminAnnouncement.Designer.cs">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminNotification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminNotification.Designer.cs">
-      <DependentUpon>AdminNotification.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminViewConcern.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,12 +140,6 @@
     </Compile>
     <Compile Include="FrmAdminNotif.Designer.cs">
       <DependentUpon>FrmAdminNotif.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAdminNotification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdminNotification.Designer.cs">
-      <DependentUpon>FrmAdminNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAdminResidentsList.cs">
       <SubType>Form</SubType>
@@ -270,9 +258,6 @@
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminNotification.resx">
-      <DependentUpon>AdminNotification.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminViewConcern.resx">
       <DependentUpon>AdminViewConcern.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,9 +290,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminNotif.resx">
       <DependentUpon>FrmAdminNotif.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAdminNotification.resx">
-      <DependentUpon>FrmAdminNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminResidentsList.resx">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>
