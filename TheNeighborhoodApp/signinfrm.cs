@@ -26,9 +26,10 @@ namespace TheNeighborhoodApp
             con = new SqlConnection(dbcon.MyConnection()); 
         }
 
+        public Image OriginalImage;
         private void signinfrm_Load(object sender, EventArgs e)
         {
-
+            OriginalImage = pictureBox1.Image;
         }
 
  
@@ -140,6 +141,7 @@ namespace TheNeighborhoodApp
                     signuphomenumtxt.Clear();
                     signupagetxt.Clear();
                     signupnumtxt.Clear();
+                    pictureBox1.Image = OriginalImage;
                     
                 }
                
