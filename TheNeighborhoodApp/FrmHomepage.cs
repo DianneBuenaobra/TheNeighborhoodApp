@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,11 +20,13 @@ namespace TheNeighborhoodApp
         DBConnection dbcon = new DBConnection();
         private UserInfo _userInfo;
 
-        FrmMessages messages = new FrmMessages();
+      
         FrmCalendar calendar = new FrmCalendar();
         public FrmHomepage(UserInfo userInfo)
         {
+            
             this._userInfo = userInfo;
+           
 
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
@@ -32,6 +35,7 @@ namespace TheNeighborhoodApp
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
+             FrmMessages messages = new FrmMessages(_userInfo);
             lineHome.Visible = false;slctHome.Visible = false;
             lineNotif.Visible = false; slctNotif.Visible = false;
             lineMessage.Visible = true;slctMessage.Visible = true;
@@ -75,9 +79,11 @@ namespace TheNeighborhoodApp
         }
         public void displayMessages()
         {
+            FrmMessages messages = new FrmMessages(_userInfo);
             panelHomepage.Visible = true;
             panelHomepage.BringToFront();
             messages.TopLevel = false;
+            panelHomepage.Controls.Clear();
             panelHomepage.Controls.Add(messages);
             messages.BringToFront();
             messages.Show();

@@ -34,7 +34,7 @@ namespace TheNeighborhoodApp
             //Application.Run(new FrmAdminHomepage(us));
             //Application.Run(frmadminCalendar);
             // Application.Run(new FrmAdminHomepage(us));
-            //Application.Run(new FrmMessages());
+           //Application.Run(new FrmMessages(us));
         }
     }
 }

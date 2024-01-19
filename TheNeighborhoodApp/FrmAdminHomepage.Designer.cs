@@ -30,14 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminHomepage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.notif = new System.Windows.Forms.Label();
             this.notifMessage = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.slctMessage = new System.Windows.Forms.PictureBox();
-            this.slctNotif = new System.Windows.Forms.PictureBox();
+            this.notif = new System.Windows.Forms.Label();
             this.menuList = new System.Windows.Forms.Panel();
-            this.btnRList = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.AdminNF = new System.Windows.Forms.Panel();
+            this.btnRList = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -45,16 +43,18 @@
             this.btnCalendar = new System.Windows.Forms.Button();
             this.btnConcerns = new System.Windows.Forms.Button();
             this.slctedMessage = new System.Windows.Forms.PictureBox();
-            this.AdminNF = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.slctMessage = new System.Windows.Forms.PictureBox();
+            this.slctNotif = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
             this.menuList.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctedMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,16 +72,6 @@
             this.panel1.Size = new System.Drawing.Size(505, 43);
             this.panel1.TabIndex = 1;
             // 
-            // notif
-            // 
-            this.notif.AutoSize = true;
-            this.notif.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.notif.Location = new System.Drawing.Point(480, 5);
-            this.notif.Name = "notif";
-            this.notif.Size = new System.Drawing.Size(13, 13);
-            this.notif.TabIndex = 17;
-            this.notif.Text = "1";
-            // 
             // notifMessage
             // 
             this.notifMessage.AutoSize = true;
@@ -92,40 +82,15 @@
             this.notifMessage.TabIndex = 16;
             this.notifMessage.Text = "1";
             // 
-            // btnMenu
+            // notif
             // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(6, 6);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(28, 29);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // slctMessage
-            // 
-            this.slctMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slctMessage.Image = ((System.Drawing.Image)(resources.GetObject("slctMessage.Image")));
-            this.slctMessage.Location = new System.Drawing.Point(425, 5);
-            this.slctMessage.Name = "slctMessage";
-            this.slctMessage.Size = new System.Drawing.Size(30, 30);
-            this.slctMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.slctMessage.TabIndex = 15;
-            this.slctMessage.TabStop = false;
-            this.slctMessage.Click += new System.EventHandler(this.slctMessage_Click);
-            // 
-            // slctNotif
-            // 
-            this.slctNotif.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slctNotif.Image = ((System.Drawing.Image)(resources.GetObject("slctNotif.Image")));
-            this.slctNotif.Location = new System.Drawing.Point(463, 5);
-            this.slctNotif.Name = "slctNotif";
-            this.slctNotif.Size = new System.Drawing.Size(30, 30);
-            this.slctNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.slctNotif.TabIndex = 14;
-            this.slctNotif.TabStop = false;
+            this.notif.AutoSize = true;
+            this.notif.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.notif.Location = new System.Drawing.Point(480, 5);
+            this.notif.Name = "notif";
+            this.notif.Size = new System.Drawing.Size(13, 13);
+            this.notif.TabIndex = 17;
+            this.notif.Text = "1";
             // 
             // menuList
             // 
@@ -143,6 +108,23 @@
             this.menuList.Size = new System.Drawing.Size(184, 725);
             this.menuList.TabIndex = 3;
             this.menuList.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnBack);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(182, 220);
+            this.panel2.TabIndex = 5;
+            // 
+            // AdminNF
+            // 
+            this.AdminNF.Location = new System.Drawing.Point(0, 41);
+            this.AdminNF.Name = "AdminNF";
+            this.AdminNF.Size = new System.Drawing.Size(505, 684);
+            this.AdminNF.TabIndex = 4;
             // 
             // btnRList
             // 
@@ -165,16 +147,6 @@
             this.btnRList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRList.UseVisualStyleBackColor = false;
             this.btnRList.Click += new System.EventHandler(this.btnRList_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnBack);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(182, 220);
-            this.panel2.TabIndex = 5;
             // 
             // btnBack
             // 
@@ -299,12 +271,40 @@
             this.slctedMessage.Visible = false;
             this.slctedMessage.Click += new System.EventHandler(this.slctedMessage_Click);
             // 
-            // AdminNF
+            // btnMenu
             // 
-            this.AdminNF.Location = new System.Drawing.Point(0, 41);
-            this.AdminNF.Name = "AdminNF";
-            this.AdminNF.Size = new System.Drawing.Size(505, 684);
-            this.AdminNF.TabIndex = 4;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(6, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(28, 29);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // slctMessage
+            // 
+            this.slctMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slctMessage.Image = ((System.Drawing.Image)(resources.GetObject("slctMessage.Image")));
+            this.slctMessage.Location = new System.Drawing.Point(425, 5);
+            this.slctMessage.Name = "slctMessage";
+            this.slctMessage.Size = new System.Drawing.Size(30, 30);
+            this.slctMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctMessage.TabIndex = 15;
+            this.slctMessage.TabStop = false;
+            this.slctMessage.Click += new System.EventHandler(this.slctMessage_Click);
+            // 
+            // slctNotif
+            // 
+            this.slctNotif.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slctNotif.Image = ((System.Drawing.Image)(resources.GetObject("slctNotif.Image")));
+            this.slctNotif.Location = new System.Drawing.Point(463, 5);
+            this.slctNotif.Name = "slctNotif";
+            this.slctNotif.Size = new System.Drawing.Size(30, 30);
+            this.slctNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctNotif.TabIndex = 14;
+            this.slctNotif.TabStop = false;
             // 
             // FrmAdminHomepage
             // 
@@ -321,14 +321,14 @@
             this.Load += new System.EventHandler(this.FrmAdminHomepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).EndInit();
             this.menuList.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctedMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).EndInit();
             this.ResumeLayout(false);
 
         }

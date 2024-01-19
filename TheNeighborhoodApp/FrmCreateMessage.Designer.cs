@@ -74,7 +74,9 @@
             // 
             // flowContacts
             // 
+            this.flowContacts.AutoScroll = true;
             this.flowContacts.BackColor = System.Drawing.Color.White;
+            this.flowContacts.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowContacts.Location = new System.Drawing.Point(21, 104);
             this.flowContacts.Name = "flowContacts";
             this.flowContacts.Size = new System.Drawing.Size(444, 459);
