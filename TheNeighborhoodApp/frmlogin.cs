@@ -80,9 +80,10 @@ namespace TheNeighborhoodApp
         {
 
             string usertype = "resident";
-            string query = "SELECT * FROM dbo.UserInfo WHERE Username = '" + usertxt.Text + "' AND password = '" + userpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
-
-            SqlDataAdapter ad = new SqlDataAdapter(query, con);
+            string query = "SELECT * FROM dbo.UserInfo WHERE Username = '" + usertxt.Text + "' AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS AND UserType = '" + usertype + "'";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@password", userpasswordtxt.Text);
+            SqlDataAdapter ad = new SqlDataAdapter(command);
 
             DataTable dtable = new DataTable();
             ad.Fill(dtable);
@@ -120,9 +121,11 @@ namespace TheNeighborhoodApp
         {
 
             string usertype = "admin";
-            string query = "SELECT * FROM dbo.userInfo WHERE Username = '" + admintxt.Text + "' AND password = '" + adminpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
-
-            SqlDataAdapter ad = new SqlDataAdapter(query, con);
+           // string query = "SELECT * FROM dbo.userInfo WHERE Username = '" + admintxt.Text + "' AND password = '" + adminpasswordtxt.Text + "' AND UserType = '" + usertype + "'";
+            string query = "SELECT * FROM dbo.UserInfo WHERE Username = '" + admintxt.Text + "' AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS AND UserType = '" + usertype + "'";
+            SqlCommand command = new SqlCommand(query, con);
+            command.Parameters.AddWithValue("@password", adminpasswordtxt.Text);
+            SqlDataAdapter ad = new SqlDataAdapter(command);
             DataTable dtable = new DataTable();
             ad.Fill(dtable);
 
