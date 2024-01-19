@@ -124,7 +124,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ConcernContactAdmin";
-            this.Text = "Message Admin";
+            this.Text = "kkn43";
             this.Load += new System.EventHandler(this.ConcernContactAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

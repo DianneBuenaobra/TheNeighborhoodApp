@@ -76,15 +76,15 @@ namespace TheNeighborhoodApp
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string gender = genderr();
             int age = 0;
-            if (signupagetxt.Text != "")
+            string gender = genderr();
+            if (signupagetxt.Text != null)
             {
-                 Convert.ToInt32(signupagetxt.Text);
+                age = Convert.ToInt32(signupagetxt.Text);
             }
-          
+            
 
-            if (signupfnametxt.Text == "" || signuplnametxt.Text == ""  || gender =="" ||  signupStreettxt.Text == "" || signupStreettxt.Text == "" || signuphomenumtxt.Text == "" ||   (signupagetxt.Text == ""|| age <=14 ))
+            if (signupfnametxt.Text == ""|| signuplnametxt.Text == "" || gender =="" || signupStreettxt.Text == "" || signuphomenumtxt.Text == "" ||  (signupagetxt.Text == ""|| age <=14))
             {
                 MessageBox.Show("Please fill all the fields correctly.");
             }
