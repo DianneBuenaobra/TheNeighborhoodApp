@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +26,7 @@ namespace TheNeighborhoodApp
         ArrayList events = new ArrayList();     
         int _month, _year, monthnow, totalDays;
         string _eventName, _fromDate, _toDate, _description;
+        
         public static string selectedDate;
         int eventID;
 
@@ -34,6 +36,7 @@ namespace TheNeighborhoodApp
         {
             InitializeComponent();
             con = new SqlConnection(dbcon.MyConnection());
+            
            
 
         }
@@ -152,8 +155,48 @@ namespace TheNeighborhoodApp
             _month--;
             DisplayDay(_month);
         }
+
+        public void timer1_Tick(object sender, EventArgs e)
+        {
+            displayText();
+        }
+
         public string eventName { get; set; } public string eventInfo { get; set; }
         public Image image { get; set; } public DateTime date { get; set; }
+
+        public void displayText()
+        {
+            txtTitle.Text = _eventName; txtDescription.Text = _description;
+        }
+
+        public void DisplayInfo(string eventName)
+        {
+            if(eventName == "")
+            {
+                System.Windows.Forms.MessageBox.Show("No events");
+            }
+            else
+            {
+                con.Open();
+                cmm = new SqlCommand("Select EventName, EvenInfo,Image,Date from Events where EventName = '" + eventName + "'", con);
+                dr = cmm.ExecuteReader();
+                while (dr.Read())
+                {
+                    _eventName = dr.GetValue(0).ToString(); _description = dr.GetValue(1).ToString();
+                    dtPicker1.Value = (DateTime)dr.GetValue(3);
+                    if(dr.GetValue(2) != null)
+                    {
+                        btnAttach.Text = dr.GetValue(2).ToString();
+                    }
+                    
+                    txtTitle.Text = _eventName; txtDescription.Text = _description;
+                    
+                }
+                con.Close();
+            }
+
+            
+        }
 
         private void DisplayDay(int m)
         {
@@ -168,14 +211,7 @@ namespace TheNeighborhoodApp
             totalDays = DateTime.DaysInMonth(_year, m);
             int startoftheWeek = Convert.ToInt32(startofMonth.DayOfWeek.ToString("d")) + 1;
 
-            /*con.Open();
-            cmm = new SqlCommand("Select EventName,Date from Events", con);
-            dr = cmm.ExecuteReader();
-            while(dr.Read())
-            {
-                events.Add(dr.GetValue(4), dr.GetValue(1));
-            }
-            con.Close();*/
+           
             
             
             for (int i = 1; i < startoftheWeek; i++)

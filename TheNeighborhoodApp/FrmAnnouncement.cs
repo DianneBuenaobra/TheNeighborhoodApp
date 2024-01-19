@@ -26,6 +26,7 @@ namespace TheNeighborhoodApp
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
             _userInfo = userinfo;
+            flowLayoutPanel1.BringToFront();
             
         }
         public int announcementid { get; set; }

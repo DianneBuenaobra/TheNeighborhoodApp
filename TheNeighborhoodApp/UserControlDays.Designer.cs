@@ -59,9 +59,11 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDate);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserControlDays";
             this.Size = new System.Drawing.Size(59, 53);
             this.Load += new System.EventHandler(this.UserControlDays_Load);
+            this.Click += new System.EventHandler(this.UserControlDays_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAttach = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnprev = new System.Windows.Forms.Button();
             this.btnnext = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEvent)).BeginInit();
             this.panel2.SuspendLayout();
@@ -348,6 +350,10 @@
             this.btnnext.UseVisualStyleBackColor = true;
             this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmAdminCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,5 +406,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAttach;
         private System.Windows.Forms.PictureBox picEvent;
+        public System.Windows.Forms.Timer timer1;
     }
 }

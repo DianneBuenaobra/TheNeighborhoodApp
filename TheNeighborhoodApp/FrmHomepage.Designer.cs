@@ -30,14 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHomepage));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCalendar = new System.Windows.Forms.PictureBox();
             this.PnlmanageAcc = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.usernamelbl = new System.Windows.Forms.Label();
-            this.panelHomepage = new System.Windows.Forms.Panel();
-            this.Pnllogout = new System.Windows.Forms.Panel();
-            this.BtnLogout = new System.Windows.Forms.Button();
-            this.BtnManageAcc = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.usernamelbl = new System.Windows.Forms.Label();
             this.slctMessage = new System.Windows.Forms.PictureBox();
             this.slctNotif = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -49,9 +46,13 @@
             this.lineMessage = new System.Windows.Forms.PictureBox();
             this.lineHome = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.PictureBox();
+            this.panelHomepage = new System.Windows.Forms.Panel();
+            this.Pnllogout = new System.Windows.Forms.Panel();
+            this.BtnLogout = new System.Windows.Forms.Button();
+            this.BtnManageAcc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
             this.PnlmanageAcc.SuspendLayout();
-            this.Pnllogout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
@@ -64,11 +65,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
+            this.Pnllogout.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnCalendar);
             this.panel1.Controls.Add(this.PnlmanageAcc);
             this.panel1.Controls.Add(this.usernamelbl);
             this.panel1.Controls.Add(this.slctMessage);
@@ -90,11 +93,23 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
+            // btnCalendar
+            // 
+            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
+            this.btnCalendar.Location = new System.Drawing.Point(443, 8);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.Size = new System.Drawing.Size(23, 22);
+            this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCalendar.TabIndex = 17;
+            this.btnCalendar.TabStop = false;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
+            // 
             // PnlmanageAcc
             // 
             this.PnlmanageAcc.Controls.Add(this.label1);
             this.PnlmanageAcc.Controls.Add(this.pictureBox1);
-            this.PnlmanageAcc.Location = new System.Drawing.Point(-1, 0);
+            this.PnlmanageAcc.Location = new System.Drawing.Point(488, 39);
             this.PnlmanageAcc.Name = "PnlmanageAcc";
             this.PnlmanageAcc.Size = new System.Drawing.Size(505, 67);
             this.PnlmanageAcc.TabIndex = 16;
@@ -111,6 +126,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "PERSONAL DATA";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.previous;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // usernamelbl
             // 
             this.usernamelbl.AutoSize = true;
@@ -122,62 +148,6 @@
             this.usernamelbl.TabIndex = 14;
             this.usernamelbl.Text = "label1";
             this.usernamelbl.Click += new System.EventHandler(this.usernamelbl_Click);
-            // 
-            // panelHomepage
-            // 
-            this.panelHomepage.BackColor = System.Drawing.Color.White;
-            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
-            this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
-            this.panelHomepage.TabIndex = 1;
-            this.panelHomepage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomepage_Paint);
-            this.panelHomepage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHomepage_MouseClick);
-            // 
-            // Pnllogout
-            // 
-            this.Pnllogout.BackColor = System.Drawing.Color.Transparent;
-            this.Pnllogout.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.hvhv;
-            this.Pnllogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pnllogout.Controls.Add(this.BtnLogout);
-            this.Pnllogout.Controls.Add(this.BtnManageAcc);
-            this.Pnllogout.Location = new System.Drawing.Point(25, 26);
-            this.Pnllogout.Name = "Pnllogout";
-            this.Pnllogout.Size = new System.Drawing.Size(165, 80);
-            this.Pnllogout.TabIndex = 15;
-            this.Pnllogout.MouseEnter += new System.EventHandler(this.Pnllogout_MouseEnter);
-            this.Pnllogout.MouseLeave += new System.EventHandler(this.Pnllogout_MouseLeave);
-            // 
-            // BtnLogout
-            // 
-            this.BtnLogout.Location = new System.Drawing.Point(11, 46);
-            this.BtnLogout.Name = "BtnLogout";
-            this.BtnLogout.Size = new System.Drawing.Size(144, 23);
-            this.BtnLogout.TabIndex = 1;
-            this.BtnLogout.Text = "Log Out";
-            this.BtnLogout.UseVisualStyleBackColor = true;
-            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
-            // BtnManageAcc
-            // 
-            this.BtnManageAcc.Location = new System.Drawing.Point(11, 15);
-            this.BtnManageAcc.Name = "BtnManageAcc";
-            this.BtnManageAcc.Size = new System.Drawing.Size(144, 23);
-            this.BtnManageAcc.TabIndex = 0;
-            this.BtnManageAcc.Text = "Manage Account";
-            this.BtnManageAcc.UseVisualStyleBackColor = true;
-            this.BtnManageAcc.Click += new System.EventHandler(this.BtnManageAcc_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.previous;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // slctMessage
             // 
@@ -306,6 +276,51 @@
             this.btnProfile.TabStop = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // panelHomepage
+            // 
+            this.panelHomepage.BackColor = System.Drawing.Color.White;
+            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
+            this.panelHomepage.Name = "panelHomepage";
+            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
+            this.panelHomepage.TabIndex = 1;
+            this.panelHomepage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomepage_Paint);
+            this.panelHomepage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHomepage_MouseClick);
+            // 
+            // Pnllogout
+            // 
+            this.Pnllogout.BackColor = System.Drawing.Color.Transparent;
+            this.Pnllogout.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.hvhv;
+            this.Pnllogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pnllogout.Controls.Add(this.BtnLogout);
+            this.Pnllogout.Controls.Add(this.BtnManageAcc);
+            this.Pnllogout.Location = new System.Drawing.Point(25, 26);
+            this.Pnllogout.Name = "Pnllogout";
+            this.Pnllogout.Size = new System.Drawing.Size(165, 80);
+            this.Pnllogout.TabIndex = 15;
+            this.Pnllogout.MouseEnter += new System.EventHandler(this.Pnllogout_MouseEnter);
+            this.Pnllogout.MouseLeave += new System.EventHandler(this.Pnllogout_MouseLeave);
+            // 
+            // BtnLogout
+            // 
+            this.BtnLogout.Location = new System.Drawing.Point(11, 46);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(144, 23);
+            this.BtnLogout.TabIndex = 1;
+            this.BtnLogout.Text = "Log Out";
+            this.BtnLogout.UseVisualStyleBackColor = true;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
+            // BtnManageAcc
+            // 
+            this.BtnManageAcc.Location = new System.Drawing.Point(11, 15);
+            this.BtnManageAcc.Name = "BtnManageAcc";
+            this.BtnManageAcc.Size = new System.Drawing.Size(144, 23);
+            this.BtnManageAcc.TabIndex = 0;
+            this.BtnManageAcc.Text = "Manage Account";
+            this.BtnManageAcc.UseVisualStyleBackColor = true;
+            this.BtnManageAcc.Click += new System.EventHandler(this.BtnManageAcc_Click);
+            // 
             // FrmHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,9 +336,9 @@
             this.Load += new System.EventHandler(this.FrmHomepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
             this.PnlmanageAcc.ResumeLayout(false);
             this.PnlmanageAcc.PerformLayout();
-            this.Pnllogout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).EndInit();
@@ -336,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
+            this.Pnllogout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -362,5 +378,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel Pnllogout;
+        private System.Windows.Forms.PictureBox btnCalendar;
     }
 }
