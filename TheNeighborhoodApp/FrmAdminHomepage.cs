@@ -20,6 +20,7 @@ namespace TheNeighborhoodApp
         adminAnnouncement announcement;
         SqlDataReader dr;
 
+       // FrmAdminConcern concernfrm;
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
@@ -28,6 +29,7 @@ namespace TheNeighborhoodApp
         public FrmAdminHomepage(UserInfo userInfo)
         {
             this._userInfo = userInfo;
+          
 
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
@@ -36,7 +38,9 @@ namespace TheNeighborhoodApp
 
         private void FrmAdminHomepage_Load(object sender, EventArgs e)
         {
+            _userInfo.getUsername();
             displayAnnouncement();
+           
 
 
         }
@@ -58,7 +62,7 @@ namespace TheNeighborhoodApp
 
         public void displayConcern()
         {
-            FrmAdminConcern frmAdminConcern = new FrmAdminConcern();
+            FrmAdminConcern frmAdminConcern = new FrmAdminConcern(_userInfo);
             AdminNF.Visible = true;
             AdminNF.BringToFront();
            

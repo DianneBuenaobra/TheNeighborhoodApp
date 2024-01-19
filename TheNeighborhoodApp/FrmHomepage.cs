@@ -154,6 +154,8 @@ namespace TheNeighborhoodApp
 
         public void displayManageAcc()
         {
+
+           
             panelHomepage.Visible = true;
             panelHomepage.BringToFront();
             FrmResidentManageAccount frm = new FrmResidentManageAccount(_userInfo);

@@ -71,8 +71,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.slctCalendar);
-            this.panel1.Controls.Add(this.btnCalendar);
             this.panel1.Controls.Add(this.PnlmanageAcc);
             this.panel1.Controls.Add(this.usernamelbl);
             this.panel1.Controls.Add(this.slctMessage);
@@ -109,7 +107,7 @@
             // 
             this.PnlmanageAcc.Controls.Add(this.label1);
             this.PnlmanageAcc.Controls.Add(this.pictureBox1);
-            this.PnlmanageAcc.Location = new System.Drawing.Point(488, 39);
+            this.PnlmanageAcc.Location = new System.Drawing.Point(-1, 0);
             this.PnlmanageAcc.Name = "PnlmanageAcc";
             this.PnlmanageAcc.Size = new System.Drawing.Size(505, 67);
             this.PnlmanageAcc.TabIndex = 16;
@@ -312,29 +310,15 @@
             this.BtnManageAcc.UseVisualStyleBackColor = true;
             this.BtnManageAcc.Click += new System.EventHandler(this.BtnManageAcc_Click);
             // 
-            // slctCalendar
-            // 
-            this.slctCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slctCalendar.Image = ((System.Drawing.Image)(resources.GetObject("slctCalendar.Image")));
-            this.slctCalendar.Location = new System.Drawing.Point(473, 7);
-            this.slctCalendar.Name = "slctCalendar";
-            this.slctCalendar.Size = new System.Drawing.Size(23, 22);
-            this.slctCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.slctCalendar.TabIndex = 18;
-            this.slctCalendar.TabStop = false;
-            this.slctCalendar.Visible = false;
-            this.slctCalendar.Click += new System.EventHandler(this.slctCalendar_Click);
-            // 
             // FrmHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(505, 725);
-            this.ControlBox = false;
             this.Controls.Add(this.Pnllogout);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelHomepage);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "FrmHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -356,7 +340,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
             this.Pnllogout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.slctCalendar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,6 +366,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel Pnllogout;
         private System.Windows.Forms.PictureBox btnCalendar;
-        private System.Windows.Forms.PictureBox slctCalendar;
     }
 }

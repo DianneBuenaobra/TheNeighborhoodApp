@@ -39,6 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbldate = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sendbtn
@@ -158,12 +160,21 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Date:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(237, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // ContactResidentConcern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(495, 263);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbldate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblid);
@@ -178,6 +189,7 @@
             this.Name = "ContactResidentConcern";
             this.Text = "Contact Id:";
             this.Load += new System.EventHandler(this.ContactResidentConcern_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -18,13 +18,14 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         private UserInfo _userInfo;
+       
         public frmlogin(UserInfo userinfo)
         {
             con = new SqlConnection(dbcon.MyConnection());
             con.Open();
             _userInfo = userinfo;
             InitializeComponent();
-
+       
         }
 
         private void frmlogin_Load(object sender, EventArgs e)
@@ -207,7 +208,7 @@ namespace TheNeighborhoodApp
             }
 
             dr.Close();
-           
+          
 
         }
         private void loginbtn_Click(object sender, EventArgs e)
@@ -267,6 +268,8 @@ namespace TheNeighborhoodApp
             else
             {
                 admin();
+                
+                
             }
 
         }
