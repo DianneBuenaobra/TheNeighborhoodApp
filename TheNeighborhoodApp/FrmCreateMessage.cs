@@ -35,7 +35,7 @@ namespace TheNeighborhoodApp
         }
         //public string getName { set; get; }
         //public string getUsername { set; get; }
-        
+       
         public void getContacts()
         {
             contactusernames.Clear();contactNames.Clear();
@@ -53,6 +53,7 @@ namespace TheNeighborhoodApp
 
 /*for(int i = 0; i < contactNames.Count; i++)
             {
+                UserControlMessages ucmessages = new UserControlMessages();
                 ucmessages.Labels(contactNames[i].ToString(), contactusernames[i].ToString());
 
                 flowContacts.Controls.Add(ucmessages);

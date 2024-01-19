@@ -120,7 +120,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(171, 22);
+            this.label1.Location = new System.Drawing.Point(174, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 20);
             this.label1.TabIndex = 1;
@@ -148,6 +148,61 @@
             this.usernamelbl.TabIndex = 14;
             this.usernamelbl.Text = "label1";
             this.usernamelbl.Click += new System.EventHandler(this.usernamelbl_Click);
+            // 
+            // panelHomepage
+            // 
+            this.panelHomepage.BackColor = System.Drawing.Color.White;
+            this.panelHomepage.Location = new System.Drawing.Point(0, 67);
+            this.panelHomepage.Name = "panelHomepage";
+            this.panelHomepage.Size = new System.Drawing.Size(505, 660);
+            this.panelHomepage.TabIndex = 1;
+            this.panelHomepage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomepage_Paint);
+            this.panelHomepage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHomepage_MouseClick);
+            // 
+            // Pnllogout
+            // 
+            this.Pnllogout.BackColor = System.Drawing.Color.Transparent;
+            this.Pnllogout.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.hvhv;
+            this.Pnllogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pnllogout.Controls.Add(this.BtnLogout);
+            this.Pnllogout.Controls.Add(this.BtnManageAcc);
+            this.Pnllogout.Location = new System.Drawing.Point(25, 26);
+            this.Pnllogout.Name = "Pnllogout";
+            this.Pnllogout.Size = new System.Drawing.Size(165, 80);
+            this.Pnllogout.TabIndex = 15;
+            this.Pnllogout.MouseEnter += new System.EventHandler(this.Pnllogout_MouseEnter);
+            this.Pnllogout.MouseLeave += new System.EventHandler(this.Pnllogout_MouseLeave);
+            // 
+            // BtnLogout
+            // 
+            this.BtnLogout.Location = new System.Drawing.Point(11, 46);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(144, 23);
+            this.BtnLogout.TabIndex = 1;
+            this.BtnLogout.Text = "Log Out";
+            this.BtnLogout.UseVisualStyleBackColor = true;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
+            // BtnManageAcc
+            // 
+            this.BtnManageAcc.Location = new System.Drawing.Point(11, 15);
+            this.BtnManageAcc.Name = "BtnManageAcc";
+            this.BtnManageAcc.Size = new System.Drawing.Size(144, 23);
+            this.BtnManageAcc.TabIndex = 0;
+            this.BtnManageAcc.Text = "Manage Account";
+            this.BtnManageAcc.UseVisualStyleBackColor = true;
+            this.BtnManageAcc.Click += new System.EventHandler(this.BtnManageAcc_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.previous;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // slctMessage
             // 
@@ -325,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(505, 725);
             this.Controls.Add(this.Pnllogout);
             this.Controls.Add(this.panel1);

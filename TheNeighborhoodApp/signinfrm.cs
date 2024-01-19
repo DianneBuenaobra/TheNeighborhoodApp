@@ -26,9 +26,10 @@ namespace TheNeighborhoodApp
             con = new SqlConnection(dbcon.MyConnection()); 
         }
 
+        public Image OriginalImage;
         private void signinfrm_Load(object sender, EventArgs e)
         {
-
+            OriginalImage = pictureBox1.Image;
         }
 
  
@@ -76,8 +77,13 @@ namespace TheNeighborhoodApp
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            int age = 0;
             string gender = genderr();
-            int age = Convert.ToInt32(signupagetxt.Text);
+            if (signupagetxt.Text != null)
+            {
+                age = Convert.ToInt32(signupagetxt.Text);
+            }
+            
 
             if (signupfnametxt.Text == ""|| signuplnametxt.Text == "" || gender =="" || signupStreettxt.Text == "" || signuphomenumtxt.Text == "" ||  (signupagetxt.Text == ""|| age <=14))
             {
@@ -135,6 +141,7 @@ namespace TheNeighborhoodApp
                     signuphomenumtxt.Clear();
                     signupagetxt.Clear();
                     signupnumtxt.Clear();
+                    pictureBox1.Image = OriginalImage;
                     
                 }
                

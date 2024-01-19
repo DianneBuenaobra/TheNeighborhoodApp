@@ -73,12 +73,24 @@
     <Compile Include="adminAnnouncement.Designer.cs">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminViewConcern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViewConcern.Designer.cs">
+      <DependentUpon>AdminViewConcern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Concern.cs" />
     <Compile Include="ConcernContactAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConcernContactAdmin.Designer.cs">
       <DependentUpon>ConcernContactAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactResidentConcern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactResidentConcern.Designer.cs">
+      <DependentUpon>ContactResidentConcern.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="DisplayHome.cs">
@@ -98,6 +110,18 @@
     </Compile>
     <Compile Include="FrmAdminCalendar.Designer.cs">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminConcern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminConcern.Designer.cs">
+      <DependentUpon>FrmAdminConcern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminMessage.Designer.cs">
+      <DependentUpon>FrmAdminMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAdminEditRListVerification.cs">
       <SubType>Form</SubType>
@@ -246,8 +270,14 @@
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewConcern.resx">
+      <DependentUpon>AdminViewConcern.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConcernContactAdmin.resx">
       <DependentUpon>ConcernContactAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactResidentConcern.resx">
+      <DependentUpon>ContactResidentConcern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayHome.resx">
       <DependentUpon>DisplayHome.cs</DependentUpon>
@@ -257,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminCalendar.resx">
       <DependentUpon>FrmAdminCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminConcern.resx">
+      <DependentUpon>FrmAdminConcern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminMessage.resx">
+      <DependentUpon>FrmAdminMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminEditRListVerification.resx">
       <DependentUpon>FrmAdminEditRListVerification.cs</DependentUpon>
@@ -407,6 +443,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
