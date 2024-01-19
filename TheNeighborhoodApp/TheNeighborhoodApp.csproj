@@ -213,6 +213,12 @@
     <Compile Include="FrmResidentManageAccount.Designer.cs">
       <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMessage.Designer.cs">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResidentViewMoreAnnouncement.cs">
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmResidentManageAccount.resx">
       <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMessage.resx">
+      <DependentUpon>NewMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

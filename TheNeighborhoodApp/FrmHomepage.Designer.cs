@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHomepage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCalendar = new System.Windows.Forms.PictureBox();
+            this.slctCalendar = new System.Windows.Forms.PictureBox();
+            this.btnCal = new System.Windows.Forms.PictureBox();
             this.PnlmanageAcc = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,9 +50,9 @@
             this.Pnllogout = new System.Windows.Forms.Panel();
             this.BtnLogout = new System.Windows.Forms.Button();
             this.BtnManageAcc = new System.Windows.Forms.Button();
-            this.slctCalendar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctCalendar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCal)).BeginInit();
             this.PnlmanageAcc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
@@ -65,12 +66,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
             this.Pnllogout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.slctCalendar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.slctCalendar);
+            this.panel1.Controls.Add(this.btnCal);
             this.panel1.Controls.Add(this.PnlmanageAcc);
             this.panel1.Controls.Add(this.usernamelbl);
             this.panel1.Controls.Add(this.slctMessage);
@@ -91,23 +93,35 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
-            // btnCalendar
+            // slctCalendar
             // 
-            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
-            this.btnCalendar.Location = new System.Drawing.Point(473, 7);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Size = new System.Drawing.Size(23, 22);
-            this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCalendar.TabIndex = 17;
-            this.btnCalendar.TabStop = false;
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
+            this.slctCalendar.Image = ((System.Drawing.Image)(resources.GetObject("slctCalendar.Image")));
+            this.slctCalendar.Location = new System.Drawing.Point(474, 4);
+            this.slctCalendar.Name = "slctCalendar";
+            this.slctCalendar.Size = new System.Drawing.Size(26, 26);
+            this.slctCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctCalendar.TabIndex = 18;
+            this.slctCalendar.TabStop = false;
+            this.slctCalendar.Visible = false;
+            this.slctCalendar.Click += new System.EventHandler(this.slctCalendar_Click);
+            // 
+            // btnCal
+            // 
+            this.btnCal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCal.Image = ((System.Drawing.Image)(resources.GetObject("btnCal.Image")));
+            this.btnCal.Location = new System.Drawing.Point(474, 4);
+            this.btnCal.Name = "btnCal";
+            this.btnCal.Size = new System.Drawing.Size(26, 26);
+            this.btnCal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCal.TabIndex = 17;
+            this.btnCal.TabStop = false;
+            this.btnCal.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
             // PnlmanageAcc
             // 
             this.PnlmanageAcc.Controls.Add(this.label1);
             this.PnlmanageAcc.Controls.Add(this.pictureBox1);
-            this.PnlmanageAcc.Location = new System.Drawing.Point(-1, 0);
+            this.PnlmanageAcc.Location = new System.Drawing.Point(501, 41);
             this.PnlmanageAcc.Name = "PnlmanageAcc";
             this.PnlmanageAcc.Size = new System.Drawing.Size(505, 67);
             this.PnlmanageAcc.TabIndex = 16;
@@ -325,7 +339,8 @@
             this.Load += new System.EventHandler(this.FrmHomepage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slctCalendar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCal)).EndInit();
             this.PnlmanageAcc.ResumeLayout(false);
             this.PnlmanageAcc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -365,6 +380,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel Pnllogout;
-        private System.Windows.Forms.PictureBox btnCalendar;
+        
+        private System.Windows.Forms.PictureBox btnCal;
+        private System.Windows.Forms.PictureBox slctCalendar;
     }
 }

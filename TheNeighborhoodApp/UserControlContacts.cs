@@ -22,5 +22,23 @@ namespace TheNeighborhoodApp
             //MessageBox.Show( name + "-" + lblName.Text);
         }
 
+        private void UserControlContacts_Click(object sender, EventArgs e)
+        {
+            FrmCreateMessage create = new FrmCreateMessage();
+            create.getContact(lblName.Text,lblUsername.Text);
+
+        }
+        public string getName(string name)
+        {
+            name = lblName.Text;
+            MessageBox.Show(name);
+            return name;
+        }
+        public string getUsername(string username)
+        {
+            username = lblUsername.Text;
+            MessageBox.Show(username);
+            return username;
+        }
     }
 }
