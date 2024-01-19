@@ -121,10 +121,36 @@ namespace TheNeighborhoodApp
         {
             Button btn = sender as Button;
             buttonclickedid = Convert.ToInt32(btn.Name);
+            getAnnouncementview();
             ResidentViewMoreAnnouncement viewmore = new ResidentViewMoreAnnouncement(this);
             viewmore.ShowDialog();
             
         }
+
+        public void getAnnouncementview()
+        {
+
+            string query = "SELECT AnnouncementId, Announcement, AnnouncementInfo, Image, Date FROM Announcement WHERE AnnouncementId = '"+buttonclickedid+"'";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                announcementid = (int)dr.GetValue(0);
+                announcement = (string)dr.GetValue(1);
+                announcementinfo = (string)dr.GetValue(2);
+                if (dr[3] != DBNull.Value)
+                {
+                    byte[] img = (byte[])(dr[3]);
+                    MemoryStream ms = new MemoryStream(img);
+                    image = Image.FromStream(ms);
+                }
+
+                date = (DateTime)dr.GetValue(4);
+               
+            }
+            dr.Close();
+        }
+
 
         private void FrmAnnouncement_Load(object sender, EventArgs e)
         {

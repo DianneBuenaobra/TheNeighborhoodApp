@@ -264,6 +264,9 @@
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminNotification.resx">
+      <DependentUpon>AdminNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminViewConcern.resx">
       <DependentUpon>AdminViewConcern.cs</DependentUpon>
     </EmbeddedResource>

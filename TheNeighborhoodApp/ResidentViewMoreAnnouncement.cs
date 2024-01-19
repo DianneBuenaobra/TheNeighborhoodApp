@@ -36,11 +36,11 @@ namespace TheNeighborhoodApp
 
         private void displayFormView(string title, string info, string date, string id, Image image)
         {
-            title = txttitle.Text;
-            info = txtdescription.Text;
-            date = lbldate.Text;
-            id = lblid.Text;
-            image = pictureBox1.Image;
+            txttitle.Text = title;
+            txtdescription.Text = info;
+            lbldate.Text = date;
+            lblid.Text = id;
+            pictureBox1.Image = image;
         }
     
     }
