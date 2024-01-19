@@ -35,13 +35,14 @@ namespace TheNeighborhoodApp
 
         private void FrmAdminHomepage_Load(object sender, EventArgs e)
         {
-            displayHome();
-           
+            displayAnnouncement();
+
+
         }
       
         public Form currentPage { set; get; }
        
-        public void displayHome()
+        public void displayAnnouncement()
         {
             
             AdminNF.Visible = true;
@@ -52,6 +53,19 @@ namespace TheNeighborhoodApp
             currentPage = announcement;
             announcement.BringToFront();
             announcement.Show();
+        }
+
+        public void displayConcern()
+        {
+            FrmAdminConcern frmAdminConcern = new FrmAdminConcern();
+            AdminNF.Visible = true;
+            AdminNF.BringToFront();
+           
+            frmAdminConcern.TopLevel = false;
+            AdminNF.Controls.Add(frmAdminConcern);
+            currentPage = frmAdminConcern;
+            frmAdminConcern.BringToFront();
+            frmAdminConcern.Show();
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -104,7 +118,10 @@ namespace TheNeighborhoodApp
             menuList.Visible = false;
             btnMenu.Visible = true; rlist.eventclickSearch();
             AdminNF.Controls.Clear();
-            displayHome();
+            displayConcern();
+
+
+
         }
 
         private void slctMessage_Click(object sender, EventArgs e)
@@ -127,7 +144,7 @@ namespace TheNeighborhoodApp
             menuList.Visible = false;
             btnMenu.Visible = true; rlist.eventclickSearch();
             AdminNF.Controls.Clear();
-            displayHome();
+            displayAnnouncement();
         }
     }
 }

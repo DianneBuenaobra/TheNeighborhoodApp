@@ -92,6 +92,9 @@ namespace TheNeighborhoodApp
             if (IsValidPhoneNumber(numTxt.Text) && age >= 15 && passwordTxt.Text.Length >= 5)
             {
                 updatePersonalInfo();
+                BtnCancel.Visible = false;
+                BtnSubmit.Visible = false;
+                BtnEdit.Visible = true;
             }
             else if(!IsValidPhoneNumber(numTxt.Text))
             {
@@ -132,8 +135,8 @@ namespace TheNeighborhoodApp
 
         public void updatePersonalInfo()
         {
-            string n = "Resident1";
-            string query = "UPDATE UserInfo SET Age = @age, [Phone Number] = @number, Password = @password, Photo = @image WHERE Username = '"+ n + "';";
+           
+            string query = "UPDATE UserInfo SET Age = @age, [Phone Number] = @number, Password = @password, Photo = @image WHERE Username = '"+ _UserInfo.getUsername() + "';";
 
             SqlCommand cmd = new SqlCommand(query, cnn);
           
@@ -149,6 +152,11 @@ namespace TheNeighborhoodApp
           
             cmd.ExecuteNonQuery();
             MessageBox.Show("Succesfully updated");
+
+            _UserInfo.setAge(Convert.ToInt32(AgeTxt.Text));
+            _UserInfo.setPassword(passwordTxt.Text);
+            _UserInfo.setPhonenumber(numTxt.Text);
+            _UserInfo.image = pictureBox1.Image;
         }
 
         private void button2_Click(object sender, EventArgs e)

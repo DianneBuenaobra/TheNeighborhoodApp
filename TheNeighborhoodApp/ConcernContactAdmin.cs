@@ -53,10 +53,10 @@ namespace TheNeighborhoodApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            insertMessage();
+            insertMessagetoAdmin();
         }
 
-        public void insertMessage()
+        public void insertMessagetoAdmin()
         {
             DateTime today = DateTime.Today;
             string fullname = _userinfo.getFirstname() + " " + _userinfo.getLastname();

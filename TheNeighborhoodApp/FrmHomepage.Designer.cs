@@ -105,7 +105,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(171, 22);
+            this.label1.Location = new System.Drawing.Point(174, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 20);
             this.label1.TabIndex = 1;
@@ -126,10 +126,9 @@
             // panelHomepage
             // 
             this.panelHomepage.BackColor = System.Drawing.Color.White;
-            this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
+            this.panelHomepage.Location = new System.Drawing.Point(0, 67);
             this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
+            this.panelHomepage.Size = new System.Drawing.Size(505, 660);
             this.panelHomepage.TabIndex = 1;
             this.panelHomepage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomepage_Paint);
             this.panelHomepage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHomepage_MouseClick);
@@ -310,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(505, 725);
             this.Controls.Add(this.Pnllogout);
             this.Controls.Add(this.panel1);

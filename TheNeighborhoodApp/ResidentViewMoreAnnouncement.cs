@@ -30,13 +30,17 @@ namespace TheNeighborhoodApp
 
         private void ResidentViewMoreAnnouncement_Load(object sender, EventArgs e)
         {
-            txttitle.Text = announcement.announcement;
-            txtdescription.Text = announcement.announcementinfo;
-            lbldate.Text = announcement.date.ToString();
-           lblid.Text = announcement.announcementid.ToString();
-            pictureBox1.Image = announcement.image;
-            
+          //title, info, id, image, 
+            displayFormView(announcement.announcement, announcement.announcementinfo, announcement.date.ToString(), announcement.announcementid.ToString(), announcement.image);
+        }
 
+        private void displayFormView(string title, string info, string date, string id, Image image)
+        {
+            title = txttitle.Text;
+            info = txtdescription.Text;
+            date = lbldate.Text;
+            id = lblid.Text;
+            image = pictureBox1.Image;
         }
     
     }
