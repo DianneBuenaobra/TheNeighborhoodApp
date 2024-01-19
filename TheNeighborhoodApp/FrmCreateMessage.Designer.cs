@@ -49,9 +49,10 @@
             // 
             this.tbContact.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContact.Location = new System.Drawing.Point(58, 42);
             this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(379, 20);
+            this.tbContact.Size = new System.Drawing.Size(379, 21);
             this.tbContact.TabIndex = 1;
             // 
             // label2
@@ -88,13 +89,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 636);
-            this.ControlBox = false;
             this.Controls.Add(this.flowContacts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pMessage);
             this.Controls.Add(this.tbContact);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCreateMessage";
             this.Load += new System.EventHandler(this.FrmCreateMessage_Load);
             this.ResumeLayout(false);

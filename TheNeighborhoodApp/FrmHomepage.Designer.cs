@@ -37,7 +37,6 @@
             this.usernamelbl = new System.Windows.Forms.Label();
             this.slctMessage = new System.Windows.Forms.PictureBox();
             this.slctNotif = new System.Windows.Forms.PictureBox();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
             this.slctHome = new System.Windows.Forms.PictureBox();
             this.btnNotif = new System.Windows.Forms.PictureBox();
             this.btnMessage = new System.Windows.Forms.PictureBox();
@@ -50,13 +49,13 @@
             this.Pnllogout = new System.Windows.Forms.Panel();
             this.BtnLogout = new System.Windows.Forms.Button();
             this.BtnManageAcc = new System.Windows.Forms.Button();
+            this.slctCalendar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
             this.PnlmanageAcc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNotif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMessage)).BeginInit();
@@ -66,17 +65,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
             this.Pnllogout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slctCalendar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.slctCalendar);
             this.panel1.Controls.Add(this.btnCalendar);
             this.panel1.Controls.Add(this.PnlmanageAcc);
             this.panel1.Controls.Add(this.usernamelbl);
             this.panel1.Controls.Add(this.slctMessage);
             this.panel1.Controls.Add(this.slctNotif);
-            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.slctHome);
             this.panel1.Controls.Add(this.btnNotif);
             this.panel1.Controls.Add(this.btnMessage);
@@ -97,7 +97,7 @@
             // 
             this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
-            this.btnCalendar.Location = new System.Drawing.Point(443, 8);
+            this.btnCalendar.Location = new System.Drawing.Point(473, 7);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(23, 22);
             this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,68 +141,14 @@
             // 
             this.usernamelbl.AutoSize = true;
             this.usernamelbl.BackColor = System.Drawing.Color.SteelBlue;
+            this.usernamelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernamelbl.ForeColor = System.Drawing.Color.White;
             this.usernamelbl.Location = new System.Drawing.Point(41, 9);
             this.usernamelbl.Name = "usernamelbl";
-            this.usernamelbl.Size = new System.Drawing.Size(35, 13);
+            this.usernamelbl.Size = new System.Drawing.Size(41, 15);
             this.usernamelbl.TabIndex = 14;
             this.usernamelbl.Text = "label1";
             this.usernamelbl.Click += new System.EventHandler(this.usernamelbl_Click);
-            // 
-            // panelHomepage
-            // 
-            this.panelHomepage.BackColor = System.Drawing.Color.White;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 67);
-            this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 660);
-            this.panelHomepage.TabIndex = 1;
-            this.panelHomepage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomepage_Paint);
-            this.panelHomepage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHomepage_MouseClick);
-            // 
-            // Pnllogout
-            // 
-            this.Pnllogout.BackColor = System.Drawing.Color.Transparent;
-            this.Pnllogout.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.hvhv;
-            this.Pnllogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pnllogout.Controls.Add(this.BtnLogout);
-            this.Pnllogout.Controls.Add(this.BtnManageAcc);
-            this.Pnllogout.Location = new System.Drawing.Point(25, 26);
-            this.Pnllogout.Name = "Pnllogout";
-            this.Pnllogout.Size = new System.Drawing.Size(165, 80);
-            this.Pnllogout.TabIndex = 15;
-            this.Pnllogout.MouseEnter += new System.EventHandler(this.Pnllogout_MouseEnter);
-            this.Pnllogout.MouseLeave += new System.EventHandler(this.Pnllogout_MouseLeave);
-            // 
-            // BtnLogout
-            // 
-            this.BtnLogout.Location = new System.Drawing.Point(11, 46);
-            this.BtnLogout.Name = "BtnLogout";
-            this.BtnLogout.Size = new System.Drawing.Size(144, 23);
-            this.BtnLogout.TabIndex = 1;
-            this.BtnLogout.Text = "Log Out";
-            this.BtnLogout.UseVisualStyleBackColor = true;
-            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
-            // BtnManageAcc
-            // 
-            this.BtnManageAcc.Location = new System.Drawing.Point(11, 15);
-            this.BtnManageAcc.Name = "BtnManageAcc";
-            this.BtnManageAcc.Size = new System.Drawing.Size(144, 23);
-            this.BtnManageAcc.TabIndex = 0;
-            this.BtnManageAcc.Text = "Manage Account";
-            this.BtnManageAcc.UseVisualStyleBackColor = true;
-            this.BtnManageAcc.Click += new System.EventHandler(this.BtnManageAcc_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::TheNeighborhoodApp.Properties.Resources.previous;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 29);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // slctMessage
             // 
@@ -227,16 +173,6 @@
             this.slctNotif.TabStop = false;
             this.slctNotif.Visible = false;
             this.slctNotif.Click += new System.EventHandler(this.slctNotif_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(472, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSearch.TabIndex = 11;
-            this.btnSearch.TabStop = false;
             // 
             // slctHome
             // 
@@ -335,9 +271,9 @@
             // 
             this.panelHomepage.BackColor = System.Drawing.Color.White;
             this.panelHomepage.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHomepage.Location = new System.Drawing.Point(0, 73);
+            this.panelHomepage.Location = new System.Drawing.Point(0, 70);
             this.panelHomepage.Name = "panelHomepage";
-            this.panelHomepage.Size = new System.Drawing.Size(505, 652);
+            this.panelHomepage.Size = new System.Drawing.Size(505, 655);
             this.panelHomepage.TabIndex = 1;
             this.panelHomepage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHomepage_Paint);
             this.panelHomepage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelHomepage_MouseClick);
@@ -376,12 +312,26 @@
             this.BtnManageAcc.UseVisualStyleBackColor = true;
             this.BtnManageAcc.Click += new System.EventHandler(this.BtnManageAcc_Click);
             // 
+            // slctCalendar
+            // 
+            this.slctCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slctCalendar.Image = ((System.Drawing.Image)(resources.GetObject("slctCalendar.Image")));
+            this.slctCalendar.Location = new System.Drawing.Point(473, 7);
+            this.slctCalendar.Name = "slctCalendar";
+            this.slctCalendar.Size = new System.Drawing.Size(23, 22);
+            this.slctCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.slctCalendar.TabIndex = 18;
+            this.slctCalendar.TabStop = false;
+            this.slctCalendar.Visible = false;
+            this.slctCalendar.Click += new System.EventHandler(this.slctCalendar_Click);
+            // 
             // FrmHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(505, 725);
+            this.ControlBox = false;
             this.Controls.Add(this.Pnllogout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelHomepage);
@@ -397,7 +347,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctNotif)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slctHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNotif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMessage)).EndInit();
@@ -407,6 +356,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lineHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
             this.Pnllogout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.slctCalendar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,7 +371,6 @@
         private System.Windows.Forms.PictureBox lineNotif;
         private System.Windows.Forms.PictureBox lineMessage;
         private System.Windows.Forms.PictureBox lineHome;
-        private System.Windows.Forms.PictureBox btnSearch;
         private System.Windows.Forms.PictureBox slctMessage;
         private System.Windows.Forms.PictureBox slctNotif;
         private System.Windows.Forms.PictureBox btnNotif;
@@ -434,5 +383,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel Pnllogout;
         private System.Windows.Forms.PictureBox btnCalendar;
+        private System.Windows.Forms.PictureBox slctCalendar;
     }
 }

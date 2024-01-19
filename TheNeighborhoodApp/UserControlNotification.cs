@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TheNeighborhoodApp
 {
-    public partial class FrmAdminNotification : Form
+    public partial class UserControlNotification : UserControl
     {
-        public FrmAdminNotification()
+        public UserControlNotification()
         {
             InitializeComponent();
         }
