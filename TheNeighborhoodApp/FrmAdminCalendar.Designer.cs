@@ -403,9 +403,9 @@
         private System.Windows.Forms.Button btnnext;
         private System.Windows.Forms.DateTimePicker dtPicker1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAttach;
         private System.Windows.Forms.PictureBox picEvent;
+        public System.Windows.Forms.Timer timer1;
     }
 }

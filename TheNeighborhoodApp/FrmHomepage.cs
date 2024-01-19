@@ -18,6 +18,9 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         private UserInfo _userInfo;
+
+        FrmMessages messages = new FrmMessages();
+        FrmCalendar calendar = new FrmCalendar();
         public FrmHomepage(UserInfo userInfo)
         {
             this._userInfo = userInfo;
@@ -32,6 +35,8 @@ namespace TheNeighborhoodApp
             lineHome.Visible = false;slctHome.Visible = false;
             lineNotif.Visible = false; slctNotif.Visible = false;
             lineMessage.Visible = true;slctMessage.Visible = true;
+            messages.TopLevel = false; panelHomepage.Controls.Add(messages);
+            displayMessages();
         }
 
         private void btnNotif_Click(object sender, EventArgs e)
@@ -67,6 +72,24 @@ namespace TheNeighborhoodApp
             panelHomepage.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
+        }
+        public void displayMessages()
+        {
+            panelHomepage.Visible = true;
+            panelHomepage.BringToFront();
+            messages.TopLevel = false;
+            panelHomepage.Controls.Add(messages);
+            messages.BringToFront();
+            messages.Show();
+        }
+        public void displayCalendar()
+        {
+            panelHomepage.Visible = true;
+            panelHomepage.BringToFront();
+            calendar.TopLevel = false;
+            panelHomepage.Controls.Add(calendar);
+            calendar.BringToFront();
+            calendar.Show();
         }
 
         public int clickcount { get; set; }
@@ -185,6 +208,11 @@ namespace TheNeighborhoodApp
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+            displayCalendar();
         }
     }
 }

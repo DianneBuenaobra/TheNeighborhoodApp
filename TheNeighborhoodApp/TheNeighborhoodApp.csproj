@@ -159,11 +159,23 @@
     <Compile Include="FrmAnnouncement.Designer.cs">
       <DependentUpon>FrmAnnouncement.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCalendar.Designer.cs">
+      <DependentUpon>FrmCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConcernResident.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConcernResident.Designer.cs">
       <DependentUpon>FrmConcernResident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreateMessage.Designer.cs">
+      <DependentUpon>FrmCreateMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEditAnnouncement.cs">
       <SubType>Form</SubType>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="frmlogin.Designer.cs">
       <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMessages.Designer.cs">
+      <DependentUpon>FrmMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmResidentManageAccount.cs">
       <SubType>Form</SubType>
@@ -220,6 +238,12 @@
     </Compile>
     <Compile Include="UserControlDays.Designer.cs">
       <DependentUpon>UserControlDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMessages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlMessages.Designer.cs">
+      <DependentUpon>UserControlMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="AdminAddAnnouncement.resx">
@@ -270,8 +294,14 @@
     <EmbeddedResource Include="FrmAnnouncement.resx">
       <DependentUpon>FrmAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCalendar.resx">
+      <DependentUpon>FrmCalendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConcernResident.resx">
       <DependentUpon>FrmConcernResident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateMessage.resx">
+      <DependentUpon>FrmCreateMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditAnnouncement.resx">
       <DependentUpon>FrmEditAnnouncement.cs</DependentUpon>
@@ -284,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessages.resx">
+      <DependentUpon>FrmMessages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmResidentManageAccount.resx">
       <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
@@ -309,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDays.resx">
       <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlMessages.resx">
+      <DependentUpon>UserControlMessages.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
