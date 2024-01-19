@@ -61,7 +61,7 @@ namespace TheNeighborhoodApp
             btnAddMessage.BringToFront();
             
             cnn.Open();
-            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,date from Messages where Username = '"
+            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,Date from Messages where Username = '"
                 + _userInfo.getUsername() + "'", cnn);
             dr = cmm.ExecuteReader();
             while (dr.Read())

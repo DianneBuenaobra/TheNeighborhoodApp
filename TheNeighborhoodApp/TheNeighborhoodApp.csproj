@@ -123,12 +123,6 @@
     <Compile Include="FrmAdminConcern.Designer.cs">
       <DependentUpon>FrmAdminConcern.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAdminMessage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdminMessage.Designer.cs">
-      <DependentUpon>FrmAdminMessage.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAdminEditRListVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +270,9 @@
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminNotification.resx">
+      <DependentUpon>AdminNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminViewConcern.resx">
       <DependentUpon>AdminViewConcern.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,9 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminConcern.resx">
       <DependentUpon>FrmAdminConcern.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAdminMessage.resx">
-      <DependentUpon>FrmAdminMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminEditRListVerification.resx">
       <DependentUpon>FrmAdminEditRListVerification.cs</DependentUpon>
