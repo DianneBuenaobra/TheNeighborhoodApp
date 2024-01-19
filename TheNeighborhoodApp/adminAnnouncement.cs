@@ -283,6 +283,7 @@ namespace TheNeighborhoodApp
 
         private void adminAnnouncement_Load(object sender, EventArgs e)
         {
+           
             admingetConcernInfo();
            
         }

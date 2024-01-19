@@ -18,11 +18,15 @@ namespace TheNeighborhoodApp
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
-        public FrmAdminConcern()
+        UserInfo userInfo;
+       
+        public FrmAdminConcern(UserInfo user)
         {
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
+            userInfo = user;
+           
         }
         public int concernid { get; set; }
         public string concern { get; set; }
@@ -204,7 +208,7 @@ namespace TheNeighborhoodApp
             //view button
             System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
             buttonclickedid = Convert.ToInt32(btn.Name);
-            AdminViewConcern frm = new AdminViewConcern(this);
+            AdminViewConcern frm = new AdminViewConcern(this, userInfo);
             frm.ShowDialog();
  
         }
@@ -213,11 +217,14 @@ namespace TheNeighborhoodApp
             //contact resident button
             System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
             buttonclickedid = Convert.ToInt32(btn.Name);
+            ContactResidentConcern frm = new ContactResidentConcern(this, userInfo);
+            frm.ShowDialog();
 
         }
 
         private void FrmAdminConcern_Load(object sender, EventArgs e)
         {
+           
             admingetConcernInfo();
         }
     }

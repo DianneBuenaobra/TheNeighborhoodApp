@@ -22,6 +22,7 @@ namespace TheNeighborhoodApp
             FrmAddConcern frmAddConcern = new FrmAddConcern(us);
             FrmConcernResident frmConcernResident = new FrmConcernResident(us);
             FrmAnnouncement frmAnnouncement = new FrmAnnouncement(us);
+        
             frmlogin frmlogin = new frmlogin(us);
             FrmResidentManageAccount frm = new FrmResidentManageAccount(us);
             FrmHomepage frmhome = new FrmHomepage(us);

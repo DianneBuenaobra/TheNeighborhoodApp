@@ -58,25 +58,51 @@ namespace TheNeighborhoodApp
 
         public void insertMessagetoAdmin()
         {
+            int idd = id();
+            Image image = _userinfo.image;
             DateTime today = DateTime.Today;
             string fullname = _userinfo.getFirstname() + " " + _userinfo.getLastname();
             string concernMessage = "Concern Id: "+ frm.buttonclickedid.ToString() +" \nConcern: " + lblconcern.Text + "\nStatus: " + lblConcernStatus.Text + "\n" + txtmessage.Text;
-            string query = "INSERT INTO Messages VALUES (@messageid,@sendername,@message,@date,@rname, @userprofile, @username)";
+            string query = "INSERT INTO Messages VALUES (@messageid,@sendername,@message,@date,@rname, @userprofile, @susername, @rusername, @mimage)";
 
             SqlCommand cmd = new SqlCommand(query, cnn);
-            cmd.Parameters.AddWithValue("@messageid", id());
+            cmd.Parameters.AddWithValue("@messageid", ++idd);
             cmd.Parameters.AddWithValue("@sendername", fullname);
             cmd.Parameters.AddWithValue("@message", concernMessage);
             cmd.Parameters.AddWithValue("@date", today);
             cmd.Parameters.AddWithValue("@rname", "Admin");
-            cmd.Parameters.AddWithValue("@userprofile", "");
-            cmd.Parameters.AddWithValue("@username", _userinfo.getUsername());
-           
+            cmd.Parameters.AddWithValue("@userprofile", getPhoto());
+            cmd.Parameters.AddWithValue("@susername", _userinfo.getUsername());
+            cmd.Parameters.AddWithValue("@rusername", "Admin");
+            cmd.Parameters.AddWithValue("@mimage", getPhotonull());
+
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Sent! Please check your inbox for confirmation.");
         }
 
+        public byte[] getPhotonull()
+        {
+            MemoryStream stream = new MemoryStream();
+            if (pictureBox1 != null && pictureBox1.Image != null)
+            {
+                pictureBox1.Image.Save(stream, pictureBox1.Image.RawFormat);
+            }
+
+
+            return stream.GetBuffer();
+        }
+        public byte[] getPhoto()
+        {
+            MemoryStream stream = new MemoryStream();
+            if (_userinfo.image != null && _userinfo.image != null)
+            {
+                _userinfo.image.Save(stream, _userinfo.image.RawFormat);
+            }
+
+
+            return stream.GetBuffer();
+        }
         public int id()
         {
             int idd = 0;

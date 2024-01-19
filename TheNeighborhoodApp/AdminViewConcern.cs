@@ -18,12 +18,15 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         FrmAdminConcern concernfrm;
-        public AdminViewConcern(FrmAdminConcern concernfrm)
+        UserInfo userinfo;
+        public AdminViewConcern(FrmAdminConcern concernfrm, UserInfo user)
         {
             InitializeComponent();
             this.concernfrm = concernfrm;
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
+            userinfo = user;
+          
         }
         public string name { get; set; }
         public string username {  get; set; }
@@ -104,6 +107,12 @@ namespace TheNeighborhoodApp
             cmd.Parameters.AddWithValue("@status", comboBox1.SelectedItem);
             
             cmd.ExecuteNonQuery();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ContactResidentConcern frm = new ContactResidentConcern(concernfrm, userinfo);
+            frm.ShowDialog();
         }
     }
 }
