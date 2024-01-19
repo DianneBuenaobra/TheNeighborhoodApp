@@ -16,8 +16,9 @@ namespace TheNeighborhoodApp
 
         FrmAdminResidentsList rlist = new FrmAdminResidentsList();
         FrmAdminCalendar calendar = new FrmAdminCalendar();
-        FrmAdminMessage message = new FrmAdminMessage();
+        
         adminAnnouncement announcement;
+        SqlDataReader dr;
 
         SqlConnection cnn = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
@@ -109,6 +110,7 @@ namespace TheNeighborhoodApp
 
         private void slctMessage_Click(object sender, EventArgs e)
         {
+            FrmMessages message = new FrmMessages(_userInfo);
             //currentPage = message;
             menuList.Visible = false; btnMenu.Visible = true; slctedMessage.Visible = true;
             message.TopLevel = false; AdminNF.Controls.Clear();slctMessage.Visible = false;
@@ -129,5 +131,6 @@ namespace TheNeighborhoodApp
             AdminNF.Controls.Clear();
             displayHome();
         }
+        
     }
 }

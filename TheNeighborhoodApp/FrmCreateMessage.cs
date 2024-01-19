@@ -38,29 +38,26 @@ namespace TheNeighborhoodApp
         
         public void getContacts()
         {
-            UserControlMessages ucmessages = new UserControlMessages();
             contactusernames.Clear();contactNames.Clear();
             cnn.Open();
             cmm = new SqlCommand("Select [First Name],[Last Name], Username from UserInfo where UserType = 'admin'", cnn);
             dr = cmm.ExecuteReader();
             while (dr.Read())
-            { 
-                contactNames.Add(dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString());
-                contactusernames.Add(dr.GetValue(2).ToString());
-                //MessageBox.Show(dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString());
-                //ContactsPanel();
-                //ucmessages.Labels(dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString(), dr.GetValue(2).ToString());
-                //flowContacts.Controls.Add(ucmessages);
+            {
+
+                UserControlContacts uccontacts = new UserControlContacts();
+                uccontacts.Labels(dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString(), dr.GetValue(2).ToString());
+                flowContacts.Controls.Add(uccontacts);
             }
             cnn.Close();
 
-           for(int i = 0; i < contactNames.Count; i++)
+/*for(int i = 0; i < contactNames.Count; i++)
             {
                 ucmessages.Labels(contactNames[i].ToString(), contactusernames[i].ToString());
 
                 flowContacts.Controls.Add(ucmessages);
                 
-            }
+            }*/
         }
 /*public void sortContacts(string tb)
         {

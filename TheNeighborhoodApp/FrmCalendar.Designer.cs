@@ -97,13 +97,12 @@
             // 
             // lblmonth
             // 
-            this.lblmonth.AutoSize = true;
             this.lblmonth.BackColor = System.Drawing.Color.Transparent;
             this.lblmonth.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmonth.ForeColor = System.Drawing.Color.White;
-            this.lblmonth.Location = new System.Drawing.Point(204, 91);
+            this.lblmonth.Location = new System.Drawing.Point(158, 87);
             this.lblmonth.Name = "lblmonth";
-            this.lblmonth.Size = new System.Drawing.Size(79, 30);
+            this.lblmonth.Size = new System.Drawing.Size(168, 34);
             this.lblmonth.TabIndex = 18;
             this.lblmonth.Text = "month";
             // 
@@ -217,7 +216,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

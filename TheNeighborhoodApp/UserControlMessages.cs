@@ -16,11 +16,16 @@ namespace TheNeighborhoodApp
         {
             InitializeComponent();
         }
-        public void Labels(string name, string username)
+        public void display(string name,string message)
         {
-            lblName.Text = name + ""; lblUsername.Text = username + "";
-            //MessageBox.Show( name + "-" + lblName.Text);
+            txtName.Text = name;txtMessage.Text = message;
+            //proflepic.Image = image;
         }
 
+        private void UserControlMessages_Click(object sender, EventArgs e)
+        {
+            FrmChat chat = new FrmChat();
+            chat.Show();
+        }
     }
 }
