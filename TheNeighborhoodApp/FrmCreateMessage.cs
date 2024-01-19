@@ -35,10 +35,10 @@ namespace TheNeighborhoodApp
         }
         //public string getName { set; get; }
         //public string getUsername { set; get; }
-        
+       
         public void getContacts()
         {
-            UserControlMessages ucmessages = new UserControlMessages();
+            
             contactusernames.Clear();contactNames.Clear();
             cnn.Open();
             cmm = new SqlCommand("Select [First Name],[Last Name], Username from UserInfo where UserType = 'admin'", cnn);
@@ -56,6 +56,7 @@ namespace TheNeighborhoodApp
 
            for(int i = 0; i < contactNames.Count; i++)
             {
+                UserControlMessages ucmessages = new UserControlMessages();
                 ucmessages.Labels(contactNames[i].ToString(), contactusernames[i].ToString());
 
                 flowContacts.Controls.Add(ucmessages);

@@ -47,19 +47,19 @@ namespace TheNeighborhoodApp
         public void insertMessagetoAdmin()
         {
             DateTime today = DateTime.Today;
-            string fullname = user.getFirstname() + " " + user.getLastname();
+            //string fullname = user.getFirstname() + " " + user.getLastname();
             int idd = id();
             string concernMessage = "Concern Id: " + view.id + " \nConcern: " + lblconcern.Text  + "\n" + txtmessage.Text;
             string query = "INSERT INTO Messages VALUES (@messageid,@sendername,@message,@date,@rname, @userprofile, @username)";
 
             SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.Parameters.AddWithValue("@messageid", idd++);
-            cmd.Parameters.AddWithValue("@sendername", "Admin: " +fullname);
+            cmd.Parameters.AddWithValue("@sendername", "Admin: " + user.getUsername().ToString());
             cmd.Parameters.AddWithValue("@message", concernMessage);
             cmd.Parameters.AddWithValue("@date", today);
-            cmd.Parameters.AddWithValue("@rname", view.name);
+            cmd.Parameters.AddWithValue("@rname", view.username);
             cmd.Parameters.AddWithValue("@userprofile", "");
-            cmd.Parameters.AddWithValue("@username", view.username);
+           
 
 
             cmd.ExecuteNonQuery();

@@ -21,7 +21,8 @@ namespace TheNeighborhoodApp
     {
         SqlConnection con = new SqlConnection();
         SqlCommand cmm = new SqlCommand();
-        DBConnection dbcon = new DBConnection(); SqlDataReader dr;
+        DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
 
         ArrayList events = new ArrayList();     
         int _month, _year, monthnow, totalDays;
@@ -36,9 +37,7 @@ namespace TheNeighborhoodApp
         {
             InitializeComponent();
             con = new SqlConnection(dbcon.MyConnection());
-            
-           
-
+            con.Open();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -79,7 +78,7 @@ namespace TheNeighborhoodApp
         {
             
            
-            con.Open();
+           
             //selectedDate = dtPicker1.Text
             // _eventName = txtTitle.Text; _fromDate = dtPicker1.Text; _toDate = dtPicker2.Text; _description = txtDescription.Text;
             string query = "INSERT INTO Events VALUES (@EventID,@EventName,@EventInfo,@Image,@Date)";
@@ -95,12 +94,12 @@ namespace TheNeighborhoodApp
 
 
             txtDescription.Text = ""; txtTitle.Text = "";
-            con.Close();
+           
         }
         public int getEventID()
         {
             int id = 0;
-            con.Open();
+          
             cmm = new SqlCommand("SELECT MAX(EventID) FROM Events", con);
             dr = cmm.ExecuteReader();
             while (dr.Read())
@@ -111,14 +110,14 @@ namespace TheNeighborhoodApp
                 
                 
             }
-            con.Close(); con.Close(); con.Close();
+            dr.Close();
             return id;
            
         }
         public void getDate()
         {
             events.Clear();
-            con.Open();
+           
             cmm = new SqlCommand("select convert(varchar(10),Date,101)from Events order by date", con);
             dr = cmm.ExecuteReader();
 
@@ -127,15 +126,15 @@ namespace TheNeighborhoodApp
                 events.Add(dr.GetValue(0).ToString());
                 
             }
+
             dr.Close();
-            con.Close();
             events.Sort();
 
         }
         public byte[] getPhoto()
         {
             MemoryStream stream = new MemoryStream();
-            if(picEvent != null)
+            if(picEvent != null && picEvent.Image != null)
             {
                 picEvent.Image.Save(stream, picEvent.Image.RawFormat);
             }
@@ -177,7 +176,7 @@ namespace TheNeighborhoodApp
             }
             else
             {
-                con.Open();
+               
                 cmm = new SqlCommand("Select EventName, EvenInfo,Image,Date from Events where EventName = '" + eventName + "'", con);
                 dr = cmm.ExecuteReader();
                 while (dr.Read())
@@ -192,7 +191,7 @@ namespace TheNeighborhoodApp
                     txtTitle.Text = _eventName; txtDescription.Text = _description;
                     
                 }
-                con.Close();
+                dr.Close();
             }
 
             
@@ -250,7 +249,7 @@ namespace TheNeighborhoodApp
                 {
                     if (events[index].Equals(countDate))
                     {
-                        con.Open();
+                      
                         cmm = new SqlCommand("Select EventName from Events where date = '" +
                            events[index] + "'", con);
                         dr = cmm.ExecuteReader();
@@ -262,8 +261,8 @@ namespace TheNeighborhoodApp
                         }
                         //System.Windows.Forms.MessageBox.Show("ookay");
                         index = index + 1;
-
-                        con.Close();
+                        dr.Close();
+                       
                     }
                     else
                     {
