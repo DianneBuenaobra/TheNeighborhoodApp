@@ -32,7 +32,6 @@
             this.btnprev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblmonth = new System.Windows.Forms.Label();
             this.DateContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblmonth = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -94,17 +94,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(469, 342);
             this.panel3.TabIndex = 0;
-            // 
-            // lblmonth
-            // 
-            this.lblmonth.BackColor = System.Drawing.Color.Transparent;
-            this.lblmonth.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmonth.ForeColor = System.Drawing.Color.White;
-            this.lblmonth.Location = new System.Drawing.Point(158, 87);
-            this.lblmonth.Name = "lblmonth";
-            this.lblmonth.Size = new System.Drawing.Size(168, 34);
-            this.lblmonth.TabIndex = 18;
-            this.lblmonth.Text = "month";
             // 
             // DateContainer
             // 
@@ -199,12 +188,23 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Monday";
             // 
+            // lblmonth
+            // 
+            this.lblmonth.BackColor = System.Drawing.Color.Transparent;
+            this.lblmonth.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmonth.ForeColor = System.Drawing.Color.White;
+            this.lblmonth.Location = new System.Drawing.Point(164, 87);
+            this.lblmonth.Name = "lblmonth";
+            this.lblmonth.Size = new System.Drawing.Size(168, 34);
+            this.lblmonth.TabIndex = 18;
+            this.lblmonth.Text = "month";
+            // 
             // FrmCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(489, 636);
+            this.ClientSize = new System.Drawing.Size(489, 634);
             this.ControlBox = false;
             this.Controls.Add(this.lblmonth);
             this.Controls.Add(this.panel2);

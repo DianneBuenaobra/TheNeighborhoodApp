@@ -20,8 +20,8 @@ namespace TheNeighborhoodApp
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
 
-        
 
+        private string contactName, contactUsername;
         ArrayList contactNames = new ArrayList();
         ArrayList contactusernames = new ArrayList();
         public FrmCreateMessage()
@@ -32,13 +32,14 @@ namespace TheNeighborhoodApp
         private void FrmCreateMessage_Load(object sender, EventArgs e)
         {
             getContacts();
+            
         }
         //public string getName { set; get; }
         //public string getUsername { set; get; }
-       
+
         public void getContacts()
         {
-            contactusernames.Clear();contactNames.Clear();
+            contactusernames.Clear(); contactNames.Clear();
             cnn.Open();
             cmm = new SqlCommand("Select [First Name],[Last Name], Username from UserInfo where UserType = 'admin'", cnn);
             dr = cmm.ExecuteReader();
@@ -51,14 +52,25 @@ namespace TheNeighborhoodApp
             }
             cnn.Close();
 
-/*for(int i = 0; i < contactNames.Count; i++)
-            {
-                UserControlMessages ucmessages = new UserControlMessages();
-                ucmessages.Labels(contactNames[i].ToString(), contactusernames[i].ToString());
 
-                flowContacts.Controls.Add(ucmessages);
-                
-            }*/
+        }
+        
+
+        private void tbContact_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void getContact(string name, string username)
+        {
+            UserControlContacts contacts = new UserControlContacts();
+
+            this.contactUsername = username;
+            tbContact.Text = this.contactUsername;
+
+            //.getName(contactName);contacts.getUsername(contactUsername);
+            MessageBox.Show(tbContact.Text);
+            //tbContact.Text = contactUsername;
         }
 /*public void sortContacts(string tb)
         {
@@ -74,85 +86,7 @@ namespace TheNeighborhoodApp
             }
         }*/
 
-        private void panel_Click(object sender, EventArgs e)
-        {
-            //tbContact.Text = flowLayoutPanel1.Click
-        }
-        /*public void ContactsPanel()
-        {
-            flowLayoutPanel1.Controls.Clear();
-            Panel panel;
-            panel = new Panel();
-            panel.Name = String.Format("PnlContact{0}", getUsername);
-            panel.BackColor = Color.FromKnownColor(KnownColor.GradientInactiveCaption);
-            panel.Size = new Size(433, 48); //125, 205
-            panel.Margin = new Padding(15);
-            panel.Location = new Point(-5, 45);
-            panel.Tag = getUsername;
-            
-            Label labelName;
-            labelName = new Label();
-            labelName.Name = String.Format("LblName{0}", getUsername);
-            labelName.Text = getName;
-            labelName.Location = new Point(16, 9);
-            labelName.ForeColor = Color.Black;
-            labelName.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
-            labelName.AutoSize = true;
-            labelName.Tag = getUsername;
-            labelName.MaximumSize = new Size(120, 120);
-            labelName.MinimumSize = new Size(120, 120);
-            labelName.BackColor = Color.FromKnownColor(KnownColor.GradientInactiveCaption);
-            
-            
-
-            Label labelUsername;
-            labelName = new Label();
-            labelName.Name = String.Format("LblUsername{0}", getUsername);
-            labelName.Text = getUsername;
-            labelName.Location = new Point(16, 20);
-            labelName.ForeColor = Color.DarkGray;
-            labelName.Font = new Font("Segoe UI", 8.5f, FontStyle.Regular);
-            labelName.AutoSize = true;
-            labelName.Tag = getUsername;
-            labelName.MaximumSize = new Size(120, 120);
-            labelName.MinimumSize = new Size(120, 120);
-            labelName.BackColor = Color.FromKnownColor(KnownColor.GradientInactiveCaption);
-
-            /*PictureBox picBox;
-            picBox = new PictureBox();
-            picBox.Name = String.Format("PbconcernImage{0}", announcementid);
-            picBox.Size = new Size(304, 140);
-            picBox.Location = new Point(0, 0);
-            picBox.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox.BackColor = Color.SteelBlue;
-            picBox.Image = image;
-
-            Button button;
-            button = new Button();
-            button.Name = announcementid.ToString();
-            button.Size = new Size(452, 21);
-            button.Text = "View More";
-            button.Location = new Point(0, 142);
-            button.ForeColor = Color.Black;
-            button.BackColor = Color.White;
-            button.Font = new Font("Microsoft Sans Serif", 8f, FontStyle.Regular);
-            button.Tag = announcementid;
-            button.Click += new EventHandler(this.button_click);
-            /*
-            if (File.Exists(movie.ImagePath))
-                picBox.Image = Image.FromFile(movie.ImagePath);
-
-            picBox.Tag = movie.Id;
-            
-            
-            panel.Controls.Add(labelName);
-
-            
-            flowLayoutPanel1.Controls.Add(panel);
-
-        }*/
-
-
+        
        
     }
 }

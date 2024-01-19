@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace TheNeighborhoodApp
 {
-    public partial class FrmAdminMessages : Form
+    public partial class FrmNotification : Form
     {
         SqlDataReader dr;
 
@@ -19,12 +19,12 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         private UserInfo _userInfo;
-        public FrmAdminMessages(UserInfo userInfo)
+        public FrmNotification(UserInfo userInfo)
         {
             InitializeComponent();
             this._userInfo = userInfo;
         }
-        public void displayChats()
+        /*public void displayChats()
         {
             cnn.Open();
             cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,date from Messages where Username = '"
@@ -38,19 +38,12 @@ namespace TheNeighborhoodApp
 
             }
             cnn.Close();
-        }
+        }*/
 
         private void FrmAdminMessages_Load(object sender, EventArgs e)
         {
-            displayChats();
-            if (flowAdminMessage.Controls.Count == 0)
-            {
-                label1.Visible = true;
-            }
-            else
-            {
-                label1.Visible = false;
-            }
+            UserControlNotification ucnotif = new UserControlNotification();
+            flowNotif.Controls.Add(ucnotif);
         }
 
         private void flowAdminMessage_Paint(object sender, PaintEventArgs e)
@@ -58,10 +51,6 @@ namespace TheNeighborhoodApp
 
         }
 
-        private void btnAddMessage_Click(object sender, EventArgs e)
-        {
-            FrmChat chat = new FrmChat();
-            chat.Show();
-        }
+
     }
 }

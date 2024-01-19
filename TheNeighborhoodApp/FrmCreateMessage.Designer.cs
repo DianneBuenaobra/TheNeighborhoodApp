@@ -49,10 +49,12 @@
             // 
             this.tbContact.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContact.Location = new System.Drawing.Point(58, 42);
             this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(379, 20);
+            this.tbContact.Size = new System.Drawing.Size(379, 21);
             this.tbContact.TabIndex = 1;
+            this.tbContact.TextChanged += new System.EventHandler(this.tbContact_TextChanged);
             // 
             // label2
             // 
@@ -66,7 +68,7 @@
             // 
             // pMessage
             // 
-            this.pMessage.Location = new System.Drawing.Point(483, 103);
+            this.pMessage.Location = new System.Drawing.Point(21, 103);
             this.pMessage.Name = "pMessage";
             this.pMessage.Size = new System.Drawing.Size(440, 521);
             this.pMessage.TabIndex = 3;
@@ -79,7 +81,7 @@
             this.flowContacts.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowContacts.Location = new System.Drawing.Point(21, 104);
             this.flowContacts.Name = "flowContacts";
-            this.flowContacts.Size = new System.Drawing.Size(444, 459);
+            this.flowContacts.Size = new System.Drawing.Size(444, 520);
             this.flowContacts.TabIndex = 4;
             // 
             // FrmCreateMessage
@@ -88,13 +90,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(489, 636);
-            this.ControlBox = false;
             this.Controls.Add(this.flowContacts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pMessage);
             this.Controls.Add(this.tbContact);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCreateMessage";
             this.Load += new System.EventHandler(this.FrmCreateMessage_Load);
             this.ResumeLayout(false);

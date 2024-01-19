@@ -41,6 +41,7 @@
             this.lblName.Size = new System.Drawing.Size(41, 17);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "label1";
+            this.lblName.Click += new System.EventHandler(this.UserControlContacts_Click);
             // 
             // lblUsername
             // 
@@ -51,6 +52,7 @@
             this.lblUsername.Size = new System.Drawing.Size(35, 13);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "label2";
+            this.lblUsername.Click += new System.EventHandler(this.UserControlContacts_Click);
             // 
             // UserControlContacts
             // 
@@ -59,8 +61,10 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblName);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserControlContacts";
             this.Size = new System.Drawing.Size(438, 39);
+            this.Click += new System.EventHandler(this.UserControlContacts_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

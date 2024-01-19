@@ -266,6 +266,7 @@ namespace TheNeighborhoodApp
             {
                 
                 resident();
+                this.Close();
             }
             else
             {

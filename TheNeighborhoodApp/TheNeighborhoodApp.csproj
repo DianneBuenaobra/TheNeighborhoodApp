@@ -129,17 +129,11 @@
     <Compile Include="FrmAdminHomepage.Designer.cs">
       <DependentUpon>FrmAdminHomepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAdminMessages.cs">
+    <Compile Include="FrmNotification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAdminMessages.Designer.cs">
-      <DependentUpon>FrmAdminMessages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAdminNotif.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdminNotif.Designer.cs">
-      <DependentUpon>FrmAdminNotif.cs</DependentUpon>
+    <Compile Include="FrmNotification.Designer.cs">
+      <DependentUpon>FrmNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAdminResidentsList.cs">
       <SubType>Form</SubType>
@@ -213,6 +207,12 @@
     <Compile Include="FrmResidentManageAccount.Designer.cs">
       <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMessage.Designer.cs">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResidentViewMoreAnnouncement.cs">
@@ -251,6 +251,12 @@
     <Compile Include="UserControlMessages.Designer.cs">
       <DependentUpon>UserControlMessages.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNotification.Designer.cs">
+      <DependentUpon>UserControlNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="AdminAddAnnouncement.resx">
       <DependentUpon>AdminAddAnnouncement.cs</DependentUpon>
@@ -285,8 +291,8 @@
     <EmbeddedResource Include="FrmAdminHomepage.resx">
       <DependentUpon>FrmAdminHomepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAdminMessages.resx">
-      <DependentUpon>FrmAdminMessages.cs</DependentUpon>
+    <EmbeddedResource Include="FrmNotification.resx">
+      <DependentUpon>FrmNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminNotif.resx">
       <DependentUpon>FrmAdminNotif.cs</DependentUpon>
@@ -327,6 +333,9 @@
     <EmbeddedResource Include="FrmResidentManageAccount.resx">
       <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewMessage.resx">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -354,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlMessages.resx">
       <DependentUpon>UserControlMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNotification.resx">
+      <DependentUpon>UserControlNotification.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -19,14 +19,13 @@ namespace TheNeighborhoodApp
         SqlCommand cmm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         private UserInfo _userInfo;
-
-      
         FrmCalendar calendar = new FrmCalendar();
         public FrmHomepage(UserInfo userInfo)
         {
             
             this._userInfo = userInfo;
            
+
 
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
@@ -48,6 +47,7 @@ namespace TheNeighborhoodApp
             lineMessage.Visible = false;slctMessage.Visible = false;
             lineHome.Visible = false; slctHome.Visible = false;
             lineNotif.Visible = true; slctNotif.Visible = true;
+            displayNotif();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -57,6 +57,16 @@ namespace TheNeighborhoodApp
             lineNotif.Visible = false; slctNotif.Visible = false;
 
             displayHome();
+        }
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+            slctCalendar.Visible = true;
+            displayCalendar();
+        }
+        private void slctCalendar_Click(object sender, EventArgs e)
+        {
+            slctCalendar.Visible = false;
+            panelHomepage.Controls.Remove(calendar);
         }
 
         private void FrmHomepage_Load(object sender, EventArgs e)
@@ -97,6 +107,17 @@ namespace TheNeighborhoodApp
             calendar.BringToFront();
             calendar.Show();
         }
+        public void displayNotif()
+        {
+            FrmNotification notif = new FrmNotification(_userInfo);
+            panelHomepage.Visible = true;
+            panelHomepage.BringToFront();
+            notif.TopLevel = false;
+            panelHomepage.Controls.Clear();
+            panelHomepage.Controls.Add(notif);
+            notif.BringToFront();
+            notif.Show();
+        }
 
         public int clickcount { get; set; }
         private void btnProfile_Click(object sender, EventArgs e)
@@ -117,7 +138,11 @@ namespace TheNeighborhoodApp
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
+            frmlogin login = new frmlogin(_userInfo);
+            login.ShowDialog();
             this.Close();
+            
+
         }
 
         private void BtnManageAcc_Click(object sender, EventArgs e)
@@ -180,6 +205,7 @@ namespace TheNeighborhoodApp
 
         private void slctNotif_Click(object sender, EventArgs e)
         {
+
            // Pnllogout.Visible = false;
         }
 
@@ -218,9 +244,6 @@ namespace TheNeighborhoodApp
 
         }
 
-        private void btnCalendar_Click(object sender, EventArgs e)
-        {
-            displayCalendar();
-        }
+        
     }
 }
