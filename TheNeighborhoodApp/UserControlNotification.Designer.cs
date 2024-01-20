@@ -38,9 +38,10 @@
             // 
             this.txtDetails.Location = new System.Drawing.Point(73, 26);
             this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Size = new System.Drawing.Size(408, 38);
+            this.txtDetails.Size = new System.Drawing.Size(394, 38);
             this.txtDetails.TabIndex = 5;
             this.txtDetails.Text = "details";
+            this.txtDetails.Click += new System.EventHandler(this.txtDetails_Click_1);
             // 
             // txtCategory
             // 
@@ -48,17 +49,21 @@
             this.txtCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategory.Location = new System.Drawing.Point(67, 4);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(62, 17);
+            this.txtCategory.Size = new System.Drawing.Size(127, 17);
             this.txtCategory.TabIndex = 4;
-            this.txtCategory.Text = "category";
+            this.txtCategory.Text = "Verification Request";
+            this.txtCategory.Click += new System.EventHandler(this.txtDetails_Click_1);
             // 
             // pic
             // 
+            this.pic.Image = global::TheNeighborhoodApp.Properties.Resources._420090728_353519404162221_526689542767889419_n;
             this.pic.Location = new System.Drawing.Point(1, 2);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(63, 61);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic.TabIndex = 3;
             this.pic.TabStop = false;
+            this.pic.Click += new System.EventHandler(this.txtDetails_Click_1);
             // 
             // UserControlNotification
             // 
@@ -70,6 +75,7 @@
             this.Controls.Add(this.pic);
             this.Name = "UserControlNotification";
             this.Size = new System.Drawing.Size(483, 64);
+            this.Click += new System.EventHandler(this.UserControlNotification_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -152,6 +152,22 @@ namespace TheNeighborhoodApp
             AdminNF.Controls.Clear();
             displayAnnouncement();
         }
-        
+
+        private void notif_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void slctNotif_Click(object sender, EventArgs e)
+        {
+            AdminNF.Visible = true;
+            AdminNF.BringToFront();
+            FrmNotification frm = new FrmNotification(_userInfo);
+            frm.TopLevel = false;
+            AdminNF.Controls.Add(frm);
+            currentPage = announcement;
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

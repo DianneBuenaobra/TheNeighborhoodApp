@@ -91,6 +91,7 @@
             this.notif.Size = new System.Drawing.Size(13, 13);
             this.notif.TabIndex = 17;
             this.notif.Text = "1";
+            this.notif.Click += new System.EventHandler(this.notif_Click);
             // 
             // menuList
             // 
@@ -305,6 +306,7 @@
             this.slctNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.slctNotif.TabIndex = 14;
             this.slctNotif.TabStop = false;
+            this.slctNotif.Click += new System.EventHandler(this.slctNotif_Click);
             // 
             // FrmAdminHomepage
             // 

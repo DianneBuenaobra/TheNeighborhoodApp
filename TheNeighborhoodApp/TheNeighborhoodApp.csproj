@@ -73,6 +73,12 @@
     <Compile Include="adminAnnouncement.Designer.cs">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminNotificationDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminNotificationDetail.Designer.cs">
+      <DependentUpon>AdminNotificationDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminViewConcern.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminNotificationDetail.resx">
+      <DependentUpon>AdminNotificationDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminViewConcern.resx">
       <DependentUpon>AdminViewConcern.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,9 +302,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNotification.resx">
       <DependentUpon>FrmNotification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAdminNotif.resx">
-      <DependentUpon>FrmAdminNotif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdminResidentsList.resx">
       <DependentUpon>FrmAdminResidentsList.cs</DependentUpon>
@@ -443,6 +449,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anxiety %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anxiety %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anxiety %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anxiety %283%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\420090728_353519404162221_526689542767889419_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anxiety %284%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace TheNeighborhoodApp
         public FrmNotification(UserInfo userInfo)
         {
             InitializeComponent();
+            cnn = new SqlConnection(dbcon.MyConnection());
+            cnn.Open();
             this._userInfo = userInfo;
         }
         /*public void displayChats()
@@ -40,10 +43,60 @@ namespace TheNeighborhoodApp
             cnn.Close();
         }*/
 
+        public string name { get; set; }
+        public int age { get; set; }
+        public string address { get; set; }
+
+        public string gender { get; set; }  
+        public DateTime DateReg { get; set; }
+
+        public string number {  get; set; }
+        public Image image { get; set; }
+        public string username { get; set; }
+
+
         private void FrmAdminMessages_Load(object sender, EventArgs e)
         {
-            UserControlNotification ucnotif = new UserControlNotification();
-            flowNotif.Controls.Add(ucnotif);
+            //A new user, [Name], has recently signed up and is currently awaiting verification.
+
+                getNotification();
+
+        }
+
+        public void getNotification()
+        {
+            string no = "no";
+            string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender,[Date Registered],  [Phone Number], Photo, Username FROM UserInfo WHERE Verified = '" + no + "'";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                
+                    UserControlNotification ucnotif = new UserControlNotification(this);
+                    name = dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString();
+
+                    age = (int)dr.GetValue(2);
+                    address = dr.GetValue(3).ToString() + ", " + (int)dr.GetValue(4);
+
+                    gender = dr.GetValue(5).ToString();
+                    DateReg = (DateTime)dr.GetValue(6);
+                    number = dr.GetValue(7).ToString();
+
+                    if (dr[8] != DBNull.Value)
+                    {
+                        byte[] img = (byte[])(dr[8]);
+                        MemoryStream ms = new MemoryStream(img);
+                        image = Image.FromStream(ms);
+                    }
+                    username = dr.GetValue(9).ToString();
+
+
+                    ucnotif.Name = username;
+                    ucnotif.labels("A new user, " + name + ", has recently signed up and is currently awaiting verification.");
+                flowNotif.Controls.Add(ucnotif);
+              
+            }
+            dr.Close();
         }
 
         private void flowAdminMessage_Paint(object sender, PaintEventArgs e)
@@ -51,6 +104,10 @@ namespace TheNeighborhoodApp
 
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flowNotif.Controls.Clear();
+            getNotification();
+        }
     }
 }
