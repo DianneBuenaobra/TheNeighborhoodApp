@@ -159,11 +159,11 @@
     <Compile Include="FrmCalendar.Designer.cs">
       <DependentUpon>FrmCalendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmChat.cs">
+    <Compile Include="FrmMessageInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmChat.Designer.cs">
-      <DependentUpon>FrmChat.cs</DependentUpon>
+    <Compile Include="FrmMessageInfo.Designer.cs">
+      <DependentUpon>FrmMessageInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConcernResident.cs">
       <SubType>Form</SubType>
@@ -313,8 +313,8 @@
     <EmbeddedResource Include="FrmCalendar.resx">
       <DependentUpon>FrmCalendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChat.resx">
-      <DependentUpon>FrmChat.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMessageInfo.resx">
+      <DependentUpon>FrmMessageInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConcernResident.resx">
       <DependentUpon>FrmConcernResident.cs</DependentUpon>

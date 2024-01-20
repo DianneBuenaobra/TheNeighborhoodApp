@@ -35,14 +35,7 @@ namespace TheNeighborhoodApp
             btnAddMessage.BringToFront();
             btnSent.BackColor = Color.FromKnownColor(KnownColor.GradientActiveCaption);
             displayChatsSent();
-            if(flowLayoutPanel1.Controls.Count == 0)
-            {
-                label1.Visible = true;
-            }
-            else
-            {
-                label1.Visible = false;
-            }
+            
             
           
         }
@@ -62,18 +55,26 @@ namespace TheNeighborhoodApp
         }
         public void displayChatsSent()
         {
+            if (flowLayoutPanel1.Controls.Count == 0)
+            {
+                label1.Visible = false;
+            }
+            else
+            {
+                label1.Visible = true;
+            }
             flowLayoutPanel1.Visible = true; btnAddMessage.Visible = true;
             flowLayoutPanel1.Controls.Clear();
             btnAddMessage.BringToFront();
            
             cnn.Open();
-            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,Date,SenderUsername,ReceiverUsername from Messages where SenderUsername = '"
+            cmm = new SqlCommand("Select MessageID,ReceiverName,Message,UserProfile,Date,SenderUsername,ReceiverUsername from Messages where SenderUsername = '"
                 + _userInfo.getUsername() + "'", cnn);
             dr = cmm.ExecuteReader();
             while (dr.Read())
             {
                 UserControlMessages ucmessages = new UserControlMessages();
-                ucmessages.display(dr.GetValue(0).ToString(),dr.GetValue(1).ToString());
+                ucmessages.display((int)dr.GetValue(0),dr.GetValue(1).ToString(), dr.GetValue(2).ToString());
                 flowLayoutPanel1.Controls.Add(ucmessages);
 
             }
@@ -82,17 +83,25 @@ namespace TheNeighborhoodApp
         }
         public void displayChatsReceived()
         {
+            if (flowLayoutPanel1.Controls.Count == 0)
+            {
+                label1.Visible = false;
+            }
+            else
+            {
+                label1.Visible = true;
+            }
             flowLayoutPanel1.Visible = true; btnAddMessage.Visible = true;
             flowLayoutPanel1.Controls.Clear();
             btnAddMessage.BringToFront();
 
             cnn.Open();
-            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,Date,SenderUsername,ReceiverUsername from Messages where ReceiverUsername = '" + _userInfo.getUsername() + "'", cnn);
+            cmm = new SqlCommand("Select MessageID,ReceiverName,Message,UserProfile,Date,SenderUsername,ReceiverUsername from Messages where ReceiverUsername = '" + _userInfo.getUsername() + "'", cnn);
             dr = cmm.ExecuteReader();
             while (dr.Read())
             {
                 UserControlMessages ucmessages = new UserControlMessages();
-                ucmessages.display(dr.GetValue(0).ToString(), dr.GetValue(1).ToString());
+                ucmessages.display((int)dr.GetValue(0), dr.GetValue(1).ToString(), dr.GetValue(2).ToString());
                 flowLayoutPanel1.Controls.Add(ucmessages);
 
             }

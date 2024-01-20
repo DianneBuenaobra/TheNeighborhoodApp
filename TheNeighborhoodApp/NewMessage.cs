@@ -78,10 +78,11 @@ namespace TheNeighborhoodApp
                 this.Close();
             }
         }
-       
+
+        int messID = 0;
         public int getMessageID()
         {
-            int messID = 0;
+            
             
             cmm = new SqlCommand("SELECT COUNT(*) FROM Messages", cnn);
             dr = cmm.ExecuteReader();

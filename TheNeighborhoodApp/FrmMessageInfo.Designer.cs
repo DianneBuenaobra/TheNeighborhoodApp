@@ -1,6 +1,6 @@
 ﻿namespace TheNeighborhoodApp
 {
-    partial class FrmChat
+    partial class FrmMessageInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.lblDateSent = new System.Windows.Forms.Label();
             this.lblSender = new System.Windows.Forms.Label();
             this.lblReceiver = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblMessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,22 +122,22 @@
             this.lblReceiver.TabIndex = 6;
             this.lblReceiver.Text = "name";
             // 
-            // textBox1
+            // lblMessage
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(94, 128);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 250);
-            this.textBox1.TabIndex = 7;
+            this.lblMessage.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lblMessage.Location = new System.Drawing.Point(94, 128);
+            this.lblMessage.Multiline = true;
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(253, 250);
+            this.lblMessage.TabIndex = 7;
             // 
-            // FrmChat
+            // FrmMessageInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(366, 390);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblReceiver);
             this.Controls.Add(this.lblSender);
             this.Controls.Add(this.lblDateSent);
@@ -147,7 +147,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmChat";
+            this.Name = "FrmMessageInfo";
             this.Text = "Message Information";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,6 +163,6 @@
         private System.Windows.Forms.Label lblDateSent;
         private System.Windows.Forms.Label lblSender;
         private System.Windows.Forms.Label lblReceiver;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lblMessage;
     }
 }
