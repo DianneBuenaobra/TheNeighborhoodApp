@@ -175,6 +175,7 @@ namespace TheNeighborhoodApp
                 }
             }
             dr.Close();
+            
 
             
 
@@ -266,6 +267,7 @@ namespace TheNeighborhoodApp
             {
                 
                 resident();
+                
                 this.Close();
             }
             else

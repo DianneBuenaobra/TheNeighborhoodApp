@@ -12,9 +12,11 @@ namespace TheNeighborhoodApp
 {
     public partial class UserControlContacts : UserControl
     {
-        public UserControlContacts()
+        private UserInfo uc;
+        public UserControlContacts(UserInfo uc)
         {
             InitializeComponent();
+            this.uc = uc;
         }
         public void Labels(string name, string username)
         {
@@ -24,21 +26,12 @@ namespace TheNeighborhoodApp
 
         private void UserControlContacts_Click(object sender, EventArgs e)
         {
-            FrmCreateMessage create = new FrmCreateMessage();
-            create.getContact(lblName.Text,lblUsername.Text);
-
+            //FrmCreateMessage create = new FrmCreateMessage();
+            //create.getContact(lblName.Text,lblUsername.Text);
+            NewMessage newmessage = new NewMessage(uc);
+            newmessage.getReceiver(lblUsername.Text,lblName.Text);
+            newmessage.ShowDialog();
         }
-        public string getName(string name)
-        {
-            name = lblName.Text;
-            MessageBox.Show(name);
-            return name;
-        }
-        public string getUsername(string username)
-        {
-            username = lblUsername.Text;
-            MessageBox.Show(username);
-            return username;
-        }
+        
     }
 }

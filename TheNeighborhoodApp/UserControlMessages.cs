@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace TheNeighborhoodApp
 {
@@ -16,16 +17,30 @@ namespace TheNeighborhoodApp
         {
             InitializeComponent();
         }
-        public void display(string name,string message)
+        public void display(int id, string name,string message)
         {
-            txtName.Text = name;txtMessage.Text = message;
+            txtName.Text = name;txtMessage.Text = message;lblmssID.Text = id.ToString();
             //proflepic.Image = image;
+        }
+        public void setMessageInfo(string message,string sender,string receiver,DateTime date)
+        {
+
         }
 
         private void UserControlMessages_Click(object sender, EventArgs e)
         {
-            FrmChat chat = new FrmChat();
-            chat.Show();
+
+            FrmMessageInfo info = new FrmMessageInfo();
+            info.showDetails(Int32.Parse(lblmssID.Text));
+            info.ShowDialog();
+
+            
+        }
+        
+
+        private void UserControlMessages_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
