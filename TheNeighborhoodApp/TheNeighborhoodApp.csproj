@@ -213,6 +213,7 @@
     <Compile Include="FrmResidentManageAccount.Designer.cs">
       <DependentUpon>FrmResidentManageAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageInfo.cs" />
     <Compile Include="NewMessage.cs">
       <SubType>Form</SubType>
     </Compile>

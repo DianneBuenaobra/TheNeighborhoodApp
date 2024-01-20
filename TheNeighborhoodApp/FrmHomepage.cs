@@ -39,7 +39,10 @@ namespace TheNeighborhoodApp
             lineNotif.Visible = false; slctNotif.Visible = false;
             lineMessage.Visible = true;slctMessage.Visible = true;
             messages.TopLevel = false; panelHomepage.Controls.Add(messages);
+            
+
             displayMessages();
+
         }
 
         private void btnNotif_Click(object sender, EventArgs e)
@@ -97,6 +100,8 @@ namespace TheNeighborhoodApp
             panelHomepage.Controls.Add(messages);
             messages.BringToFront();
             messages.Show();
+            
+
         }
         public void displayCalendar()
         {
@@ -211,7 +216,8 @@ namespace TheNeighborhoodApp
 
         private void slctMessage_Click(object sender, EventArgs e)
         {
-           // Pnllogout.Visible = false;
+            // Pnllogout.Visible = false;
+            
         }
 
         private void lineNotif_Click(object sender, EventArgs e)

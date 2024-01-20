@@ -21,11 +21,21 @@ namespace TheNeighborhoodApp
             txtName.Text = name;txtMessage.Text = message;
             //proflepic.Image = image;
         }
+        public void setMessageInfo(string message,string sender,string receiver,DateTime date)
+        {
+
+        }
 
         private void UserControlMessages_Click(object sender, EventArgs e)
         {
-            FrmChat chat = new FrmChat();
-            chat.Show();
+            FrmChat details = new FrmChat();
+            
+            details.ShowDialog();
+        }
+
+        private void UserControlMessages_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

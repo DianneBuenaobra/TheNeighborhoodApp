@@ -51,6 +51,7 @@
             this.txtMessage.Size = new System.Drawing.Size(408, 38);
             this.txtMessage.TabIndex = 2;
             this.txtMessage.Text = "message";
+            this.txtMessage.Click += new System.EventHandler(this.UserControlMessages_Click);
             // 
             // proflepic
             // 
@@ -59,6 +60,7 @@
             this.proflepic.Size = new System.Drawing.Size(63, 61);
             this.proflepic.TabIndex = 0;
             this.proflepic.TabStop = false;
+            this.proflepic.Click += new System.EventHandler(this.UserControlMessages_Click);
             // 
             // UserControlMessages
             // 
@@ -70,6 +72,7 @@
             this.Controls.Add(this.proflepic);
             this.Name = "UserControlMessages";
             this.Size = new System.Drawing.Size(483, 64);
+            this.Load += new System.EventHandler(this.UserControlMessages_Load);
             this.Click += new System.EventHandler(this.UserControlMessages_Click);
             ((System.ComponentModel.ISupportInitialize)(this.proflepic)).EndInit();
             this.ResumeLayout(false);

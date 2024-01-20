@@ -19,20 +19,22 @@ namespace TheNeighborhoodApp
         SqlDataReader dr;
 
         private UserInfo _userInfo;
-        FrmCreateMessage create = new FrmCreateMessage();
+        FrmCreateMessage create;
      
         public FrmMessages(UserInfo userinfo)
         {
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             _userInfo = userinfo;
-           
+            create = new FrmCreateMessage(_userInfo);
+
         }
 
         private void FrmMessages_Load(object sender, EventArgs e)
         {
             btnAddMessage.BringToFront();
-            displayChats();
+            btnSent.BackColor = Color.FromKnownColor(KnownColor.GradientActiveCaption);
+            displayChatsSent();
             if(flowLayoutPanel1.Controls.Count == 0)
             {
                 label1.Visible = true;
@@ -49,19 +51,23 @@ namespace TheNeighborhoodApp
             panelMessage.Visible = true;flowLayoutPanel1.Visible = false; btnAddMessage.Visible = false;
             create.TopLevel = false; panelMessage.Controls.Add(create);
             create.Show();
+           
         }
 
         private void btnAddMessage_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;btnReceived.Visible = false; btnSent.Visible = false;
+
             displayMessages();
         }
-        public void displayChats()
+        public void displayChatsSent()
         {
             flowLayoutPanel1.Visible = true; btnAddMessage.Visible = true;
+            flowLayoutPanel1.Controls.Clear();
             btnAddMessage.BringToFront();
-            
+           
             cnn.Open();
-            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,Date from Messages where Username = '"
+            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,Date,SenderUsername,ReceiverUsername from Messages where SenderUsername = '"
                 + _userInfo.getUsername() + "'", cnn);
             dr = cmm.ExecuteReader();
             while (dr.Read())
@@ -71,8 +77,46 @@ namespace TheNeighborhoodApp
                 flowLayoutPanel1.Controls.Add(ucmessages);
 
             }
-            MessageBox.Show("lol");
+            
             cnn.Close();
+        }
+        public void displayChatsReceived()
+        {
+            flowLayoutPanel1.Visible = true; btnAddMessage.Visible = true;
+            flowLayoutPanel1.Controls.Clear();
+            btnAddMessage.BringToFront();
+
+            cnn.Open();
+            cmm = new SqlCommand("Select ReceiverName,Message,UserProfile,Date,SenderUsername,ReceiverUsername from Messages where ReceiverUsername = '" + _userInfo.getUsername() + "'", cnn);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+                UserControlMessages ucmessages = new UserControlMessages();
+                ucmessages.display(dr.GetValue(0).ToString(), dr.GetValue(1).ToString());
+                flowLayoutPanel1.Controls.Add(ucmessages);
+
+            }
+
+            cnn.Close();
+        }
+        public  void closeContacts()
+        {
+            panelMessage.Controls.Remove(create);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnReceived.BackColor = Color.FromKnownColor(KnownColor.GradientInactiveCaption);
+            btnSent.BackColor = Color.FromKnownColor(KnownColor.GradientActiveCaption);
+            displayChatsSent();
+
+        }
+
+        private void btnReceived_Click(object sender, EventArgs e)
+        {
+            btnSent.BackColor = Color.FromKnownColor(KnownColor.GradientInactiveCaption);
+            btnReceived.BackColor = Color.FromKnownColor(KnownColor.GradientActiveCaption);
+            displayChatsReceived();
         }
     }
 }

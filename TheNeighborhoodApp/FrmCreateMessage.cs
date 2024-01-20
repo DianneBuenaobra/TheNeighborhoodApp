@@ -20,14 +20,15 @@ namespace TheNeighborhoodApp
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
 
-
+        private UserInfo _userinfo;
         private string contactName, contactUsername;
         ArrayList contactNames = new ArrayList();
         ArrayList contactusernames = new ArrayList();
-        public FrmCreateMessage()
+        public FrmCreateMessage(UserInfo userinfo)
         {
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
+            this._userinfo = userinfo;
         }
         private void FrmCreateMessage_Load(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace TheNeighborhoodApp
             while (dr.Read())
             {
 
-                UserControlContacts uccontacts = new UserControlContacts();
+                UserControlContacts uccontacts = new UserControlContacts(_userinfo);
                 uccontacts.Labels(dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString(), dr.GetValue(2).ToString());
                 flowContacts.Controls.Add(uccontacts);
             }
@@ -63,13 +64,13 @@ namespace TheNeighborhoodApp
 
         public void getContact(string name, string username)
         {
-            UserControlContacts contacts = new UserControlContacts();
+            UserControlContacts contacts = new UserControlContacts(_userinfo);
 
             this.contactUsername = username;
-            tbContact.Text = this.contactUsername;
+            
 
             //.getName(contactName);contacts.getUsername(contactUsername);
-            MessageBox.Show(tbContact.Text);
+           
             //tbContact.Text = contactUsername;
         }
 /*public void sortContacts(string tb)
