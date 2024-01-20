@@ -60,10 +60,12 @@ namespace TheNeighborhoodApp
             //A new user, [Name], has recently signed up and is currently awaiting verification.
 
                 getNotification();
+            getNotification2();
 
         }
 
-        public void getNotification()
+        public void 
+            getNotification()
         {
             string no = "no";
             string query = "SELECT [First Name], [Last Name], Age, Street, [Home Number], gender,[Date Registered],  [Phone Number], Photo, Username FROM UserInfo WHERE Verified = '" + no + "'";
@@ -99,6 +101,37 @@ namespace TheNeighborhoodApp
             dr.Close();
         }
 
+        public int concernid { get; set; }
+        public string concern {  get; set; }    
+        public string concerninfo {  get; set; }    
+        public string concernStatus{ get; set; }
+        public string Cname { get; set; }
+        public void getNotification2()
+        {
+            string statusss = "submitted";
+            string query = "SELECT ConcernId, Concern, ConcernInfo, Name, ConcernStatus FROM Concern WHERE ConcernStatus = '" + statusss + "'";
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+
+                UserControlNotificationControl ucnotif = new UserControlNotificationControl(this);
+                concernid = (int)dr.GetValue(0);
+                concern = dr.GetValue(1).ToString();
+
+                concerninfo = dr.GetValue(2).ToString();
+                Cname = dr.GetValue(3).ToString();
+
+                concernStatus = dr.GetValue(4).ToString();
+              
+
+                ucnotif.Name = concernid.ToString();
+                ucnotif.labels( Cname + ": Submitted a new Concern.");
+                flowNotif.Controls.Add(ucnotif);
+
+            }
+            dr.Close();
+        }
         private void flowAdminMessage_Paint(object sender, PaintEventArgs e)
         {
 

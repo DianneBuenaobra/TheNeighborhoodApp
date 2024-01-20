@@ -73,6 +73,12 @@
     <Compile Include="adminAnnouncement.Designer.cs">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminNotificationConcernInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminNotificationConcernInfo.Designer.cs">
+      <DependentUpon>AdminNotificationConcernInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminNotificationDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,12 +270,21 @@
     <Compile Include="UserControlNotification.Designer.cs">
       <DependentUpon>UserControlNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlNotificationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNotificationControl.Designer.cs">
+      <DependentUpon>UserControlNotificationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="AdminAddAnnouncement.resx">
       <DependentUpon>AdminAddAnnouncement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adminAnnouncement.resx">
       <DependentUpon>adminAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminNotificationConcernInfo.resx">
+      <DependentUpon>AdminNotificationConcernInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminNotificationDetail.resx">
       <DependentUpon>AdminNotificationDetail.cs</DependentUpon>
@@ -373,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlNotification.resx">
       <DependentUpon>UserControlNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNotificationControl.resx">
+      <DependentUpon>UserControlNotificationControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -34,12 +34,7 @@ namespace TheNeighborhoodApp
         {
             txtDetails.Text = Details;
         }
-        public static bool Exists(List<UserControlNotification> ucList, string username)
-        {
-            return ucList.Exists(uc => uc.Username == username);
-        }
-
-
+       
 
         private void txtDetails_Click_1(object sender, EventArgs e)
         {
@@ -90,5 +85,6 @@ namespace TheNeighborhoodApp
             }
             dr.Close();
         }
+       
     }
 }
