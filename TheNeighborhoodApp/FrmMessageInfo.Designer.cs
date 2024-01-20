@@ -128,6 +128,7 @@
             this.lblMessage.Location = new System.Drawing.Point(94, 128);
             this.lblMessage.Multiline = true;
             this.lblMessage.Name = "lblMessage";
+            this.lblMessage.ReadOnly = true;
             this.lblMessage.Size = new System.Drawing.Size(253, 250);
             this.lblMessage.TabIndex = 7;
             // 
@@ -148,6 +149,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMessageInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Message Information";
             this.ResumeLayout(false);
             this.PerformLayout();

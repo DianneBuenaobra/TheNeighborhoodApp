@@ -193,7 +193,7 @@
             this.lblmonth.BackColor = System.Drawing.Color.Transparent;
             this.lblmonth.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmonth.ForeColor = System.Drawing.Color.White;
-            this.lblmonth.Location = new System.Drawing.Point(164, 87);
+            this.lblmonth.Location = new System.Drawing.Point(167, 87);
             this.lblmonth.Name = "lblmonth";
             this.lblmonth.Size = new System.Drawing.Size(168, 34);
             this.lblmonth.TabIndex = 18;

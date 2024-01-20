@@ -84,7 +84,7 @@ namespace TheNeighborhoodApp
         {
             
             
-            cmm = new SqlCommand("SELECT COUNT(*) FROM Messages", cnn);
+            cmm = new SqlCommand("SELECT MAX(MessageID) FROM Messages", cnn);
             dr = cmm.ExecuteReader();
             while (dr.Read())
             {

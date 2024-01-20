@@ -23,6 +23,8 @@ namespace TheNeighborhoodApp
         private SqlDataReader sqlReader;
         public DataTable dataTable;
         public BindingSource bindingSource;
+
+        string selctcell;
         public FrmAdminResidentsList()
         {
             InitializeComponent();
@@ -96,7 +98,19 @@ namespace TheNeighborhoodApp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             eventclickSearch();
-            btnEdit.Visible = true;
+            //btnEdit.Visible = true;
+            selctcell= dataGridView1.SelectedCells[0].Selected.ToString();
+
+            cnn.Open();
+            cmm = new SqlCommand("Select * from dbo.UserInfo WHERE CONCAT([First name],[Last Name],Age,Street,[Home number], gender, Username, Password, UserType,[Date registered],[Phone Number], Verified)" + 
+            "like '%" + selctcell + "%'",cnn);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+                
+            }
+                cnn.Close();
+
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -106,7 +120,7 @@ namespace TheNeighborhoodApp
         public void eventclickSearch()
         {
             IconSearch.Visible = true;tbSearch.Text = "";btnX.Visible = false; label1.Visible = true;
-            btnEdit.Visible = false;
+            //btnEdit.Visible = false;
 
         }
 

@@ -92,6 +92,7 @@ namespace TheNeighborhoodApp
             cmm.ExecuteNonQuery();
             DisplayDay(_month);
 
+            con.Close();
 
             txtDescription.Text = ""; txtTitle.Text = "";
            
@@ -160,7 +161,24 @@ namespace TheNeighborhoodApp
             displayText();
         }
 
-        public string eventName { get; set; } public string eventInfo { get; set; }
+        public string eventName { get; set; }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DisplayDay(_month);
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = true;
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = true;
+        }
+
+        public string eventInfo { get; set; }
         public Image image { get; set; } public DateTime date { get; set; }
 
         public void displayText()

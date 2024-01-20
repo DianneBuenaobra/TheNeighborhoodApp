@@ -102,6 +102,7 @@
             // backpb
             // 
             this.backpb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.backpb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backpb.Image = ((System.Drawing.Image)(resources.GetObject("backpb.Image")));
             this.backpb.Location = new System.Drawing.Point(36, 21);
             this.backpb.Name = "backpb";
@@ -215,6 +216,7 @@
             // 
             // adminbtn
             // 
+            this.adminbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminbtn.Location = new System.Drawing.Point(136, 29);
             this.adminbtn.Name = "adminbtn";
@@ -226,6 +228,7 @@
             // 
             // g
             // 
+            this.g.Cursor = System.Windows.Forms.Cursors.Hand;
             this.g.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g.Location = new System.Drawing.Point(38, 29);
             this.g.Name = "g";

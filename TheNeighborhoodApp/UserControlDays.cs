@@ -40,7 +40,7 @@ namespace TheNeighborhoodApp
 
         private void UserControlDays_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(label1.Text);
+            
 
             calendar.DisplayInfo(label1.Text);
             

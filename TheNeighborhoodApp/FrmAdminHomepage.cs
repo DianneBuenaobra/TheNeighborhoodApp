@@ -16,7 +16,8 @@ namespace TheNeighborhoodApp
 
         FrmAdminResidentsList rlist = new FrmAdminResidentsList();
         FrmAdminCalendar calendar = new FrmAdminCalendar();
-        
+        FrmNotification frm;
+
         adminAnnouncement announcement;
         SqlDataReader dr;
 
@@ -29,8 +30,8 @@ namespace TheNeighborhoodApp
         public FrmAdminHomepage(UserInfo userInfo)
         {
             this._userInfo = userInfo;
-          
 
+            frm = new FrmNotification(_userInfo);
             InitializeComponent();
             cnn = new SqlConnection(dbcon.MyConnection());
             cnn.Open();
@@ -49,7 +50,7 @@ namespace TheNeighborhoodApp
        
         public void displayAnnouncement()
         {
-            
+            slctedMessage.Visible = false;
             AdminNF.Visible = true;
             AdminNF.BringToFront();
             announcement = new adminAnnouncement(_userInfo);
@@ -74,6 +75,7 @@ namespace TheNeighborhoodApp
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            slctedMessage.Visible = false;
             menuList.Visible = true;
             panel2.BringToFront();
             menuList.BringToFront();
@@ -84,6 +86,7 @@ namespace TheNeighborhoodApp
         }
         private void btnBack_Click_1(object sender, EventArgs e)
         {
+            slctedMessage.Visible = false;
             menuList.Visible = false;
             btnMenu.Visible = true; rlist.eventclickSearch();
         }
@@ -98,6 +101,7 @@ namespace TheNeighborhoodApp
 
         private void btnRList_Click(object sender, EventArgs e)
         {
+            slctedMessage.Visible = false;
             currentPage = rlist;
             menuList.Visible = false;
             btnMenu.Visible = true;
@@ -109,6 +113,7 @@ namespace TheNeighborhoodApp
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
+            slctedMessage.Visible = false;
             currentPage = calendar;
             menuList.Visible = false;
             btnMenu.Visible = true;
@@ -119,7 +124,7 @@ namespace TheNeighborhoodApp
 
         private void btnConcerns_Click(object sender, EventArgs e)
         {
-            
+            slctedMessage.Visible = false;
             menuList.Visible = false;
             btnMenu.Visible = true; rlist.eventclickSearch();
             AdminNF.Controls.Clear();
@@ -147,6 +152,7 @@ namespace TheNeighborhoodApp
 
         private void btnAnnouncements_Click(object sender, EventArgs e)
         {
+            slctedMessage.Visible = false;
             menuList.Visible = false;
             btnMenu.Visible = true; rlist.eventclickSearch();
             AdminNF.Controls.Clear();
@@ -160,14 +166,30 @@ namespace TheNeighborhoodApp
 
         private void slctNotif_Click(object sender, EventArgs e)
         {
-            AdminNF.Visible = true;
+            slctedNotif.Visible = true;
+            AdminNF.Visible = true; slctedMessage.Visible = false;
             AdminNF.BringToFront();
-            FrmNotification frm = new FrmNotification(_userInfo);
+            
             frm.TopLevel = false;
             AdminNF.Controls.Add(frm);
             currentPage = announcement;
             frm.BringToFront();
             frm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmlogin login = new frmlogin(_userInfo);
+            login.ShowDialog();
+            this.Close();
+        }
+
+        private void slctedNotif_Click(object sender, EventArgs e)
+        {
+           
+            slctedNotif.Visible = false;
+            AdminNF.Controls.Remove(frm);
+            AdminNF.BringToFront();
         }
     }
 }

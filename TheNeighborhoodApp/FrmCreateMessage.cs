@@ -32,6 +32,14 @@ namespace TheNeighborhoodApp
         }
         private void FrmCreateMessage_Load(object sender, EventArgs e)
         {
+            if (_userinfo.getUserType().Equals("admin"))
+            {
+                getContactsAdmin();
+            }
+            else
+            {
+                getContacts();
+            }
             getContacts();
             
         }
@@ -55,7 +63,24 @@ namespace TheNeighborhoodApp
 
 
         }
-        
+        public void getContactsAdmin()
+        {
+            contactusernames.Clear(); contactNames.Clear();
+            cnn.Open();
+            cmm = new SqlCommand("Select [First Name],[Last Name], Username from UserInfo", cnn);
+            dr = cmm.ExecuteReader();
+            while (dr.Read())
+            {
+
+                UserControlContacts uccontacts = new UserControlContacts(_userinfo);
+                uccontacts.Labels(dr.GetValue(0).ToString() + " " + dr.GetValue(1).ToString(), dr.GetValue(2).ToString());
+                flowContacts.Controls.Add(uccontacts);
+            }
+            cnn.Close();
+
+
+        }
+
 
         private void tbContact_TextChanged(object sender, EventArgs e)
         {

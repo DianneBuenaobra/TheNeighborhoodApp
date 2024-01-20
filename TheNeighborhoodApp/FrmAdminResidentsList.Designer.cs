@@ -34,7 +34,6 @@
             this.IconSearch = new System.Windows.Forms.PictureBox();
             this.btnX = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnX)).BeginInit();
@@ -51,7 +50,7 @@
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.Size = new System.Drawing.Size(479, 528);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
@@ -106,24 +105,12 @@
             this.label1.Text = "Search";
             this.label1.Click += new System.EventHandler(this.tbSearch_Click);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(416, 605);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // FrmAdminResidentsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 681);
             this.ControlBox = false;
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnX);
             this.Controls.Add(this.IconSearch);
@@ -148,6 +135,5 @@
         private System.Windows.Forms.PictureBox IconSearch;
         private System.Windows.Forms.PictureBox btnX;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEdit;
     }
 }

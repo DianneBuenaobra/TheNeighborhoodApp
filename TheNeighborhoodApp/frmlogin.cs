@@ -111,7 +111,8 @@ namespace TheNeighborhoodApp
             }
             else
             {
-                MessageBox.Show("Invalid credentials");
+                MessageBox.Show("Invalid credentials");usertxt.Text = "";userpasswordtxt.Text = "";
+                
             }
          
            
@@ -143,7 +144,9 @@ namespace TheNeighborhoodApp
             }
             else
             {
-                MessageBox.Show("invalid credentials");
+                MessageBox.Show("invalid credentials"); usertxt.Text = ""; userpasswordtxt.Text = "";
+
+
             }
         }
 
@@ -268,7 +271,7 @@ namespace TheNeighborhoodApp
                 
                 resident();
                 
-                this.Close();
+               
             }
             else
             {

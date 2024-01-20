@@ -35,7 +35,6 @@
             this.dtPicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
@@ -70,7 +69,6 @@
             this.panel1.Controls.Add(this.dtPicker1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.txtDescription);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTitle);
@@ -127,6 +125,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(383, 207);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(64, 21);
@@ -134,16 +133,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(313, 207);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(64, 21);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
             // 
             // txtDescription
             // 
@@ -153,6 +142,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(424, 87);
             this.txtDescription.TabIndex = 8;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // label4
             // 
@@ -172,6 +162,7 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(424, 22);
             this.txtTitle.TabIndex = 2;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // label1
             // 
@@ -200,7 +191,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(12, 266);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(479, 352);
+            this.panel2.Size = new System.Drawing.Size(479, 388);
             this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -218,7 +209,7 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(2, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(469, 342);
+            this.panel3.Size = new System.Drawing.Size(469, 377);
             this.panel3.TabIndex = 0;
             // 
             // lblmonth
@@ -239,7 +230,7 @@
             this.DateContainer.Location = new System.Drawing.Point(6, 43);
             this.DateContainer.Margin = new System.Windows.Forms.Padding(1);
             this.DateContainer.Name = "DateContainer";
-            this.DateContainer.Size = new System.Drawing.Size(457, 296);
+            this.DateContainer.Size = new System.Drawing.Size(457, 330);
             this.DateContainer.TabIndex = 17;
             // 
             // label12
@@ -330,7 +321,7 @@
             // 
             this.btnprev.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnprev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprev.Location = new System.Drawing.Point(427, 644);
+            this.btnprev.Location = new System.Drawing.Point(427, 657);
             this.btnprev.Name = "btnprev";
             this.btnprev.Size = new System.Drawing.Size(26, 23);
             this.btnprev.TabIndex = 11;
@@ -342,7 +333,7 @@
             // 
             this.btnnext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnnext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnext.Location = new System.Drawing.Point(459, 644);
+            this.btnnext.Location = new System.Drawing.Point(459, 657);
             this.btnnext.Name = "btnnext";
             this.btnnext.Size = new System.Drawing.Size(26, 23);
             this.btnnext.TabIndex = 12;
@@ -395,7 +386,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.FlowLayoutPanel DateContainer;
         private System.Windows.Forms.Label lblmonth;

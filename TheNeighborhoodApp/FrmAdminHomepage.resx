@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="slctedNotif.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAEISURBVEhL5ZRBSsQwFIa7U/AIuvQwegpPkMQyqx7DlYmz
+        GOhRFERw04EhqVUYGM+gW+dl+qtQXtNn7UKcD34or/m/pIsm2x/y+erUOP8SE58xng4SF8aFjza+wPj3
+        qKvmgKS6PX27gbbhWdmg4jssG4e6aU6M9cvvk3fjq/z66RjLf8bu5En5Z3w16ktIfskL2WjU5GjnHxkR
+        G+3CA2pyaIN3TtaTN9TkMJJkUJPDSVJBTQ4nSQU1OZwkFdTkcJJUUJPDSVJBbZiLxfqQCq4rGIwN5ays
+        jqDph36ae1YgSOxC0w/dLXdcWRK6ZW+h+YPQ5ff6dVIXNhhPh3H1eRTHKFufYfzvybIttCQxLGIFSGIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="slctedMessage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
